@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-gray-400 mt-auto">
+    <footer className="bg-[#1a1a1a] text-[#999999] mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
@@ -14,7 +14,7 @@ export default function Footer() {
             <p className="text-sm leading-relaxed max-w-sm">
               A multidisciplinary research network dedicated to understanding and reducing violent extremism and radicalisation in Australia and globally.
             </p>
-            <p className="text-xs mt-4 text-gray-600">
+            <p className="text-xs mt-4 text-[#555555]">
               Supported by Deakin University's Alfred Deakin Institute for Citizenship and Globalisation.
             </p>
           </div>
@@ -42,14 +42,14 @@ export default function Footer() {
         </div>
 
         {/* Acknowledgement of Country */}
-        <div className="border-t border-gray-800 mt-8 pt-6 mb-6">
-          <p className="text-xs text-gray-600 leading-relaxed max-w-3xl">
-            <span className="text-gray-500 font-semibold font-sans">Acknowledgement of Country.</span>{' '}
+        <div className="border-t border-[#2d2d2d] mt-8 pt-6 mb-6">
+          <p className="text-xs text-[#555555] leading-relaxed max-w-3xl">
+            <span className="text-[#777777] font-semibold font-sans">Acknowledgement of Country.</span>{' '}
             AVERT Research Network acknowledges the Traditional Custodians of the lands on which our members live and work, and pays respect to their Elders past, present, and emerging. We recognise the continuing connection of Aboriginal and Torres Strait Islander peoples to Country, and their enduring contributions to this land.
           </p>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="border-t border-[#2d2d2d] pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs">© {new Date().getFullYear()} AVERT Research Network. All rights reserved.</p>
           <a
             href="https://www.linkedin.com/company/avert-research-network"
