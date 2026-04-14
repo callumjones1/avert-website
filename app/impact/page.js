@@ -35,7 +35,7 @@ export default function ImpactPage() {
                 <span className="text-xs text-[#999999] font-sans">{featured.date}</span>
               )}
             </div>
-            <h2 className="text-2xl font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors mb-3">
+            <h2 className="text-2xl font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-3">
               {featured.title}
             </h2>
             {featured.body && (
@@ -57,7 +57,7 @@ export default function ImpactPage() {
               {item.date && (
                 <p className="text-xs text-[#999999] uppercase tracking-wide mb-3 font-sans">{item.date}</p>
               )}
-              <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors">
+              <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors">
                 {item.title}
               </h3>
               {item.body && (

@@ -103,7 +103,7 @@ export default function PeoplePage() {
                 )}
               </div>
 
-              <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors text-sm mb-1">
+              <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors text-sm mb-1">
                 {person.name}
               </h3>
               {person.title && (

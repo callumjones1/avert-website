@@ -44,13 +44,13 @@ export default function AffiliateMembershipPage() {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-xl font-bold text-[#111827] mb-6">Affiliate Benefits</h2>
+              <h2 className="text-xl font-bold text-[#1a1a1a] mb-6">Affiliate Benefits</h2>
               <div className="space-y-4">
                 {benefits.map((b) => (
                   <div key={b.title} className="flex gap-4 items-start">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0c7c59] flex-shrink-0 mt-2" />
                     <div>
-                      <span className="font-semibold text-[#111827]">{b.title}</span>
+                      <span className="font-semibold text-[#1a1a1a]">{b.title}</span>
                       <span className="text-[#2d2d2d] text-sm"> — {b.desc}</span>
                     </div>
                   </div>
@@ -59,7 +59,7 @@ export default function AffiliateMembershipPage() {
             </div>
 
             <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-8">
-              <h3 className="font-bold text-[#111827] mb-3">Become an Affiliate Member</h3>
+              <h3 className="font-bold text-[#1a1a1a] mb-3">Become an Affiliate Member</h3>
               <p className="text-sm text-[#2d2d2d] leading-relaxed mb-6">
                 If you are interested in joining AVERT as an affiliate member, please contact us to begin your application.
               </p>
@@ -74,7 +74,7 @@ export default function AffiliateMembershipPage() {
 
           <div className="space-y-4">
             <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-6">
-              <h3 className="font-bold text-[#111827] text-xs uppercase tracking-wide mb-4 font-sans">Membership Options</h3>
+              <h3 className="font-bold text-[#1a1a1a] text-xs uppercase tracking-wide mb-4 font-sans">Membership Options</h3>
               <ul className="space-y-3 text-sm">
                 <li><Link href="/opportunities/research" className="text-[#0c7c59] hover:underline">Research Membership →</Link></li>
                 <li><Link href="/opportunities/affiliate" className="text-[#0c7c59] font-semibold">Affiliate Membership</Link></li>
@@ -90,7 +90,7 @@ export default function AffiliateMembershipPage() {
               </a>
             </div>
             <div className="border border-[#e2e2dc] bg-white p-6">
-              <h3 className="font-bold text-[#111827] text-xs uppercase tracking-wide mb-3 font-sans">Already a researcher?</h3>
+              <h3 className="font-bold text-[#1a1a1a] text-xs uppercase tracking-wide mb-3 font-sans">Already a researcher?</h3>
               <p className="text-sm text-[#5a5a5a] leading-relaxed mb-3">
                 If you meet the research membership criteria, consider applying as a research member instead.
               </p>

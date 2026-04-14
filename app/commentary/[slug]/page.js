@@ -197,7 +197,7 @@ export default async function CommentaryArticle({ params }) {
       {related.length > 0 && (
         <div className="bg-[#f7f7f5] border-t border-[#e2e2dc]">
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h2 className="text-lg font-bold text-[#111827] mb-6">More Commentary</h2>
+            <h2 className="text-lg font-bold text-[#1a1a1a] mb-6">More Commentary</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((a) => (
                 <Link
@@ -208,7 +208,7 @@ export default async function CommentaryArticle({ params }) {
                   {a.author && (
                     <p className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide mb-2 font-sans">{a.author}</p>
                   )}
-                  <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug text-sm transition-colors">
+                  <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug text-sm transition-colors">
                     {a.title}
                   </h3>
                 </Link>

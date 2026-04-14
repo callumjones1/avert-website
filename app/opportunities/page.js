@@ -39,12 +39,12 @@ export default function OpportunitiesPage() {
 
             <div className="space-y-6">
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-[#111827]">Current Opportunities</h2>
+                <h2 className="text-2xl font-bold text-[#1a1a1a]">Current Opportunities</h2>
                 <div className="w-12 h-0.5 bg-[#0c7c59] mt-2" />
               </div>
               <div className="border border-[#e2e2dc] bg-white p-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">PhD Scholarships</p>
-                <h3 className="font-bold text-[#111827] mb-2">Adelaide University — Terrorism & Extremism</h3>
+                <h3 className="font-bold text-[#1a1a1a] mb-2">Adelaide University — Terrorism & Extremism</h3>
                 <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">
                   Multiple funded PhD scholarships available at Adelaide University in the study of terrorism, extremism, and related fields.
                   Topics include vernacular security, cyberthreats, proscription, and listing regimes.
@@ -60,7 +60,7 @@ export default function OpportunitiesPage() {
               </div>
               <div className="border border-[#e2e2dc] bg-white p-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Call for Proposals</p>
-                <h3 className="font-bold text-[#111827] mb-2">GNET — New Voices in Extremism Research</h3>
+                <h3 className="font-bold text-[#1a1a1a] mb-2">GNET — New Voices in Extremism Research</h3>
                 <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">
                   GNET is seeking proposals from PhD students researching the nexus of technology, violent extremism, and terrorism.
                   This series highlights new and emerging academic voices. Applications from women and students from underrepresented regions are especially encouraged.
@@ -79,7 +79,7 @@ export default function OpportunitiesPage() {
 
           <div className="space-y-4">
             <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-6">
-              <h3 className="font-bold text-[#111827] text-xs uppercase tracking-wide mb-4 font-sans">Join AVERT</h3>
+              <h3 className="font-bold text-[#1a1a1a] text-xs uppercase tracking-wide mb-4 font-sans">Join AVERT</h3>
               <ul className="space-y-3 text-sm">
                 <li>
                   <Link href="/opportunities/research" className="text-[#0c7c59] hover:underline">

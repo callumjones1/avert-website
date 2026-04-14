@@ -42,7 +42,7 @@ export default function FaqsPage() {
           <div className="space-y-10">
             {faqs.map((faq, i) => (
               <div key={i} className="border-b border-[#e2e2dc] pb-10 last:border-0">
-                <h2 className="text-lg font-bold text-[#111827] mb-4 leading-snug">{faq.q}</h2>
+                <h2 className="text-lg font-bold text-[#1a1a1a] mb-4 leading-snug">{faq.q}</h2>
                 <div className="space-y-3">
                   {faq.paragraphs.map((p, j) => (
                     <p key={j} className="text-[#2d2d2d] leading-relaxed">{p}</p>
@@ -56,7 +56,7 @@ export default function FaqsPage() {
         )}
 
         <div className="mt-14 bg-[#f7f7f5] border border-[#e2e2dc] p-8">
-          <h3 className="font-bold text-[#111827] mb-3">Still have questions?</h3>
+          <h3 className="font-bold text-[#1a1a1a] mb-3">Still have questions?</h3>
           <p className="text-[#2d2d2d] text-sm leading-relaxed mb-4">
             Get in touch with the AVERT team at{' '}
             <a href="mailto:adi-avert@deakin.edu.au" className="text-[#0c7c59] hover:underline">

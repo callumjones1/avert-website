@@ -29,12 +29,12 @@ export default function ResearchMembershipPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <div className="mb-10">
-              <h2 className="text-xl font-bold text-[#111827] mb-6">Eligibility Criteria</h2>
+              <h2 className="text-xl font-bold text-[#1a1a1a] mb-6">Eligibility Criteria</h2>
               <div className="space-y-6">
                 <div className="flex gap-5">
                   <div className="w-8 h-8 bg-[#0c7c59] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 font-sans">1</div>
                   <div>
-                    <h3 className="font-bold text-[#111827] mb-2">Active Researcher</h3>
+                    <h3 className="font-bold text-[#1a1a1a] mb-2">Active Researcher</h3>
                     <p className="text-[#2d2d2d] leading-relaxed text-sm">
                       Research members must be active researchers in any discipline in the area of addressing violent extremism
                       and radicalisation to terrorism. 'Active research' is defined as having:
@@ -51,7 +51,7 @@ export default function ResearchMembershipPage() {
                 <div className="flex gap-5">
                   <div className="w-8 h-8 bg-[#0c7c59] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 font-sans">2</div>
                   <div>
-                    <h3 className="font-bold text-[#111827] mb-2">Active Participation</h3>
+                    <h3 className="font-bold text-[#1a1a1a] mb-2">Active Participation</h3>
                     <p className="text-[#2d2d2d] leading-relaxed text-sm">
                       Research members are expected to be active participants in AVERT engagement activities and to share information
                       about their research projects, publications and related activities with other members through the AVERT Newsletter
@@ -63,13 +63,13 @@ export default function ResearchMembershipPage() {
             </div>
 
             <div className="mb-10">
-              <h2 className="text-xl font-bold text-[#111827] mb-6">Member Benefits</h2>
+              <h2 className="text-xl font-bold text-[#1a1a1a] mb-6">Member Benefits</h2>
               <div className="space-y-4">
                 {benefits.map((b) => (
                   <div key={b.title} className="flex gap-4 items-start">
                     <div className="w-1.5 h-1.5 rounded-full bg-[#0c7c59] flex-shrink-0 mt-2" />
                     <div>
-                      <span className="font-semibold text-[#111827]">{b.title}</span>
+                      <span className="font-semibold text-[#1a1a1a]">{b.title}</span>
                       <span className="text-[#2d2d2d] text-sm"> — {b.desc}</span>
                     </div>
                   </div>
@@ -78,7 +78,7 @@ export default function ResearchMembershipPage() {
             </div>
 
             <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-8">
-              <h3 className="font-bold text-[#111827] mb-3">Apply for Research Membership</h3>
+              <h3 className="font-bold text-[#1a1a1a] mb-3">Apply for Research Membership</h3>
               <p className="text-sm text-[#2d2d2d] leading-relaxed mb-6">
                 If you are interested in joining AVERT as a research member and fulfil the above criteria,
                 please contact us to begin your application.
@@ -94,7 +94,7 @@ export default function ResearchMembershipPage() {
 
           <div className="space-y-4">
             <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-6">
-              <h3 className="font-bold text-[#111827] text-xs uppercase tracking-wide mb-4 font-sans">Membership Options</h3>
+              <h3 className="font-bold text-[#1a1a1a] text-xs uppercase tracking-wide mb-4 font-sans">Membership Options</h3>
               <ul className="space-y-3 text-sm">
                 <li><Link href="/opportunities/research" className="text-[#0c7c59] font-semibold">Research Membership</Link></li>
                 <li><Link href="/opportunities/affiliate" className="text-[#0c7c59] hover:underline">Affiliate Membership →</Link></li>

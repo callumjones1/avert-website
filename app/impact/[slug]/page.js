@@ -88,7 +88,7 @@ export default async function ImpactArticle({ params }) {
       {related.length > 0 && (
         <div className="bg-[#f7f7f5] border-t border-[#e2e2dc]">
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h2 className="text-lg font-bold text-[#111827] mb-6">More News & Impact</h2>
+            <h2 className="text-lg font-bold text-[#1a1a1a] mb-6">More News & Impact</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((r) => (
                 <Link
@@ -99,7 +99,7 @@ export default async function ImpactArticle({ params }) {
                   {r.date && (
                     <p className="text-xs text-[#999999] uppercase tracking-wide mb-2 font-sans">{r.date}</p>
                   )}
-                  <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug text-sm transition-colors">
+                  <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug text-sm transition-colors">
                     {r.title}
                   </h3>
                 </Link>

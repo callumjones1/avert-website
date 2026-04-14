@@ -3,7 +3,7 @@
 sync_webinars.py
 ----------------
 Checks the AVERT YouTube playlist(s) for new webinar recordings and
-automatically inserts any new entries into app/events/webinars/page.js.
+automatically inserts any new entries into data/webinars.json.
 
 Usage:
     python backend/scripts/sync_webinars.py
@@ -18,7 +18,7 @@ Dependencies (install into backend/.venv):
     pip install yt-dlp
 """
 
-import re
+import json
 import sys
 from pathlib import Path
 
@@ -31,13 +31,11 @@ except ImportError:
 # Config
 # ---------------------------------------------------------------------------
 
-# Repo root is three levels up from this script (backend/scripts/sync_webinars.py)
 ROOT = Path(__file__).resolve().parent.parent.parent
-WEBINARS_PAGE = ROOT / "app" / "events" / "webinars" / "page.js"
+WEBINARS_JSON = ROOT / "data" / "webinars.json"
 
 # Add new yearly playlists here as they are created.
-# Only the *current* year typically gets new uploads mid-year; past playlists
-# are complete, so no need to re-check them every run.
+# Only the *current* year typically gets new uploads mid-year.
 PLAYLISTS_TO_CHECK = {
     "2026": "PLfjeIYamD7WUrTxvdfLuc5TqBDB9ztTQE",
 }
@@ -46,7 +44,7 @@ PLAYLISTS_TO_CHECK = {
 # Helpers
 # ---------------------------------------------------------------------------
 
-def fetch_playlist(playlist_id: str) -> list[dict]:
+def fetch_playlist(playlist_id):
     """Return list of {id, title} dicts for every public video in the playlist."""
     url = f"https://www.youtube.com/playlist?list={playlist_id}"
     opts = {
@@ -64,40 +62,29 @@ def fetch_playlist(playlist_id: str) -> list[dict]:
     ]
 
 
-def existing_video_ids(page_js: str) -> set[str]:
-    """Extract every videoId value already present in page.js."""
-    return set(re.findall(r"videoId:\s*'([^']+)'", page_js))
-
-
-def insert_video(page_js: str, year: str, video_id: str, title: str) -> str:
-    """
-    Prepend a new tile entry to the front of the given year's array in page.js.
-    New uploads are most recent so they should appear first.
-    """
-    safe_title = title.replace("'", "\\'")
-    new_entry = f"    {{ title: '{safe_title}', videoId: '{video_id}' }},\n"
-    # Match the opening of the year's array, e.g. '2026': [
-    pattern = rf"('{re.escape(year)}':\s*\[)"
-    if not re.search(pattern, page_js):
-        # Year section doesn't exist yet — create it before the closing of the object
-        new_section = f"  '{year}': [\n{new_entry}  ],\n"
-        page_js = re.sub(r"(const webinars\s*=\s*\{)", rf"\1\n{new_section}", page_js, count=1)
-    else:
-        page_js = re.sub(pattern, rf"\1\n{new_entry}", page_js, count=1)
-    return page_js
+def existing_video_ids(data):
+    """Return set of all videoIds already present in the JSON data."""
+    ids = set()
+    for year_entries in data.values():
+        for entry in year_entries:
+            if entry.get("videoId"):
+                ids.add(entry["videoId"])
+    return ids
 
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
-def main() -> None:
-    if not WEBINARS_PAGE.exists():
-        sys.exit(f"Cannot find webinars page at {WEBINARS_PAGE}")
+def main():
+    if not WEBINARS_JSON.exists():
+        sys.exit(f"Cannot find webinars JSON at {WEBINARS_JSON}")
 
-    page_js = WEBINARS_PAGE.read_text(encoding="utf-8")
-    known_ids = existing_video_ids(page_js)
-    added: list[dict] = []
+    with open(WEBINARS_JSON, encoding="utf-8") as f:
+        data = json.load(f)
+
+    known_ids = existing_video_ids(data)
+    added = []
 
     for year, playlist_id in PLAYLISTS_TO_CHECK.items():
         print(f"\nChecking {year} playlist ({playlist_id}) ...")
@@ -113,17 +100,20 @@ def main() -> None:
                 print(f"  already present  {vid}  {video['title']}")
             else:
                 print(f"  + adding         {vid}  {video['title']}")
-                page_js = insert_video(page_js, year, vid, video["title"])
+                if year not in data:
+                    data[year] = []
+                #Prepend so newest appears first
+                data[year].insert(0, {"title": video["title"], "videoId": vid})
                 known_ids.add(vid)
                 added.append(video)
 
     if added:
-        WEBINARS_PAGE.write_text(page_js, encoding="utf-8")
-        print(f"\nWrote {len(added)} new entry/entries to {WEBINARS_PAGE.relative_to(ROOT)}")
+        with open(WEBINARS_JSON, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
+        print(f"\nWrote {len(added)} new entry/entries to {WEBINARS_JSON.relative_to(ROOT)}")
         print("Next step: commit the change and push (or run `npm run build` locally).")
     else:
-        print("\nNo new videos — page.js unchanged.")
+        print("\nNo new videos — webinars.json unchanged.")
 
 
-if __name__ == "__main__":
-    main()
+main()
