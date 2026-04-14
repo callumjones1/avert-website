@@ -21,6 +21,7 @@ const navItems = [
       { label: 'Publications', href: '/publications' },
       { label: 'Commentary', href: '/commentary' },
       { label: 'Impact', href: '/impact' },
+      { label: 'Newsletters', href: '/newsletters' },
     ],
   },
   {
