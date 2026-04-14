@@ -52,7 +52,7 @@ export default function EventsPage() {
                           <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-2 py-0.5 font-semibold font-sans">{event.platform}</span>
                         )}
                         {event.format && (
-                          <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 font-sans">{event.format}</span>
+                          <span className="text-xs bg-[#f3f3f3] text-[#717171] px-2 py-0.5 font-sans">{event.format}</span>
                         )}
                       </div>
                       <h3 className="text-lg font-bold text-[#1a1a1a] mb-3 leading-snug">{event.title}</h3>
@@ -74,7 +74,7 @@ export default function EventsPage() {
                             <p className="text-sm font-bold text-[#0c7c59] mb-0.5 font-sans">{event.speaker}</p>
                           )}
                           {event.speaker_title && (
-                            <p className="text-xs text-gray-500 font-sans leading-snug">{event.speaker_title}</p>
+                            <p className="text-xs text-[#717171] font-sans leading-snug">{event.speaker_title}</p>
                           )}
                         </div>
                         {event.org_logo && (
@@ -90,7 +90,7 @@ export default function EventsPage() {
                       </div>
 
                       {event.description && (
-                        <div className="text-sm text-gray-600 leading-relaxed mb-5 max-w-2xl space-y-3">
+                        <div className="text-sm text-[#5a5a5a] leading-relaxed mb-5 max-w-2xl space-y-3">
                           {event.description.split('\n\n').map((para, i) => (
                             <p key={i}>{para}</p>
                           ))}
@@ -99,7 +99,7 @@ export default function EventsPage() {
                       {event.speaker_bio && (
                         <div className="border-l-2 border-[#0c7c59]/30 pl-4 mb-5 max-w-2xl">
                           <p className="text-xs font-semibold uppercase tracking-wide text-[#0c7c59] mb-2 font-sans">About the Speaker</p>
-                          <p className="text-sm text-gray-600 leading-relaxed">{event.speaker_bio}</p>
+                          <p className="text-sm text-[#5a5a5a] leading-relaxed">{event.speaker_bio}</p>
                         </div>
                       )}
                       {event.register_url && (
@@ -132,13 +132,13 @@ export default function EventsPage() {
                 <div key={i} className="border border-[#e2e2dc] bg-white p-5">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
-                      <p className="text-xs text-gray-400 mb-1.5 font-sans">{event.date_aedt} · {event.format}</p>
+                      <p className="text-xs text-[#999999] mb-1.5 font-sans">{event.date_aedt} · {event.format}</p>
                       <h3 className="font-bold text-[#1a1a1a] leading-snug text-sm mb-1">{event.title}</h3>
                       {event.speaker && event.speaker !== 'Various speakers' && (
                         <p className="text-xs text-[#0c7c59] font-semibold font-sans mt-0.5">{event.speaker}</p>
                       )}
                       {event.speaker_title && event.speaker !== 'Various speakers' && (
-                        <p className="text-xs text-gray-400 font-sans mt-0.5 leading-snug">{event.speaker_title}</p>
+                        <p className="text-xs text-[#999999] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>
                       )}
                     </div>
                     {event.recording_url && (

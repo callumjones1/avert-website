@@ -9,8 +9,8 @@ const ROLE_COLOURS = {
   'Convenor': 'bg-[#0c7c59] text-white',
   'Coordinator': 'bg-[#0c7c59]/80 text-white',
   'Executive Committee': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/30',
-  'Research Member': 'bg-gray-100 text-gray-600',
-  'Affiliate Member': 'bg-gray-100 text-gray-500',
+  'Research Member': 'bg-[#f3f3f3] text-[#5a5a5a]',
+  'Affiliate Member': 'bg-[#f3f3f3] text-[#717171]',
 }
 
 export default function PeoplePage() {
@@ -72,7 +72,7 @@ export default function PeoplePage() {
           </select>
         </div>
 
-        <p className="text-sm text-gray-400 mb-8 font-sans">
+        <p className="text-sm text-[#999999] mb-8 font-sans">
           Showing {filtered.length} of {people.length} researchers
         </p>
 
@@ -107,10 +107,10 @@ export default function PeoplePage() {
                 {person.name}
               </h3>
               {person.title && (
-                <p className="text-xs text-gray-500 mb-0.5 leading-snug">{person.title}</p>
+                <p className="text-xs text-[#717171] mb-0.5 leading-snug">{person.title}</p>
               )}
               {person.institution && (
-                <p className="text-xs text-gray-400 mb-3">{person.institution}</p>
+                <p className="text-xs text-[#999999] mb-3">{person.institution}</p>
               )}
 
               {/* Role badge */}
@@ -124,7 +124,7 @@ export default function PeoplePage() {
               {person.research_areas && (
                 <div className="mt-2 flex flex-wrap gap-1">
                   {person.research_areas.split(/[;,]/).map((k) => k.trim()).filter(Boolean).slice(0, 3).map((k) => (
-                    <span key={k} className="text-xs bg-[#f7f7f5] text-gray-500 px-2 py-0.5 border border-[#e2e2dc] font-sans leading-snug">
+                    <span key={k} className="text-xs bg-[#f7f7f5] text-[#717171] px-2 py-0.5 border border-[#e2e2dc] font-sans leading-snug">
                       {k}
                     </span>
                   ))}

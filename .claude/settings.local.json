@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /c/Users/callu/OneDrive/Documents/avert-website/ remote -v)",
+      "Bash(python -m venv .venv)",
+      "Bash(.venv/Scripts/pip install:*)",
+      "Bash(npm run:*)",
+      "Bash(git -C /c/Users/callu/OneDrive/Documents/avert-website status)",
+      "Bash(git -C /c/Users/callu/OneDrive/Documents/avert-website log --oneline -5)",
+      "Bash(git add:*)",
+      "Bash(git:*)",
+      "Bash(grep -r \"1a1a1a\\\\|111827\\\\|0c7c59\" /c/Users/callu/OneDrive/Documents/avert-website/out/_next/static/chunks/*.css)",
+      "Bash(xargs sed:*)"
+    ]
+  }
+}

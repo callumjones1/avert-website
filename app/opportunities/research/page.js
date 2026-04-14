@@ -43,7 +43,7 @@ export default function ResearchMembershipPage() {
                       <li className="flex gap-2"><span className="text-[#0c7c59] font-bold">a)</span> Published at least 3 peer-reviewed research publications and/or publicly available research reports over the last 5 years; and/or</li>
                       <li className="flex gap-2"><span className="text-[#0c7c59] font-bold">b)</span> Received at least one externally funded research grant supporting research relevant to AVERT's focus over the last five years.</li>
                     </ul>
-                    <p className="mt-3 text-sm text-gray-500 italic">
+                    <p className="mt-3 text-sm text-[#717171] italic">
                       Note: Masters and Doctoral students are only eligible for Affiliate membership. Once a doctoral degree is conferred, the applicant can be upgraded to a Research member.
                     </p>
                   </div>
@@ -102,7 +102,7 @@ export default function ResearchMembershipPage() {
             </div>
             <div className="bg-[#1a1a1a] text-white p-6">
               <h3 className="font-bold text-xs uppercase tracking-wide mb-2 font-sans">Questions?</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              <p className="text-[#999999] text-sm leading-relaxed mb-3">
                 Contact the AVERT team for any membership enquiries.
               </p>
               <a href="mailto:adi-avert@deakin.edu.au" className="text-[#0c7c59] hover:text-white text-sm font-semibold transition-colors font-sans">

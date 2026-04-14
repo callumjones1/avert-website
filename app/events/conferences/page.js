@@ -68,7 +68,7 @@ export default function ConferencesPage() {
             <div key={i} className="border border-[#e2e2dc] bg-white p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 <div className="flex-1">
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2 font-sans">{conf.date}</p>
+                  <p className="text-xs font-semibold text-[#999999] uppercase tracking-wide mb-2 font-sans">{conf.date}</p>
                   <h2 className="text-xl font-bold text-[#1a1a1a] mb-2 leading-snug">{conf.title}</h2>
                   {conf.theme && (
                     <p className="text-sm font-semibold text-[#0c7c59] mb-3 font-sans">
@@ -76,12 +76,12 @@ export default function ConferencesPage() {
                     </p>
                   )}
                   {conf.keynote && (
-                    <p className="text-sm text-gray-600 mb-3">
+                    <p className="text-sm text-[#5a5a5a] mb-3">
                       <span className="font-semibold text-[#1a1a1a]">Keynote: </span>{conf.keynote}
                     </p>
                   )}
                   {conf.description && (
-                    <p className="text-sm text-gray-600 leading-relaxed">{conf.description}</p>
+                    <p className="text-sm text-[#5a5a5a] leading-relaxed">{conf.description}</p>
                   )}
                 </div>
                 {conf.recording_url && (

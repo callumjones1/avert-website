@@ -81,7 +81,7 @@ const publications = [
 const typeColour = {
   'Database': 'bg-[#0c7c59] text-white',
   'Report': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/20',
-  'Submission': 'bg-gray-100 text-gray-600',
+  'Submission': 'bg-[#f3f3f3] text-[#5a5a5a]',
 }
 
 export default function PublicationsPage() {
@@ -140,7 +140,7 @@ export default function PublicationsPage() {
                       <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-1">
                         {pub.title}
                       </h3>
-                      <p className="text-sm text-gray-500">{pub.authors}</p>
+                      <p className="text-sm text-[#717171]">{pub.authors}</p>
                     </div>
                     <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans flex-shrink-0 mt-1">
                       Read →

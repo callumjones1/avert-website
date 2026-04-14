@@ -80,7 +80,7 @@ export default async function ImpactArticle({ params }) {
             ? paragraphs.map((p, i) => (
                 <p key={i} className="mb-5 leading-relaxed text-[#2d2d2d] text-base">{p}</p>
               ))
-            : <p className="text-gray-400 italic">Content unavailable.</p>
+            : <p className="text-[#999999] italic">Content unavailable.</p>
           }
         </div>
       </div>
@@ -97,7 +97,7 @@ export default async function ImpactArticle({ params }) {
                   className="group bg-white border border-[#e2e2dc] hover:border-[#0c7c59] p-5 transition-colors"
                 >
                   {r.date && (
-                    <p className="text-xs text-gray-400 uppercase tracking-wide mb-2 font-sans">{r.date}</p>
+                    <p className="text-xs text-[#999999] uppercase tracking-wide mb-2 font-sans">{r.date}</p>
                   )}
                   <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug text-sm transition-colors">
                     {r.title}

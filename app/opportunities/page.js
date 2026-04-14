@@ -45,7 +45,7 @@ export default function OpportunitiesPage() {
               <div className="border border-[#e2e2dc] bg-white p-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">PhD Scholarships</p>
                 <h3 className="font-bold text-[#111827] mb-2">Adelaide University — Terrorism & Extremism</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">
                   Multiple funded PhD scholarships available at Adelaide University in the study of terrorism, extremism, and related fields.
                   Topics include vernacular security, cyberthreats, proscription, and listing regimes.
                 </p>
@@ -61,7 +61,7 @@ export default function OpportunitiesPage() {
               <div className="border border-[#e2e2dc] bg-white p-6">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Call for Proposals</p>
                 <h3 className="font-bold text-[#111827] mb-2">GNET — New Voices in Extremism Research</h3>
-                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">
                   GNET is seeking proposals from PhD students researching the nexus of technology, violent extremism, and terrorism.
                   This series highlights new and emerging academic voices. Applications from women and students from underrepresented regions are especially encouraged.
                 </p>
@@ -95,7 +95,7 @@ export default function OpportunitiesPage() {
             </div>
             <div className="bg-[#1a1a1a] text-white p-6">
               <h3 className="font-bold text-xs uppercase tracking-wide mb-2 font-sans">Contact Us</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              <p className="text-[#999999] text-sm leading-relaxed mb-3">
                 For funding opportunities, collaboration enquiries, or membership questions:
               </p>
               <a href="mailto:adi-avert@deakin.edu.au" className="text-[#0c7c59] hover:text-white text-sm font-semibold transition-colors font-sans">

@@ -80,12 +80,12 @@ export default function Navbar() {
                 )}
               </Link>
               {item.children && openDropdown === item.label && (
-                <div className="absolute top-full left-0 bg-white min-w-52 py-1 shadow-xl border border-gray-100">
+                <div className="absolute top-full left-0 bg-white min-w-52 py-1 shadow-xl border border-[#eeeeee]">
                   {item.children.map((child) => (
                     <Link
                       key={child.href}
                       href={child.href}
-                      className="block px-4 py-2.5 text-sm text-gray-700 hover:text-[#0c7c59] hover:bg-gray-50 transition-colors font-sans"
+                      className="block px-4 py-2.5 text-sm text-[#3d3d3d] hover:text-[#0c7c59] hover:bg-[#f9f9f9] transition-colors font-sans"
                     >
                       {child.label}
                     </Link>

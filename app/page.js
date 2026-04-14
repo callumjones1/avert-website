@@ -59,7 +59,7 @@ export default function HomePage() {
                 <div className="w-1 h-12 bg-[#0c7c59] flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold text-[#111827] mb-1 font-sans">{item.label}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm text-[#5a5a5a] leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -86,13 +86,13 @@ export default function HomePage() {
               className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
             >
               {item.date && (
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-sans">{item.date}</p>
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-3 font-sans">{item.date}</p>
               )}
               <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors">
                 {item.title}
               </h3>
               {item.body && (
-                <p className="text-sm text-gray-500 mt-2 line-clamp-2 leading-relaxed">
+                <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
                   {item.body.substring(0, 120)}…
                 </p>
               )}
@@ -127,14 +127,14 @@ export default function HomePage() {
                     </span>
                   )}
                   {article.date && (
-                    <span className="text-xs text-gray-400 font-sans">{article.date}</span>
+                    <span className="text-xs text-[#999999] font-sans">{article.date}</span>
                   )}
                 </div>
                 <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors">
                   {article.title}
                 </h3>
                 {article.original_publication && (
-                  <p className="text-xs text-gray-400 mt-3 font-sans">
+                  <p className="text-xs text-[#999999] mt-3 font-sans">
                     via {article.original_publication}
                   </p>
                 )}
@@ -162,7 +162,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-2xl font-bold mb-2">Join the Network</h2>
-            <p className="text-gray-400 text-sm max-w-lg leading-relaxed">
+            <p className="text-[#999999] text-sm max-w-lg leading-relaxed">
               AVERT welcomes researchers committed to evidence-based approaches to violent extremism. Research and affiliate memberships are available.
             </p>
           </div>
@@ -175,7 +175,7 @@ export default function HomePage() {
             </Link>
             <Link
               href="/opportunities/affiliate"
-              className="border border-gray-600 hover:border-gray-400 text-gray-300 hover:text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+              className="border border-[#5a5a5a] hover:border-[#999999] text-[#cccccc] hover:text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
             >
               Affiliate Membership
             </Link>

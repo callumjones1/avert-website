@@ -32,14 +32,14 @@ export default function ImpactPage() {
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Latest</span>
               {featured.date && (
-                <span className="text-xs text-gray-400 font-sans">{featured.date}</span>
+                <span className="text-xs text-[#999999] font-sans">{featured.date}</span>
               )}
             </div>
             <h2 className="text-2xl font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors mb-3">
               {featured.title}
             </h2>
             {featured.body && (
-              <p className="text-gray-500 leading-relaxed max-w-3xl">
+              <p className="text-[#717171] leading-relaxed max-w-3xl">
                 {featured.body.replace(/^.+?\n/s, '').replace(/Written By[\s\S]*?\n/i, '').substring(0, 240)}…
               </p>
             )}
@@ -55,13 +55,13 @@ export default function ImpactPage() {
               className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
             >
               {item.date && (
-                <p className="text-xs text-gray-400 uppercase tracking-wide mb-3 font-sans">{item.date}</p>
+                <p className="text-xs text-[#999999] uppercase tracking-wide mb-3 font-sans">{item.date}</p>
               )}
               <h3 className="font-bold text-[#111827] group-hover:text-[#0c7c59] leading-snug transition-colors">
                 {item.title}
               </h3>
               {item.body && (
-                <p className="text-sm text-gray-500 mt-2 line-clamp-2 leading-relaxed">
+                <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
                   {item.body.replace(/^.+?\n/s, '').replace(/Written By[\s\S]*?\n/i, '').substring(0, 120)}…
                 </p>
               )}
@@ -70,7 +70,7 @@ export default function ImpactPage() {
         </div>
 
         {impactData.length === 0 && (
-          <p className="text-gray-400 italic">No items yet.</p>
+          <p className="text-[#999999] italic">No items yet.</p>
         )}
       </div>
     </>

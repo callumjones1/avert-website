@@ -52,7 +52,7 @@ export default function FaqsPage() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic">Content coming soon.</p>
+          <p className="text-[#999999] italic">Content coming soon.</p>
         )}
 
         <div className="mt-14 bg-[#f7f7f5] border border-[#e2e2dc] p-8">

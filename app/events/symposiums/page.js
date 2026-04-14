@@ -101,14 +101,14 @@ export default function SymposiumsPage() {
                   {sym.theme && (
                     <p className="text-sm text-[#0c7c59] font-semibold italic mb-2 font-sans">{sym.theme}</p>
                   )}
-                  <p className="text-xs text-gray-400 font-sans mb-3">{sym.dates} · {sym.location}</p>
+                  <p className="text-xs text-[#999999] font-sans mb-3">{sym.dates} · {sym.location}</p>
                   {sym.keynote && (
-                    <p className="text-sm text-gray-600 mb-3 font-sans">
-                      <span className="font-semibold text-gray-700">Keynote: </span>{sym.keynote}
+                    <p className="text-sm text-[#5a5a5a] mb-3 font-sans">
+                      <span className="font-semibold text-[#3d3d3d]">Keynote: </span>{sym.keynote}
                     </p>
                   )}
                   {sym.description && (
-                    <p className="text-sm text-gray-600 leading-relaxed mb-4">{sym.description}</p>
+                    <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">{sym.description}</p>
                   )}
                   <div className="flex gap-4 flex-wrap">
                     {sym.recordings_url && (
@@ -126,7 +126,7 @@ export default function SymposiumsPage() {
                         href={sym.program_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-semibold text-gray-500 hover:text-[#0c7c59] hover:underline font-sans"
+                        className="text-xs font-semibold text-[#717171] hover:text-[#0c7c59] hover:underline font-sans"
                       >
                         Download program →
                       </a>

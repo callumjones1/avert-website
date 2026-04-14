@@ -26,8 +26,8 @@ const ROLE_COLOURS = {
   'Convenor': 'bg-[#0c7c59] text-white',
   'Coordinator': 'bg-[#0c7c59]/80 text-white',
   'Executive Committee': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/30',
-  'Research Member': 'bg-gray-100 text-gray-600',
-  'Affiliate Member': 'bg-gray-100 text-gray-500',
+  'Research Member': 'bg-[#f3f3f3] text-[#5a5a5a]',
+  'Affiliate Member': 'bg-[#f3f3f3] text-[#717171]',
 }
 
 export default async function PersonPage({ params }) {
@@ -89,7 +89,7 @@ export default async function PersonPage({ params }) {
           <div className="md:col-span-1 space-y-6">
             {person.email && (
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2 font-sans">Contact</h4>
+                <h4 className="text-xs font-semibold uppercase tracking-widest text-[#999999] mb-2 font-sans">Contact</h4>
                 <a
                   href={`mailto:${person.email}`}
                   className="text-sm text-[#0c7c59] hover:underline break-all"
@@ -100,18 +100,18 @@ export default async function PersonPage({ params }) {
             )}
             {person.institution && (
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2 font-sans">Institution</h4>
+                <h4 className="text-xs font-semibold uppercase tracking-widest text-[#999999] mb-2 font-sans">Institution</h4>
                 <p className="text-sm text-[#2d2d2d]">{person.institution}</p>
               </div>
             )}
             {person.research_areas && (
               <div>
-                <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3 font-sans">Research Areas</h4>
+                <h4 className="text-xs font-semibold uppercase tracking-widest text-[#999999] mb-3 font-sans">Research Areas</h4>
                 <div className="flex flex-wrap gap-1.5">
                   {person.research_areas.split(/[;,]/).map((k) => k.trim()).filter(Boolean).map((k) => (
                     <span
                       key={k}
-                      className="text-xs bg-[#f7f7f5] text-gray-600 px-2 py-1 border border-[#e2e2dc] leading-snug"
+                      className="text-xs bg-[#f7f7f5] text-[#5a5a5a] px-2 py-1 border border-[#e2e2dc] leading-snug"
                     >
                       {k}
                     </span>
@@ -130,7 +130,7 @@ export default async function PersonPage({ params }) {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-400 italic">No biography available.</p>
+              <p className="text-[#999999] italic">No biography available.</p>
             )}
           </div>
         </div>

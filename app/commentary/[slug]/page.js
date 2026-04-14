@@ -144,7 +144,7 @@ export default async function CommentaryArticle({ params }) {
       {/* Hero image */}
       {heroImage && (
         <div className="max-w-4xl mx-auto px-6 pt-10">
-          <div className="relative w-full h-64 md:h-80 overflow-hidden bg-gray-100">
+          <div className="relative w-full h-64 md:h-80 overflow-hidden bg-[#f3f3f3]">
             <Image
               src={`/images/${heroImage}`}
               alt={article.title}
@@ -164,14 +164,14 @@ export default async function CommentaryArticle({ params }) {
                   {linkifyText(para, article.external_links)}
                 </p>
               ))
-            : <p className="text-gray-400 italic">Content unavailable — please visit the original publication.</p>
+            : <p className="text-[#999999] italic">Content unavailable — please visit the original publication.</p>
           }
         </div>
 
         {/* Sources */}
         {article.external_links?.length > 0 && (
           <div className="mt-12 pt-8 border-t border-[#e2e2dc] max-w-2xl">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-4 font-sans">Sources & Links</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-widest text-[#999999] mb-4 font-sans">Sources & Links</h4>
             <ul className="space-y-2">
               {article.external_links
                 .filter((lnk) => lnk.text && !['Unsplash', 'Franco Alva', 'Written By'].includes(lnk.text))

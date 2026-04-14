@@ -58,7 +58,7 @@ export default function CommentaryPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-widest font-sans">Featured</span>
                   {featured.date && (
-                    <span className="text-xs text-gray-400 font-sans">{featured.date}</span>
+                    <span className="text-xs text-[#999999] font-sans">{featured.date}</span>
                   )}
                 </div>
                 <h2 className="text-2xl font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-3">
@@ -68,12 +68,12 @@ export default function CommentaryPage() {
                   <p className="text-sm font-semibold text-[#0c7c59] mb-3 font-sans">By {featured.author}</p>
                 )}
                 {featured.body && (
-                  <p className="text-gray-600 leading-relaxed line-clamp-3 text-sm">
+                  <p className="text-[#5a5a5a] leading-relaxed line-clamp-3 text-sm">
                     {featured.body.replace(/^.+?\n/s, '').replace(/Written By[\s\S]*?\n/i, '').substring(0, 280)}…
                   </p>
                 )}
                 {featured.original_publication && (
-                  <p className="text-xs text-gray-400 mt-4 font-sans">
+                  <p className="text-xs text-[#999999] mt-4 font-sans">
                     Originally published in {featured.original_publication}
                   </p>
                 )}
@@ -111,19 +111,19 @@ export default function CommentaryPage() {
                       </span>
                     )}
                     {article.date && (
-                      <span className="text-xs text-gray-400 font-sans">{article.date}</span>
+                      <span className="text-xs text-[#999999] font-sans">{article.date}</span>
                     )}
                   </div>
                   <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors flex-1">
                     {article.title}
                   </h3>
                   {!img && article.body && (
-                    <p className="text-sm text-gray-500 mt-2 line-clamp-2 leading-relaxed">
+                    <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
                       {article.body.replace(/^.+?\n/s, '').substring(0, 120)}…
                     </p>
                   )}
                   {article.original_publication && (
-                    <p className="text-xs text-gray-400 mt-3 font-sans">
+                    <p className="text-xs text-[#999999] mt-3 font-sans">
                       via {article.original_publication}
                     </p>
                   )}

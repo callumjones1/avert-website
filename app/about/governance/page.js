@@ -20,7 +20,7 @@ export default function GovernancePage() {
         <div className="prose-article">
           {paragraphs.length > 0
             ? paragraphs.map((p, i) => <p key={i} className="mb-5 leading-relaxed text-[#2d2d2d]">{p}</p>)
-            : <p className="text-gray-400 italic">Content coming soon.</p>
+            : <p className="text-[#999999] italic">Content coming soon.</p>
           }
         </div>
       </div>

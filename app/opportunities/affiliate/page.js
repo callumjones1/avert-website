@@ -37,7 +37,7 @@ export default function AffiliateMembershipPage() {
                 briefs and roundtables, and opportunities for collaboration with researchers and other potential partners
                 for project ideas and development.
               </p>
-              <p className="text-sm text-gray-500 italic">
+              <p className="text-sm text-[#717171] italic">
                 Note: Masters and Doctoral students are eligible for Affiliate membership. Upon conferral of a doctoral degree,
                 affiliate members may apply to upgrade to Research Membership.
               </p>
@@ -82,7 +82,7 @@ export default function AffiliateMembershipPage() {
             </div>
             <div className="bg-[#1a1a1a] text-white p-6">
               <h3 className="font-bold text-xs uppercase tracking-wide mb-2 font-sans">Questions?</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-3">
+              <p className="text-[#999999] text-sm leading-relaxed mb-3">
                 Contact the AVERT team for any membership enquiries.
               </p>
               <a href="mailto:adi-avert@deakin.edu.au" className="text-[#0c7c59] hover:text-white text-sm font-semibold transition-colors font-sans">
@@ -91,7 +91,7 @@ export default function AffiliateMembershipPage() {
             </div>
             <div className="border border-[#e2e2dc] bg-white p-6">
               <h3 className="font-bold text-[#111827] text-xs uppercase tracking-wide mb-3 font-sans">Already a researcher?</h3>
-              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              <p className="text-sm text-[#5a5a5a] leading-relaxed mb-3">
                 If you meet the research membership criteria, consider applying as a research member instead.
               </p>
               <Link href="/opportunities/research" className="text-sm text-[#0c7c59] hover:underline font-semibold font-sans">
