@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+:root {
+  --green: #0c7c59;
+  --green-dark: #0a6b4d;
+  --green-darker: #085c41;
+  --green-light: #e8f5f0;
+  --charcoal: #1a1a1a;
+  --charcoal-mid: #1f2937;
+  --off-white: #f7f7f5;
+  --border: #e2e2dc;
+  --muted: #6b7280;
+  --text: #1a1a1a;
+}
+
+body {
+  background: #ffffff;
+  color: var(--text);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Consistent sans-serif for all UI chrome — nav, buttons, labels, inputs, badges */
+nav, button, input, select, textarea, label,
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+.prose-article p {
+  margin-bottom: 1.25rem;
+  line-height: 1.85;
+  color: #2d2d2d;
+}
+
+.prose-article h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--green-dark);
+}
+
+.prose-article a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
