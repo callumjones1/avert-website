@@ -7,14 +7,7 @@ export const metadata = {
 
 const webinars = {
   '2026': [
-    {
-      title: 'AVERT Webinar with Dr Ali Fisher — Jihadism and the Bondi Attack: Disrupting IS and AQ Strategy in 2026',
-      videoId: null,
-    },
-    {
-    title: 'AVERT Webinar with Rahel Kellich — Education in Christian Fundamentalism: Current Developments and Challenges for Civic Education',
-      videoId: null,
-    },
+    { title: 'AVERT Webinar with Dr Ali Fisher — Jihadism and the Bondi Attack: Disrupting IS and AQ Strategy in 2026', videoId: 'TNpstuPkYYI' },
   ],
   '2025': [
     { title: 'AVERT Webinar with Dr Rik Peels — Cognitive and Behavioral Radicalization: An Explanatory Split', videoId: 'vUF1DQsMmcc' },
@@ -28,21 +21,22 @@ const webinars = {
     { title: 'AVERT Webinar with Dr Nell Bennett — The Bureaucracy of Violence: Organisational Survival and the Challenge of Disengagement', videoId: 'je6gQmZAfzw' },
     { title: 'AVERT Webinar with Dr Keiran Hardy — How (Not) to Argue with a Sovereign Citizen', videoId: 'm9A3p7BMxBY' },
     { title: 'AVERT Webinar with Dr Imogen Richards — The Aesthetic Politics of Far-right Environmentalism', videoId: 's3LH4HM5Muk' },
+    { title: 'AVERT Webinar with Rahel Kellich — Education in Christian Fundamentalism: Current Developments and Challenges for Civic Education', videoId: 'wcjYJyZAEiE' },
   ],
   '2024': [
     { title: 'AVERT Webinar with A/Prof Mario Peucker — Understanding and Countering the Rise of the Far-Right', videoId: '690sKFBZqNI' },
     { title: 'AVERT Webinar with Dr Suraj Lakhani — The nexus between videogaming and violent extremism', videoId: 'Il7HlfFAtuU' },
     { title: 'AVERT Webinar with Dr Aaron Y Zelin — The Evolution of the Islamic State', videoId: 'zMmjGmEEznI' },
     { title: 'AVERT Webinar with Dr Julia Ebner — Is There a Language of Terrorists?', videoId: 'dCHZ5109pSw' },
-    { title: 'AVERT Webinar with Dr Imogen Richards — The Far Right and the Environment in Australia', videoId: null },
-    { title: 'AVERT Webinar with Professor John Horgan — Terrorist Minds', videoId: null },
+    { title: 'AVERT Webinar with Dr Imogen Richards — The Far Right and the Environment in Australia', videoId: 'Dg4S0CrQvL4' },
+    { title: 'AVERT Webinar with Professor John Horgan — Terrorist Minds', videoId: '3sbLqpOsO3U' },
     { title: 'AVERT Webinar — Research on Radicalisation: Where have we got to and ways forward', videoId: 'PdGzWAfvhII' },
     { title: 'AVERT Webinar with Jade Hutchinson — "The Far-Right Online Ecosystem"', videoId: 'NmICee0a6YM' },
     { title: 'AVERT Webinar with Dr Lauren Moulds and John Young — Rethinking CVE Interventions: a needs based approach', videoId: 'Y-kxb3XzNu8' },
     { title: 'AVERT Webinar with Professor Stuart Macdonald — "Outlinks": Violent Jihadist Online Propaganda Dissemination Strategies', videoId: 'jfiHMlX37X0' },
   ],
   '2023': [
-    { title: 'AVERT Webinar with Professor Daniel Byman — The October 7th Attacks: Hamas Goals, Israeli Response and Global Impacts', videoId: null },
+    { title: 'AVERT Webinar with Professor Daniel Byman — The October 7th Attacks: Hamas Goals, Israeli Response and Global Impacts', videoId: 't9u7wdur7xs' },
     { title: 'AVERT Webinar with Professor Sébastien Brouillette-Alarie — Systematic review of the reliability and validity of risk tools for violent radicalization', videoId: 'LCm1fBkMBy8' },
     { title: 'AVERT Webinar with Associate Professor David Malet — Ukraine Foreign Fighters: Volunteers on the Right Side or the Far-Right\'s ISIS?', videoId: 'd8-m_GhAdRA' },
     { title: 'AVERT Webinar with Emma Belton — Understanding the progression to violence: Background characteristics and risk factors', videoId: null },
