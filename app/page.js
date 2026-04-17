@@ -28,9 +28,9 @@ function cleanTitle(title) {
 }
 
 export default function HomePage() {
-  const latestImpact = impactData
+  const newsItems = impactData
     .filter(item => !item.slug.includes('submission'))
-    .slice(0, 3)
+    .slice(0, 4)
 
   const latestCommentary = commentaryData
     .filter(item => !item.slug.startsWith('category') && !item.slug.startsWith('tag'))
@@ -39,6 +39,7 @@ export default function HomePage() {
   const latestWebinars = getLatestWebinars(6)
 
   const nextEvent = eventsData.find(e => e.type === 'upcoming') || null
+  const sidebarEvents = eventsData.slice(0, 5)
 
   return (
     <>
@@ -68,57 +69,14 @@ export default function HomePage() {
               >
                 Meet the Researchers
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bondi attack statement */}
-      <section className="border-b border-[#e2e2dc] bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <div className="flex flex-col md:flex-row md:items-center gap-6 border-l-4 border-[#0c7c59] pl-6">
-            <div className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">AVERT Statement</p>
-              <h2 className="text-xl font-bold text-[#1a1a1a] mb-2 leading-snug">
-                AVERT responds to the Bondi attack
-              </h2>
-              <p className="text-sm text-[#5a5a5a] leading-relaxed max-w-2xl">
-                AVERT researchers have been engaging publicly with analysis of the Bondi attack and its implications for understanding jihadism, IS and AQ strategy, and violent extremism in Australia. Watch our recent webinar with Dr Ali Fisher for evidence-based analysis.
-              </p>
-            </div>
-            <div className="flex-shrink-0 flex flex-col sm:flex-row gap-3">
               <a
-                href="https://www.youtube.com/watch?v=TNpstuPkYYI"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                href="#newsletter"
+                className="border border-white/40 hover:border-white text-white/80 hover:text-white px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-                Watch webinar
+                Stay Informed
               </a>
-              <Link
-                href="/impact/avert-responds-to-tragic-events-in-sydney"
-                className="inline-flex items-center gap-2 border border-[#0c7c59] text-[#0c7c59] hover:bg-[#e8f5f0] px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-              >
-                Read statement
-              </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Subscribe */}
-      <section className="bg-[#0c7c59] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h2 className="text-lg font-bold mb-1">Stay Informed</h2>
-            <p className="text-white/80 text-sm max-w-md">
-              Subscribe to the AVERT newsletter for updates on research, events, and commentary.
-            </p>
-          </div>
-          <SubscribeForm />
         </div>
       </section>
 
@@ -135,9 +93,21 @@ export default function HomePage() {
             </div>
             <div className="flex flex-col md:flex-row md:items-start gap-6">
               {nextEvent.date_aedt && (
-                <div className="flex-shrink-0 bg-[#0c7c59] text-white px-5 py-4 text-center min-w-40">
-                  <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
-                  <p className="text-sm font-bold mt-1 font-sans leading-snug">{nextEvent.date_aedt}</p>
+                <div className="flex-shrink-0 flex flex-col items-center gap-3">
+                  <div className="bg-[#0c7c59] text-white px-5 py-4 text-center w-full">
+                    <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
+                    <p className="text-sm font-bold mt-1 font-sans leading-snug">{nextEvent.date_aedt}</p>
+                  </div>
+                  {nextEvent.speaker_image && (
+                    <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ aspectRatio: '1/1', minWidth: '160px', maxWidth: '160px' }}>
+                      <Image
+                        src={`/images/${nextEvent.speaker_image}`}
+                        alt={nextEvent.speaker || 'Speaker'}
+                        fill
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  )}
                 </div>
               )}
               <div className="flex-1 min-w-0">
@@ -172,49 +142,88 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Latest News & Impact */}
+      {/* News & Events */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex items-baseline justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-bold text-[#1a1a1a]">Latest News & Impact</h2>
+            <h2 className="text-2xl font-bold text-[#1a1a1a]">News & Events</h2>
             <div className="w-12 h-0.5 bg-[#0c7c59] mt-2" />
           </div>
           <Link href="/impact" className="text-sm text-[#0c7c59] hover:underline font-medium font-sans">
-            View all →
+            All news →
           </Link>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestImpact.map((item) => (
-            <Link
-              key={item.slug}
-              href={`/impact/${item.slug}`}
-              className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white transition-colors overflow-hidden flex flex-col"
-            >
-              {item.hero_image && (
-                <div className="relative h-44 overflow-hidden bg-[#f3f3f3] flex-shrink-0">
-                  <Image
-                    src={`/images/${item.hero_image}`}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* News 2×2 grid */}
+          <div className="flex-1 min-w-0">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {newsItems.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/impact/${item.slug}`}
+                  className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white transition-colors overflow-hidden flex flex-col"
+                >
+                  {item.hero_image && (
+                    <div className="relative h-36 overflow-hidden bg-[#f3f3f3] flex-shrink-0">
+                      <Image
+                        src={`/images/${item.hero_image}`}
+                        alt={item.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+                  <div className="p-4 flex-1 flex flex-col">
+                    {item.date && (
+                      <p className="text-xs text-[#999999] uppercase tracking-wide mb-1.5 font-sans">{item.date}</p>
+                    )}
+                    <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors flex-1 text-sm">
+                      {cleanTitle(item.title)}
+                    </h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Events sidebar */}
+          <div className="lg:w-72 xl:w-80 flex-shrink-0">
+            <div className="flex items-baseline justify-between mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Events</p>
+              <Link href="/events" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
+                All events →
+              </Link>
+            </div>
+            <div className="flex flex-col divide-y divide-[#e2e2dc] border border-[#e2e2dc]">
+              {sidebarEvents.map((event, i) => (
+                <div key={i} className="p-4">
+                  <div className="flex gap-1.5 mb-1.5 flex-wrap">
+                    <span className={`text-xs px-1.5 py-0.5 font-semibold font-sans ${event.type === 'upcoming' ? 'bg-[#e8f5f0] text-[#0c7c59]' : 'bg-[#ebebeb] text-[#717171]'}`}>
+                      {event.type === 'upcoming' ? 'Upcoming' : 'Past'}
+                    </span>
+                    {event.format && (
+                      <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{event.format}</span>
+                    )}
+                  </div>
+                  <p className="text-xs text-[#999999] font-sans mb-1">{event.date_aedt}</p>
+                  <p className="text-sm font-semibold text-[#1a1a1a] leading-snug line-clamp-2">{event.title}</p>
+                  {event.speaker && (
+                    <p className="text-xs text-[#5a5a5a] mt-1 font-sans">{event.speaker}</p>
+                  )}
+                  {event.register_url && (
+                    <a
+                      href={event.register_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-[#0c7c59] font-semibold hover:underline mt-1.5 inline-block font-sans"
+                    >
+                      Register →
+                    </a>
+                  )}
                 </div>
-              )}
-              <div className="p-5 flex-1 flex flex-col">
-                {item.date && (
-                  <p className="text-xs text-[#999999] uppercase tracking-wide mb-2 font-sans">{item.date}</p>
-                )}
-                <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors flex-1">
-                  {cleanTitle(item.title)}
-                </h3>
-                {item.body && (
-                  <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
-                    {item.body.replace(/\n/g, ' ').substring(0, 120)}…
-                  </p>
-                )}
-              </div>
-            </Link>
-          ))}
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -277,7 +286,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Recent Webinars — 2 rows of 3 */}
+      {/* Recent Webinars */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         <div className="flex items-baseline justify-between mb-8">
           <div>
@@ -339,6 +348,19 @@ export default function HomePage() {
               </div>
             )
           ))}
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section id="newsletter" className="bg-[#0c7c59] text-white">
+        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h2 className="text-lg font-bold mb-1">Stay Informed</h2>
+            <p className="text-white/80 text-sm max-w-md">
+              Subscribe to the AVERT newsletter for updates on research, events, and commentary.
+            </p>
+          </div>
+          <SubscribeForm />
         </div>
       </section>
 
