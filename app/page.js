@@ -173,7 +173,7 @@ export default function HomePage() {
                   {(nextEvent.speaker || nextEvent.speaker_image) && (
                     <div className="flex items-center gap-3">
                       {nextEvent.speaker_image && (
-                        <div className="relative flex-shrink-0 w-12 h-12 overflow-hidden rounded-full bg-[#f3f3f3]">
+                        <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
                           <Image
                             src={`/images/${nextEvent.speaker_image}`}
                             alt={nextEvent.speaker || 'Speaker'}
