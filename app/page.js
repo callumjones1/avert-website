@@ -44,7 +44,7 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="bg-[#0c7c59] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-14 md:py-20">
+        <div className="max-w-[1440px] mx-auto px-6 py-14 md:py-20">
           <div className="max-w-3xl">
             <div className="inline-block border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-6 font-sans">
               Australian Research Network
@@ -80,7 +80,7 @@ export default function HomePage() {
       </section>
 
       {/* News & Events */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-[1440px] mx-auto px-6 py-16">
         <div className="flex items-baseline justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold text-[#1a1a1a]">News & Events</h2>
@@ -184,7 +184,7 @@ export default function HomePage() {
 
       {/* Commentary */}
       <section className="bg-[#f7f7f5] border-t border-[#e2e2dc]">
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="max-w-[1440px] mx-auto px-6 py-16">
           <div className="flex items-baseline justify-between mb-8">
             <div>
               <h2 className="text-2xl font-bold text-[#1a1a1a]">Commentary</h2>
@@ -242,7 +242,7 @@ export default function HomePage() {
       </section>
 
       {/* Recent Webinars */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section className="max-w-[1440px] mx-auto px-6 py-16">
         <div className="flex items-baseline justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold text-[#1a1a1a]">Recent Webinars</h2>
@@ -308,7 +308,7 @@ export default function HomePage() {
 
       {/* Newsletter */}
       <section id="newsletter" className="bg-[#0c7c59] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="max-w-[1440px] mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h2 className="text-lg font-bold mb-1">Stay Informed</h2>
             <p className="text-white/80 text-sm max-w-md">
@@ -321,7 +321,7 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="bg-[#1a1a1a] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-[1440px] mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h2 className="text-2xl font-bold mb-2">Join the Network</h2>
             <p className="text-[#999999] text-sm max-w-lg leading-relaxed">
