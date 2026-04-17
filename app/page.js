@@ -5,6 +5,7 @@ import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
 import eventsData from '@/data/events.json'
 import SubscribeForm from '@/components/SubscribeForm'
+import WebinarCarousel from '@/components/WebinarCarousel'
 
 export const metadata = {
   title: 'AVERT Research Network',
@@ -64,7 +65,7 @@ export default function HomePage() {
     .filter(item => !item.slug.startsWith('category') && !item.slug.startsWith('tag'))
     .slice(0, 3)
 
-  const latestWebinars = getLatestWebinars(6)
+  const latestWebinars = getLatestWebinars(12)
 
   const upcomingEvents = eventsData.filter(e => e.type === 'upcoming')
 
@@ -265,58 +266,7 @@ export default function HomePage() {
             Full archive →
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {latestWebinars.map((w, i) => (
-            w.videoId ? (
-              <a
-                key={i}
-                href={`https://www.youtube.com/watch?v=${w.videoId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <div className="relative w-full overflow-hidden bg-[#111]" style={{ paddingBottom: '56.25%' }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`https://img.youtube.com/vi/${w.videoId}/hqdefault.jpg`}
-                    alt={w.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-75"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-[#ff0000] rounded-full flex items-center justify-center shadow-lg opacity-90 group-hover:opacity-100 transition-opacity duration-200">
-                      <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="pt-3">
-                  <p className="text-xs text-[#999999] font-sans mb-1">{w.year}</p>
-                  <p className="text-sm font-medium text-[#2d2d2d] group-hover:text-[#0c7c59] leading-snug line-clamp-3 transition-colors duration-150 font-sans">
-                    {w.title}
-                  </p>
-                </div>
-              </a>
-            ) : (
-              <div key={i}>
-                <div className="relative w-full bg-[#ebebeb] border border-[#e2e2dc]" style={{ paddingBottom: '56.25%' }}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5">
-                    <svg className="w-7 h-7 text-[#c0c0c0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10l4.553-2.069A1 1 0 0121 8.862v6.276a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-                    </svg>
-                    <span className="text-xs text-[#b0b0b0] font-sans">No recording</span>
-                  </div>
-                </div>
-                <div className="pt-3">
-                  <p className="text-xs text-[#999999] font-sans mb-1">{w.year}</p>
-                  <p className="text-sm font-medium text-[#888888] leading-snug line-clamp-3 font-sans">
-                    {w.title}
-                  </p>
-                </div>
-              </div>
-            )
-          ))}
-        </div>
+        <WebinarCarousel webinars={latestWebinars} />
       </section>
 
       {/* Newsletter */}
