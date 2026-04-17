@@ -1,6 +1,32 @@
 [
   {
     "type": "upcoming",
+    "speakers": [
+      {
+        "name": "Lydia Khalil",
+        "title": "Senior Research Fellow, Alfred Deakin Institute; Project Director, Lowy Institute",
+        "bio": "Lydia Khalil is a Senior Research Fellow at the Alfred Deakin Institute and a Project Director at the Lowy Institute. In her capacity at Deakin University, she also served as Co-Convenor of the AVERT Research Network and as liaison to the Research and Evaluation Working Group (REWG) of CVESC. As part of her work with the Lowy Institute, Lydia manages the Transnational Challenges Program and Digital Threats to Democracy Project.",
+        "image": "lydia-khalil.jpg",
+        "image_dir": "headshots"
+      },
+      {
+        "name": "Dr Keiran Hardy",
+        "title": "Associate Professor, School of Criminology and Criminal Justice, Griffith University",
+        "bio": "Dr Keiran Hardy is an Associate Professor in the School of Criminology and Criminal Justice at Griffith University and a member of the Griffith Criminology Institute. He is a recognised expert in counter-terrorism and national security law. He is the author of Law in Australian Society: An Introduction to Principles and Process (Routledge, 2024, 2nd ed.) and is currently undertaking a 3-year ARC Discovery Project on conspiracy extremism, focusing on sovereign citizen beliefs and behaviours, pseudolaw, and the impact of conspiracy extremism on families and communities.",
+        "image": "keiran-hardy.jpg",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Tuesday 28 April 2026, 11:00–12:00 AEST",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "The Sovereign Citizen Movement: Global and Local Threats",
+    "description": "Sovereign citizens are often dismissed as conspiratorial eccentrics who operate on the fringes of society. However, at its core, the movement rejects the legitimacy of government authority and the democratic rule of law. Sovereign citizens do not believe they are subject to the same laws as everyone else. They rely on fantastical conspiracy beliefs and pseudo-legal arguments to justify this rejection of society.\n\nThis fundamental rejection of democratic norms means the sovereign citizen movement is not simply a local nuisance: it is a growing national security challenge for many countries around the world. Sovereign citizens have promoted delegitimising narratives against democracies, created alternative structures of authority, committed acts of political violence, fomented civil unrest, engaged in violent confrontations with law enforcement, and threatened elected officials and high office holders.\n\nIn this webinar, Lydia Khalil and Keiran Hardy explore the threats posed by sovereign citizens — both globally and locally — and how law enforcement, governments and society can best respond.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_zRFHaRcPQhGYgEFBRXsPzQ",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
     "speaker": "Dr Bettina Rottweiler",
     "speaker_title": "Associate Research Professor, National Counterterrorism Innovation, Technology, and Education Center (NCITE), University of Nebraska Omaha",
     "speaker_affiliation": "NCITE, University of Nebraska Omaha",

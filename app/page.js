@@ -173,25 +173,30 @@ export default function HomePage() {
                         )}
                       </div>
                       <h3 className="text-sm font-bold text-[#1a1a1a] mb-3 leading-snug">{event.title}</h3>
-                      {(event.speaker || event.speaker_image) && (
+                      {event.speakers ? (
+                        <div className="flex flex-col gap-2">
+                          {event.speakers.map((s, si) => (
+                            <div key={si} className="flex items-center gap-3">
+                              <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
+                                <Image src={`/${s.image_dir}/${s.image}`} alt={s.name} fill className="object-cover object-top" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="text-xs font-semibold text-[#0c7c59] font-sans">{s.name}</p>
+                                <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{s.title}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (event.speaker || event.speaker_image) && (
                         <div className="flex items-center gap-3">
                           {event.speaker_image && (
                             <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
-                              <Image
-                                src={`/images/${event.speaker_image}`}
-                                alt={event.speaker || 'Speaker'}
-                                fill
-                                className="object-cover object-top"
-                              />
+                              <Image src={`/images/${event.speaker_image}`} alt={event.speaker || 'Speaker'} fill className="object-cover object-top" />
                             </div>
                           )}
                           <div className="min-w-0">
-                            {event.speaker && (
-                              <p className="text-xs font-semibold text-[#0c7c59] font-sans">{event.speaker}</p>
-                            )}
-                            {event.speaker_title && (
-                              <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>
-                            )}
+                            {event.speaker && <p className="text-xs font-semibold text-[#0c7c59] font-sans">{event.speaker}</p>}
+                            {event.speaker_title && <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>}
                           </div>
                         </div>
                       )}

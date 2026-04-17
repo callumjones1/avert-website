@@ -56,37 +56,39 @@ export default function EventsPage() {
                       </div>
                       <h3 className="text-lg font-bold text-[#1a1a1a] mb-3 leading-snug">{event.title}</h3>
 
-                      {/* Speaker row with optional headshot and org logo */}
-                      <div className="flex items-start gap-4 mb-4">
-                        {event.speaker_image && (
-                          <div className="flex-shrink-0 w-14 h-14 relative overflow-hidden rounded-full border-2 border-[#e2e2dc]">
-                            <Image
-                              src={`/images/${event.speaker_image}`}
-                              alt={event.speaker || 'Speaker'}
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                        )}
-                        <div className="flex-1 min-w-0">
-                          {event.speaker && (
-                            <p className="text-sm font-bold text-[#0c7c59] mb-0.5 font-sans">{event.speaker}</p>
+                      {/* Speaker row */}
+                      {event.speakers ? (
+                        <div className="flex flex-wrap gap-6 mb-4">
+                          {event.speakers.map((s, si) => (
+                            <div key={si} className="flex items-start gap-3">
+                              <div className="flex-shrink-0 w-14 h-14 relative overflow-hidden rounded-full border-2 border-[#e2e2dc]">
+                                <Image src={`/${s.image_dir}/${s.image}`} alt={s.name} fill className="object-cover object-top" />
+                              </div>
+                              <div className="min-w-0">
+                                <p className="text-sm font-bold text-[#0c7c59] mb-0.5 font-sans">{s.name}</p>
+                                <p className="text-xs text-[#717171] font-sans leading-snug">{s.title}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="flex items-start gap-4 mb-4">
+                          {event.speaker_image && (
+                            <div className="flex-shrink-0 w-14 h-14 relative overflow-hidden rounded-full border-2 border-[#e2e2dc]">
+                              <Image src={`/images/${event.speaker_image}`} alt={event.speaker || 'Speaker'} fill className="object-cover" />
+                            </div>
                           )}
-                          {event.speaker_title && (
-                            <p className="text-xs text-[#717171] font-sans leading-snug">{event.speaker_title}</p>
+                          <div className="flex-1 min-w-0">
+                            {event.speaker && <p className="text-sm font-bold text-[#0c7c59] mb-0.5 font-sans">{event.speaker}</p>}
+                            {event.speaker_title && <p className="text-xs text-[#717171] font-sans leading-snug">{event.speaker_title}</p>}
+                          </div>
+                          {event.org_logo && (
+                            <div className="flex-shrink-0 relative h-10 w-28">
+                              <Image src={`/images/${event.org_logo}`} alt="Organisation logo" fill className="object-contain object-right" />
+                            </div>
                           )}
                         </div>
-                        {event.org_logo && (
-                          <div className="flex-shrink-0 relative h-10 w-28">
-                            <Image
-                              src={`/images/${event.org_logo}`}
-                              alt="Organisation logo"
-                              fill
-                              className="object-contain object-right"
-                            />
-                          </div>
-                        )}
-                      </div>
+                      )}
 
                       {event.description && (
                         <div className="text-sm text-[#5a5a5a] leading-relaxed mb-5 max-w-2xl space-y-3">
@@ -95,7 +97,17 @@ export default function EventsPage() {
                           ))}
                         </div>
                       )}
-                      {event.speaker_bio && (
+                      {event.speakers ? (
+                        <div className="mb-5 max-w-2xl space-y-4">
+                          <p className="text-xs font-semibold uppercase tracking-wide text-[#0c7c59] font-sans">About the Speakers</p>
+                          {event.speakers.map((s, si) => (
+                            <div key={si} className="border-l-2 border-[#0c7c59]/30 pl-4">
+                              <p className="text-xs font-semibold text-[#1a1a1a] mb-1">{s.name}</p>
+                              <p className="text-sm text-[#5a5a5a] leading-relaxed">{s.bio}</p>
+                            </div>
+                          ))}
+                        </div>
+                      ) : event.speaker_bio && (
                         <div className="border-l-2 border-[#0c7c59]/30 pl-4 mb-5 max-w-2xl">
                           <p className="text-xs font-semibold uppercase tracking-wide text-[#0c7c59] mb-2 font-sans">About the Speaker</p>
                           <p className="text-sm text-[#5a5a5a] leading-relaxed">{event.speaker_bio}</p>
