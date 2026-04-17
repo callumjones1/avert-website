@@ -110,18 +110,15 @@ export default function HomePage() {
 
       {/* News & Events */}
       <section className="max-w-[1440px] mx-auto px-6 py-16">
-        <div className="flex items-baseline justify-between mb-8">
-          <div>
-            <h2 className="text-2xl font-bold text-[#1a1a1a]">News & Events</h2>
-            <div className="w-12 h-0.5 bg-[#0c7c59] mt-2" />
-          </div>
-          <Link href="/impact" className="text-sm text-[#0c7c59] hover:underline font-medium font-sans">
-            All news →
-          </Link>
-        </div>
         <div className="flex flex-col lg:flex-row gap-8">
           {/* News 2×2 grid */}
           <div className="lg:w-[63%] min-w-0">
+            <div className="flex items-baseline justify-between mb-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Latest News</p>
+              <Link href="/impact" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
+                All news →
+              </Link>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {newsItems.map((item) => (
                 <Link
