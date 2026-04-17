@@ -98,26 +98,19 @@ export default function HomePage() {
                 <Link
                   key={item.slug}
                   href={`/impact/${item.slug}`}
-                  className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white transition-colors overflow-hidden flex flex-col"
+                  className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
                 >
-                  {item.hero_image && (
-                    <div className="relative h-36 overflow-hidden bg-[#f3f3f3] flex-shrink-0">
-                      <Image
-                        src={`/images/${item.hero_image}`}
-                        alt={item.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
+                  {item.date && (
+                    <p className="text-xs text-[#999999] uppercase tracking-wide mb-3 font-sans">{item.date}</p>
                   )}
-                  <div className="p-4 flex-1 flex flex-col">
-                    {item.date && (
-                      <p className="text-xs text-[#999999] uppercase tracking-wide mb-1.5 font-sans">{item.date}</p>
-                    )}
-                    <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors flex-1 text-sm">
-                      {cleanTitle(item.title)}
-                    </h3>
-                  </div>
+                  <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors">
+                    {cleanTitle(item.title)}
+                  </h3>
+                  {item.body && (
+                    <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
+                      {item.body.replace(/^.+?\n/s, '').replace(/Written By[\s\S]*?\n/i, '').substring(0, 120)}…
+                    </p>
+                  )}
                 </Link>
               ))}
             </div>
