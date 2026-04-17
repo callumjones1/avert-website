@@ -92,13 +92,13 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/people"
-                className="border border-white/40 hover:border-white text-white/80 hover:text-white px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                className="bg-white text-[#0c7c59] hover:bg-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
               >
                 Meet the Researchers
               </Link>
               <a
                 href="#newsletter"
-                className="border border-white/40 hover:border-white text-white/80 hover:text-white px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                className="bg-white text-[#0c7c59] hover:bg-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
               >
                 Stay Informed
               </a>
