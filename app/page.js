@@ -39,7 +39,6 @@ export default function HomePage() {
   const latestWebinars = getLatestWebinars(6)
 
   const nextEvent = eventsData.find(e => e.type === 'upcoming') || null
-  const sidebarEvents = eventsData.slice(0, 5)
 
   return (
     <>
@@ -79,68 +78,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Next upcoming event */}
-      {nextEvent && (
-        <section className="bg-[#f7f7f5] border-b border-[#e2e2dc]">
-          <div className="max-w-7xl mx-auto px-6 py-10">
-            <div className="flex items-baseline gap-3 mb-5">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Next Event</p>
-              <div className="flex-1 h-px bg-[#e2e2dc]" />
-              <Link href="/events" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
-                All events →
-              </Link>
-            </div>
-            <div className="flex flex-col md:flex-row md:items-start gap-6">
-              {nextEvent.date_aedt && (
-                <div className="flex-shrink-0 flex flex-col items-center gap-3">
-                  <div className="bg-[#0c7c59] text-white px-5 py-4 text-center w-full">
-                    <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
-                    <p className="text-sm font-bold mt-1 font-sans leading-snug">{nextEvent.date_aedt}</p>
-                  </div>
-                  {nextEvent.speaker_image && (
-                    <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ aspectRatio: '1/1', minWidth: '160px', maxWidth: '160px' }}>
-                      <Image
-                        src={`/images/${nextEvent.speaker_image}`}
-                        alt={nextEvent.speaker || 'Speaker'}
-                        fill
-                        className="object-cover object-top"
-                      />
-                    </div>
-                  )}
-                </div>
-              )}
-              <div className="flex-1 min-w-0">
-                <div className="flex flex-wrap gap-2 mb-2">
-                  {nextEvent.platform && (
-                    <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-2 py-0.5 font-semibold font-sans">{nextEvent.platform}</span>
-                  )}
-                  {nextEvent.format && (
-                    <span className="text-xs bg-[#ebebeb] text-[#717171] px-2 py-0.5 font-sans">{nextEvent.format}</span>
-                  )}
-                </div>
-                <h3 className="text-lg font-bold text-[#1a1a1a] mb-1 leading-snug">{nextEvent.title}</h3>
-                {nextEvent.speaker && (
-                  <p className="text-sm font-semibold text-[#0c7c59] font-sans">{nextEvent.speaker}</p>
-                )}
-                {nextEvent.speaker_title && (
-                  <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{nextEvent.speaker_title}</p>
-                )}
-                {nextEvent.register_url && (
-                  <a
-                    href={nextEvent.register_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-4 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-5 py-2 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-                  >
-                    Register →
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* News & Events */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -186,44 +123,62 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Events sidebar */}
-          <div className="lg:w-72 xl:w-80 flex-shrink-0">
-            <div className="flex items-baseline justify-between mb-4">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Events</p>
-              <Link href="/events" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
-                All events →
-              </Link>
-            </div>
-            <div className="flex flex-col divide-y divide-[#e2e2dc] border border-[#e2e2dc]">
-              {sidebarEvents.map((event, i) => (
-                <div key={i} className="p-4">
-                  <div className="flex gap-1.5 mb-1.5 flex-wrap">
-                    <span className={`text-xs px-1.5 py-0.5 font-semibold font-sans ${event.type === 'upcoming' ? 'bg-[#e8f5f0] text-[#0c7c59]' : 'bg-[#ebebeb] text-[#717171]'}`}>
-                      {event.type === 'upcoming' ? 'Upcoming' : 'Past'}
-                    </span>
-                    {event.format && (
-                      <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{event.format}</span>
+          {/* Next event panel */}
+          {nextEvent && (
+            <div className="lg:w-72 xl:w-80 flex-shrink-0">
+              <div className="flex items-baseline justify-between mb-4">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Next Event</p>
+                <Link href="/events" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
+                  All events →
+                </Link>
+              </div>
+              <div className="border border-[#e2e2dc] bg-white overflow-hidden">
+                {nextEvent.date_aedt && (
+                  <div className="bg-[#0c7c59] text-white px-5 py-4">
+                    <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
+                    <p className="text-sm font-bold mt-1 font-sans leading-snug">{nextEvent.date_aedt}</p>
+                  </div>
+                )}
+                {nextEvent.speaker_image && (
+                  <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ aspectRatio: '4/3' }}>
+                    <Image
+                      src={`/images/${nextEvent.speaker_image}`}
+                      alt={nextEvent.speaker || 'Speaker'}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  </div>
+                )}
+                <div className="p-4">
+                  <div className="flex flex-wrap gap-1.5 mb-2">
+                    {nextEvent.platform && (
+                      <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-1.5 py-0.5 font-semibold font-sans">{nextEvent.platform}</span>
+                    )}
+                    {nextEvent.format && (
+                      <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{nextEvent.format}</span>
                     )}
                   </div>
-                  <p className="text-xs text-[#999999] font-sans mb-1">{event.date_aedt}</p>
-                  <p className="text-sm font-semibold text-[#1a1a1a] leading-snug line-clamp-2">{event.title}</p>
-                  {event.speaker && (
-                    <p className="text-xs text-[#5a5a5a] mt-1 font-sans">{event.speaker}</p>
+                  <h3 className="text-sm font-bold text-[#1a1a1a] mb-1 leading-snug">{nextEvent.title}</h3>
+                  {nextEvent.speaker && (
+                    <p className="text-xs font-semibold text-[#0c7c59] font-sans">{nextEvent.speaker}</p>
                   )}
-                  {event.register_url && (
+                  {nextEvent.speaker_title && (
+                    <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{nextEvent.speaker_title}</p>
+                  )}
+                  {nextEvent.register_url && (
                     <a
-                      href={event.register_url}
+                      href={nextEvent.register_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-[#0c7c59] font-semibold hover:underline mt-1.5 inline-block font-sans"
+                      className="inline-block mt-4 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
                     >
                       Register →
                     </a>
                   )}
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
