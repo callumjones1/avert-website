@@ -92,7 +92,7 @@ export default function HomePage() {
         </div>
         <div className="flex flex-col lg:flex-row gap-8">
           {/* News 2×2 grid */}
-          <div className="flex-1 min-w-0">
+          <div className="lg:w-[55%] min-w-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {newsItems.map((item) => (
                 <Link
@@ -125,7 +125,7 @@ export default function HomePage() {
 
           {/* Next event panel */}
           {nextEvent && (
-            <div className="lg:w-72 xl:w-80 flex-shrink-0">
+            <div className="lg:w-[40%] flex-shrink-0">
               <div className="flex items-baseline justify-between mb-4">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Next Event</p>
                 <Link href="/events" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
