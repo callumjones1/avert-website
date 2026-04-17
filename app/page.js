@@ -160,18 +160,8 @@ export default function HomePage() {
                     <p className="text-sm font-bold mt-1 font-sans leading-snug">{nextEvent.date_aedt}</p>
                   </div>
                 )}
-                {nextEvent.speaker_image && (
-                  <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ height: '140px' }}>
-                    <Image
-                      src={`/images/${nextEvent.speaker_image}`}
-                      alt={nextEvent.speaker || 'Speaker'}
-                      fill
-                      className="object-cover object-center"
-                    />
-                  </div>
-                )}
                 <div className="p-4">
-                  <div className="flex flex-wrap gap-1.5 mb-2">
+                  <div className="flex flex-wrap gap-1.5 mb-3">
                     {nextEvent.platform && (
                       <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-1.5 py-0.5 font-semibold font-sans">{nextEvent.platform}</span>
                     )}
@@ -179,12 +169,28 @@ export default function HomePage() {
                       <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{nextEvent.format}</span>
                     )}
                   </div>
-                  <h3 className="text-sm font-bold text-[#1a1a1a] mb-1 leading-snug">{nextEvent.title}</h3>
-                  {nextEvent.speaker && (
-                    <p className="text-xs font-semibold text-[#0c7c59] font-sans">{nextEvent.speaker}</p>
-                  )}
-                  {nextEvent.speaker_title && (
-                    <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{nextEvent.speaker_title}</p>
+                  <h3 className="text-sm font-bold text-[#1a1a1a] mb-3 leading-snug">{nextEvent.title}</h3>
+                  {(nextEvent.speaker || nextEvent.speaker_image) && (
+                    <div className="flex items-center gap-3">
+                      {nextEvent.speaker_image && (
+                        <div className="relative flex-shrink-0 w-12 h-12 overflow-hidden rounded-full bg-[#f3f3f3]">
+                          <Image
+                            src={`/images/${nextEvent.speaker_image}`}
+                            alt={nextEvent.speaker || 'Speaker'}
+                            fill
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        {nextEvent.speaker && (
+                          <p className="text-xs font-semibold text-[#0c7c59] font-sans">{nextEvent.speaker}</p>
+                        )}
+                        {nextEvent.speaker_title && (
+                          <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{nextEvent.speaker_title}</p>
+                        )}
+                      </div>
+                    </div>
                   )}
                   {nextEvent.register_url && (
                     <a
