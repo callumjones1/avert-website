@@ -66,7 +66,7 @@ export default function HomePage() {
 
   const latestWebinars = getLatestWebinars(6)
 
-  const nextEvent = eventsData.find(e => e.type === 'upcoming') || null
+  const upcomingEvents = eventsData.filter(e => e.type === 'upcoming')
 
   return (
     <>
@@ -144,65 +144,69 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Next event panel */}
-          {nextEvent && (
+          {/* Upcoming events panel */}
+          {upcomingEvents.length > 0 && (
             <div className="lg:w-[33%] flex-shrink-0">
               <div className="flex items-baseline justify-between mb-4">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Next Event</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Upcoming Events</p>
                 <Link href="/events" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
                   All events →
                 </Link>
               </div>
-              <div className="border border-[#e2e2dc] bg-white overflow-hidden">
-                {nextEvent.date_aedt && (
-                  <div className="bg-[#0c7c59] text-white px-5 py-4">
-                    <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
-                    <p className="text-sm font-bold mt-1 font-sans leading-snug">{nextEvent.date_aedt}</p>
-                  </div>
-                )}
-                <div className="p-4">
-                  <div className="flex flex-wrap gap-1.5 mb-3">
-                    {nextEvent.platform && (
-                      <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-1.5 py-0.5 font-semibold font-sans">{nextEvent.platform}</span>
+              <div className="flex flex-col gap-4">
+                {upcomingEvents.map((event, i) => (
+                  <div key={i} className="border border-[#e2e2dc] bg-white overflow-hidden">
+                    {event.date_aedt && (
+                      <div className="bg-[#0c7c59] text-white px-5 py-4">
+                        <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
+                        <p className="text-sm font-bold mt-1 font-sans leading-snug">{event.date_aedt}</p>
+                      </div>
                     )}
-                    {nextEvent.format && (
-                      <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{nextEvent.format}</span>
-                    )}
-                  </div>
-                  <h3 className="text-sm font-bold text-[#1a1a1a] mb-3 leading-snug">{nextEvent.title}</h3>
-                  {(nextEvent.speaker || nextEvent.speaker_image) && (
-                    <div className="flex items-center gap-3">
-                      {nextEvent.speaker_image && (
-                        <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
-                          <Image
-                            src={`/images/${nextEvent.speaker_image}`}
-                            alt={nextEvent.speaker || 'Speaker'}
-                            fill
-                            className="object-cover object-top"
-                          />
-                        </div>
-                      )}
-                      <div className="min-w-0">
-                        {nextEvent.speaker && (
-                          <p className="text-xs font-semibold text-[#0c7c59] font-sans">{nextEvent.speaker}</p>
+                    <div className="p-4">
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        {event.platform && (
+                          <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-1.5 py-0.5 font-semibold font-sans">{event.platform}</span>
                         )}
-                        {nextEvent.speaker_title && (
-                          <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{nextEvent.speaker_title}</p>
+                        {event.format && (
+                          <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{event.format}</span>
                         )}
                       </div>
+                      <h3 className="text-sm font-bold text-[#1a1a1a] mb-3 leading-snug">{event.title}</h3>
+                      {(event.speaker || event.speaker_image) && (
+                        <div className="flex items-center gap-3">
+                          {event.speaker_image && (
+                            <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
+                              <Image
+                                src={`/images/${event.speaker_image}`}
+                                alt={event.speaker || 'Speaker'}
+                                fill
+                                className="object-cover object-top"
+                              />
+                            </div>
+                          )}
+                          <div className="min-w-0">
+                            {event.speaker && (
+                              <p className="text-xs font-semibold text-[#0c7c59] font-sans">{event.speaker}</p>
+                            )}
+                            {event.speaker_title && (
+                              <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                      {event.register_url && (
+                        <a
+                          href={event.register_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block mt-4 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+                        >
+                          Register →
+                        </a>
+                      )}
                     </div>
-                  )}
-                  {nextEvent.register_url && (
-                    <a
-                      href={nextEvent.register_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-4 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
-                    >
-                      Register →
-                    </a>
-                  )}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
           )}

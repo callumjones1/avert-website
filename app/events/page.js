@@ -9,7 +9,6 @@ export const metadata = {
 
 export default function EventsPage() {
   const upcoming = eventsData.filter((e) => e.type === 'upcoming')
-  const past = eventsData.filter((e) => e.type === 'past')
 
   return (
     <>
@@ -121,50 +120,30 @@ export default function EventsPage() {
         )}
 
         {/* Past events */}
-        {past.length > 0 && (
-          <section>
-            <div className="flex items-baseline gap-3 mb-6">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Past Events</h2>
-              <div className="flex-1 h-px bg-[#e2e2dc]" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {past.map((event, i) => (
-                <div key={i} className="border border-[#e2e2dc] bg-white p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1 min-w-0">
-                      <p className="text-xs text-[#999999] mb-1.5 font-sans">{event.date_aedt} · {event.format}</p>
-                      <h3 className="font-bold text-[#1a1a1a] leading-snug text-sm mb-1">{event.title}</h3>
-                      {event.speaker && event.speaker !== 'Various speakers' && (
-                        <p className="text-xs text-[#0c7c59] font-semibold font-sans mt-0.5">{event.speaker}</p>
-                      )}
-                      {event.speaker_title && event.speaker !== 'Various speakers' && (
-                        <p className="text-xs text-[#999999] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>
-                      )}
-                    </div>
-                    {event.recording_url && (
-                      <a
-                        href={event.recording_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-shrink-0 text-xs font-semibold text-[#0c7c59] hover:underline font-sans whitespace-nowrap mt-0.5"
-                      >
-                        Watch recording →
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 flex gap-6">
-              <Link href="/events/webinars" className="text-sm text-[#0c7c59] hover:underline font-sans font-medium">
-                Full webinar archive →
-              </Link>
-              <Link href="/events/symposiums" className="text-sm text-[#0c7c59] hover:underline font-sans font-medium">
-                Past symposiums →
-              </Link>
-            </div>
-          </section>
-        )}
+        <section>
+          <div className="flex items-baseline gap-3 mb-6">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Past Events</h2>
+            <div className="flex-1 h-px bg-[#e2e2dc]" />
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/events/webinars"
+              className="flex-1 border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors group"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Archive</p>
+              <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] transition-colors">Past Webinars →</h3>
+              <p className="text-sm text-[#717171] mt-1">Full archive of AVERT webinar recordings</p>
+            </Link>
+            <Link
+              href="/events/symposiums"
+              className="flex-1 border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors group"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Archive</p>
+              <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] transition-colors">Past Symposiums →</h3>
+              <p className="text-sm text-[#717171] mt-1">AVERT annual research symposiums</p>
+            </Link>
+          </div>
+        </section>
       </div>
     </>
   )
