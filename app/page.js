@@ -110,6 +110,10 @@ export default function HomePage() {
 
       {/* News & Events */}
       <section className="max-w-[1440px] mx-auto px-6 py-16">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-[#1a1a1a]">News & Events</h2>
+          <div className="w-12 h-0.5 bg-[#0c7c59] mt-2" />
+        </div>
         <div className="flex flex-col lg:flex-row gap-8">
           {/* News 2×2 grid */}
           <div className="lg:w-[63%] min-w-0">
