@@ -133,12 +133,12 @@ export default function HomePage() {
                   </div>
                 )}
                 {nextEvent.speaker_image && (
-                  <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ height: '180px' }}>
+                  <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ height: '140px' }}>
                     <Image
                       src={`/images/${nextEvent.speaker_image}`}
                       alt={nextEvent.speaker || 'Speaker'}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-center"
                     />
                   </div>
                 )}
