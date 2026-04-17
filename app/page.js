@@ -27,6 +27,34 @@ function cleanTitle(title) {
   return title.replace(/<[^>]*>/g, '').trim()
 }
 
+function getPreview(body, title) {
+  if (!body) return ''
+  const lines = body.split('\n').map(l => l.trim()).filter(Boolean)
+  const junk = new RegExp(
+    [
+      '^Written By$',
+      '^Apple User$',
+      '^AVERT Research Network$',
+      '^Lydia Khalil$',
+      // short date lines like "17 Apr" or "3 May"
+      '^\\d{1,2}\\s+\\w{3,}$',
+      // photo credits — lines containing "on Unsplash" or "Photo:"
+      'on Unsplash',
+      '^Photo:',
+      // lines that are just the title repeated
+    ].join('|'),
+    'i'
+  )
+  const titleNorm = title?.toLowerCase().trim() ?? ''
+  const candidates = lines.filter(l =>
+    !junk.test(l) &&
+    l.toLowerCase().trim() !== titleNorm &&
+    l.length > 40
+  )
+  const first = candidates[0] ?? ''
+  return first.length > 180 ? first.substring(0, 180) + '…' : first
+}
+
 export default function HomePage() {
   const newsItems = impactData
     .filter(item => !item.slug.includes('submission'))
@@ -108,7 +136,7 @@ export default function HomePage() {
                   </h3>
                   {item.body && (
                     <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
-                      {item.body.replace(/^.+?\n/s, '').replace(/Written By[\s\S]*?\n/i, '').substring(0, 120)}…
+                      {getPreview(item.body, item.title)}
                     </p>
                   )}
                 </Link>
