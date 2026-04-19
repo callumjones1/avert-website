@@ -63,7 +63,7 @@ export default function HomePage() {
 
   const latestCommentary = commentaryData
     .filter(item => !item.slug.startsWith('category') && !item.slug.startsWith('tag'))
-    .slice(0, 3)
+    .slice(0, 4)
 
   const latestWebinars = getLatestWebinars(12)
 
@@ -232,7 +232,7 @@ export default function HomePage() {
               All articles →
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {latestCommentary.map((article) => (
               <Link
                 key={article.slug}
