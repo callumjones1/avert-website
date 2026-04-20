@@ -1,11 +1,11 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import impactData from '@/data/impact.json'
 import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
 import eventsData from '@/data/events.json'
 import SubscribeForm from '@/components/SubscribeForm'
 import WebinarCarousel from '@/components/WebinarCarousel'
+import EventCarousel from '@/components/EventCarousel'
 
 export const metadata = {
   title: 'AVERT Research Network',
@@ -155,66 +155,7 @@ export default function HomePage() {
                   All events →
                 </Link>
               </div>
-              <div className="flex flex-col gap-4">
-                {upcomingEvents.map((event, i) => (
-                  <div key={i} className="border border-[#e2e2dc] bg-white overflow-hidden">
-                    {event.date_aedt && (
-                      <div className="bg-[#0c7c59] text-white px-5 py-4">
-                        <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
-                        <p className="text-sm font-bold mt-1 font-sans leading-snug">{event.date_aedt}</p>
-                      </div>
-                    )}
-                    <div className="p-4">
-                      <div className="flex flex-wrap gap-1.5 mb-3">
-                        {event.platform && (
-                          <span className="text-xs bg-[#e8f5f0] text-[#0c7c59] px-1.5 py-0.5 font-semibold font-sans">{event.platform}</span>
-                        )}
-                        {event.format && (
-                          <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{event.format}</span>
-                        )}
-                      </div>
-                      <h3 className="text-sm font-bold text-[#1a1a1a] mb-3 leading-snug">{event.title}</h3>
-                      {event.speakers ? (
-                        <div className="flex flex-col gap-2">
-                          {event.speakers.map((s, si) => (
-                            <div key={si} className="flex items-center gap-3">
-                              <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
-                                <Image src={`/${s.image_dir}/${s.image}`} alt={s.name} fill className="object-cover object-top" />
-                              </div>
-                              <div className="min-w-0">
-                                <p className="text-xs font-semibold text-[#0c7c59] font-sans">{s.name}</p>
-                                <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{s.title}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      ) : (event.speaker || event.speaker_image) && (
-                        <div className="flex items-center gap-3">
-                          {event.speaker_image && (
-                            <div className="relative flex-shrink-0 w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3]">
-                              <Image src={`/images/${event.speaker_image}`} alt={event.speaker || 'Speaker'} fill className="object-cover object-top" />
-                            </div>
-                          )}
-                          <div className="min-w-0">
-                            {event.speaker && <p className="text-xs font-semibold text-[#0c7c59] font-sans">{event.speaker}</p>}
-                            {event.speaker_title && <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>}
-                          </div>
-                        </div>
-                      )}
-                      {event.register_url && (
-                        <a
-                          href={event.register_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block mt-4 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
-                        >
-                          Register →
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <EventCarousel events={upcomingEvents} />
             </div>
           )}
         </div>
