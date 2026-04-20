@@ -19,7 +19,7 @@ export default function ResearchMembershipPage() {
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
         <div className="max-w-7xl mx-auto">
-          <Link href="/opportunities" className="text-white/60 hover:text-white text-sm mb-6 inline-block font-sans">← Opportunities</Link>
+          <Link href="/join" className="text-white/60 hover:text-white text-sm mb-6 inline-block font-sans">← Join</Link>
           <h1 className="text-4xl font-bold mb-3 mt-4">Research Membership</h1>
           <div className="w-12 h-0.5 bg-white/40" />
         </div>
@@ -99,6 +99,9 @@ export default function ResearchMembershipPage() {
                 <li><Link href="/opportunities/research" className="text-[#0c7c59] font-semibold">Research Membership</Link></li>
                 <li><Link href="/opportunities/affiliate" className="text-[#0c7c59] hover:underline">Affiliate Membership →</Link></li>
               </ul>
+              <div className="mt-4 pt-4 border-t border-[#e2e2dc]">
+                <Link href="/join" className="text-xs text-[#717171] hover:text-[#0c7c59] font-sans">← All membership options</Link>
+              </div>
             </div>
             <div className="bg-[#1a1a1a] text-white p-6">
               <h3 className="font-bold text-xs uppercase tracking-wide mb-2 font-sans">Questions?</h3>

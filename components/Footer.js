@@ -26,7 +26,7 @@ export default function Footer() {
               <li><Link href="/about" className="hover:text-white transition-colors">About AVERT</Link></li>
               <li><Link href="/people" className="hover:text-white transition-colors">Researchers</Link></li>
               <li><Link href="/about/governance" className="hover:text-white transition-colors">Governance</Link></li>
-              <li><Link href="/opportunities" className="hover:text-white transition-colors">Membership</Link></li>
+              <li><Link href="/join" className="hover:text-white transition-colors">Join the Network</Link></li>
             </ul>
           </div>
 

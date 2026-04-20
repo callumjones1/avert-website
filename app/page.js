@@ -284,31 +284,14 @@ export default function HomePage() {
               Subscribe to the AVERT newsletter for updates on research, events, and commentary.
             </p>
           </div>
-          <SubscribeForm />
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-[#1a1a1a] text-white">
-        <div className="max-w-[1440px] mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div>
-            <h2 className="text-2xl font-bold mb-2">Join the Network</h2>
-            <p className="text-[#999999] text-sm max-w-lg leading-relaxed">
-              AVERT welcomes researchers committed to evidence-based approaches to violent extremism. Research and affiliate memberships are available.
-            </p>
-          </div>
-          <div className="flex gap-4 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <SubscribeForm />
+            <div className="hidden sm:block w-px h-10 bg-white/20" />
             <Link
-              href="/opportunities/research"
-              className="bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+              href="/join"
+              className="bg-white text-[#0c7c59] hover:bg-white/90 px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans whitespace-nowrap flex-shrink-0"
             >
-              Research Membership
-            </Link>
-            <Link
-              href="/opportunities/affiliate"
-              className="border border-[#5a5a5a] hover:border-[#999999] text-[#cccccc] hover:text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-            >
-              Affiliate Membership
+              Join
             </Link>
           </div>
         </div>

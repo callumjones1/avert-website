@@ -33,9 +33,10 @@ const navItems = [
       { label: 'Symposiums', href: '/events/symposiums' },
     ],
   },
+  { label: 'Opportunities', href: '/opportunities' },
   {
     label: 'Join',
-    href: '/opportunities',
+    href: '/join',
     children: [
       { label: 'Research Membership', href: '/opportunities/research' },
       { label: 'Affiliate Membership', href: '/opportunities/affiliate' },
