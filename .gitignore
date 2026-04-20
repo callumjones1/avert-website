@@ -43,3 +43,5 @@ next-env.d.ts
 # backend
 /backend/.venv/
 /backend/__pycache__/
+
+.vercel
