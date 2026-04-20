@@ -1,7 +1,7 @@
 'use client'
 export default function SubscribeForm() {
   return (
-    <form className="flex gap-3 w-full md:w-auto" onSubmit={(e) => e.preventDefault()}>
+    <form className="flex gap-3 w-full sm:w-auto" onSubmit={(e) => e.preventDefault()}>
       <input
         type="email"
         placeholder="Your email address"
