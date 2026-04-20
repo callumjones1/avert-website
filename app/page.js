@@ -277,16 +277,21 @@ export default function HomePage() {
 
       {/* Newsletter */}
       <section id="newsletter" className="bg-[#0c7c59] text-white">
-        <div className="max-w-[1440px] mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h2 className="text-lg font-bold mb-1">Stay Informed</h2>
-            <p className="text-white/80 text-sm max-w-md">
-              Subscribe to the AVERT newsletter for updates on research, events, and commentary.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center gap-4">
+        <div className="max-w-[1440px] mx-auto px-6 py-10 flex flex-col md:flex-row items-center gap-0 divide-y md:divide-y-0 md:divide-x divide-white/20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 w-full md:w-auto md:flex-1 py-6 md:py-0 md:pr-10">
+            <div>
+              <h2 className="text-lg font-bold mb-1">Stay Informed</h2>
+              <p className="text-white/80 text-sm max-w-md">
+                Subscribe to the AVERT newsletter for updates on research, events, and commentary.
+              </p>
+            </div>
             <SubscribeForm />
-            <div className="hidden sm:block w-px h-10 bg-white/20" />
+          </div>
+          <div className="flex flex-col sm:flex-row md:flex-col items-center md:items-start gap-3 py-6 md:py-0 md:pl-10 flex-shrink-0">
+            <div>
+              <h2 className="text-lg font-bold mb-1">Join the Network</h2>
+              <p className="text-white/80 text-sm">Research and affiliate memberships available.</p>
+            </div>
             <Link
               href="/join"
               className="bg-white text-[#0c7c59] hover:bg-white/90 px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans whitespace-nowrap flex-shrink-0"
