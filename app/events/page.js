@@ -9,7 +9,6 @@ export const metadata = {
 
 export default function EventsPage() {
   const upcoming = eventsData.filter((e) => e.type === 'upcoming')
-  const past = eventsData.filter((e) => e.type === 'past')
 
   return (
     <>
@@ -130,44 +129,12 @@ export default function EventsPage() {
           </section>
         )}
 
-        {/* Past events */}
+        {/* Archive links */}
         <section>
           <div className="flex items-baseline gap-3 mb-6">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Past Events</h2>
             <div className="flex-1 h-px bg-[#e2e2dc]" />
           </div>
-
-          {/* Past events index */}
-          <div className="border border-[#e2e2dc] bg-white mb-6 divide-y divide-[#e2e2dc]">
-            {past.map((event, i) => {
-              const speaker = event.speakers
-                ? event.speakers.map((s) => s.name).join(' & ')
-                : event.speaker || ''
-              return (
-                <div key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-5 py-3">
-                  <span className="flex-shrink-0 text-xs text-[#717171] font-sans w-36">{event.date_aedt}</span>
-                  <div className="flex-1 min-w-0">
-                    <span className="text-sm font-medium text-[#1a1a1a] font-sans">{event.title}</span>
-                    {speaker && (
-                      <span className="text-sm text-[#717171] font-sans"> — {speaker}</span>
-                    )}
-                  </div>
-                  {event.recording_url && (
-                    <a
-                      href={event.recording_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-shrink-0 text-xs text-[#0c7c59] hover:underline font-sans font-semibold"
-                    >
-                      Recording →
-                    </a>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-
-          {/* Archive links */}
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/events/webinars"
