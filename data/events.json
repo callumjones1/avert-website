@@ -3,6 +3,66 @@
     "type": "upcoming",
     "speakers": [
       {
+        "name": "Dr John Morrison",
+        "title": "Associate Professor of Criminology, Maynooth University; Co-Editor in Chief, Behavioral Sciences of Terrorism and Political Aggression",
+        "bio": "Dr John Morrison is an Associate Professor of Criminology at Maynooth University, Ireland. He is co-Editor in Chief of the journal Behavioral Sciences of Terrorism and Political Aggression. With a multi-disciplinary background, John's research interests include organisational fragmentation, individual disengagement, and the role of trust in the psychology of terrorism.",
+        "image": "john-morrison.jpg",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Thursday 11 June 2026, 16:30–17:30 AEST",
+    "date_other": "7:30–8:30 AM Dublin Time",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "The Filtering Role of Trust in the Process of Disengagement",
+    "description": "In this webinar, Dr John Morrison will focus on the role which trust plays within the process of disengagement from violent extremism. Dr Morrison will utilise the Phoenix model of disengagement and deradicalisation as a basis for his presentation. This model includes the theme of (dis)trust as a filter variable. Dr Morrison will critically discuss the implication of this and how it can be integrated within appropriate CVE approaches, including consideration of the need to understand cross-cultural differences in the development and maintenance of trust, and how this may impact our approaches and understanding of disengagement processes.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_CRaa9MnPQ9KrIuXd1bJJMg",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
+    "speakers": [
+      {
+        "name": "J.M. Berger",
+        "title": "Senior Research Fellow, Center on Terrorism, Extremism, and Counterterrorism (CTEC), Middlebury Institute of International Studies",
+        "bio": "J.M. Berger is an internationally recognised and widely cited expert on extremism. He is the author of Extremism (MIT Press, 2018), now available in six languages. He holds a PhD in criminology from Swansea University School of Law. His research encompasses extremist and terrorist ideologies and propaganda, including methods for analysing extremist narratives and language, as well as extremists' use of social media and emerging technologies. As a Senior Research Fellow at CTEC, he has focused on lawful extremism — analysing how extremists bend law and governance to their aims.",
+        "image": "jm-berger.jpg",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Wednesday 24 June 2026, 10:30–11:30 AM AEST",
+    "date_other": "Tuesday 23 June 2026, 8:30–9:30 PM EDT",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "From the Fringe to the Centre: The Differing Radicalisation Strategies of Extremist In-Groups When They Are Weak Versus When They Are Strong",
+    "description": "Much contemporary scholarship on radicalisation focuses on strategies pursued by weak groups like al-Qaeda or the Aryan Nations. But extremists sometimes succeed in seizing the reins of political power. This talk will examine key differences and similarities in radicalisation strategies for strong and weak movements, and how this comparison can inform efforts to hinder or even prevent extremists from achieving success.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_fqfTOz4HQ6ScFr4CuHQFYA",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
+    "speakers": [
+      {
+        "name": "Daniel Koehler",
+        "title": "Head of Research, Terrorism Analysis and Research Unit, Joint Counterterrorism Center at the State Bureau of Investigation; Co-Director, Competence Center Against Extremism",
+        "bio": "Daniel Koehler holds a PhD in political science and studied comparative religion, political science and economics at Princeton University and Free University Berlin. His work focuses on terrorism (far-right, jihadist and left-wing), radicalisation, and deradicalisation processes and programs. He is co-founder of the first peer-reviewed open-access journal on deradicalisation (journal-derad.com). He has served as a court expert on deradicalisation in the United States and as a Research Fellow at the Royal United Services Institute (RUSI). Currently, Daniel is Head of Research at the Terrorism Analysis and Research Unit within the Joint Counterterrorism Center at the State Bureau of Investigation, and co-Director at the Competence Center Against Extremism in Baden-Württemberg.",
+        "image": "daniel-koehler.jpg",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Thursday 6 August 2026, 15:00–16:00 AEST",
+    "date_other": "7:00–8:00 AM CEST",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "Teenage Terrorism in Germany: Findings from the First National Study of Terrorgram Police Files",
+    "description": "This webinar examines the criminal investigation files on Germany's Terrorgram milieu — the online ecosystem driving militant accelerationism and siege culture. The session presents findings from a landmark new study exploring Terrorgram membership and what draws people into the network. Beyond ideology, the study examines the socio-biographic pathways and mental health dimensions that shape radicalisation in this space — findings with direct implications for practitioners and policymakers. The session closes by situating these insights within the broader P/CVE landscape, highlighting what works, what gaps remain, and what this milieu demands of our prevention strategies going forward.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_AMrg4VpJT5uIw6MRUEskaQ",
+    "recording_url": ""
+  },
+  {
+    "type": "past",
+    "speakers": [
+      {
         "name": "Lydia Khalil",
         "title": "Senior Research Fellow, Alfred Deakin Institute; Project Director, Lowy Institute",
         "bio": "Lydia Khalil is a Senior Research Fellow at the Alfred Deakin Institute and a Project Director at the Lowy Institute. In her capacity at Deakin University, she also served as Co-Convenor of the AVERT Research Network and as liaison to the Research and Evaluation Working Group (REWG) of CVESC. As part of her work with the Lowy Institute, Lydia manages the Transnational Challenges Program and Digital Threats to Democracy Project.",
@@ -17,30 +77,37 @@
         "image_dir": "headshots"
       }
     ],
-    "date_aedt": "Tuesday 28 April 2026, 11:00–12:00 AEST",
+    "date_aedt": "Tuesday 28 April 2026",
     "platform": "Zoom",
     "format": "Online Webinar",
     "title": "The Sovereign Citizen Movement: Global and Local Threats",
-    "description": "Sovereign citizens are often dismissed as conspiratorial eccentrics who operate on the fringes of society. However, at its core, the movement rejects the legitimacy of government authority and the democratic rule of law. Sovereign citizens do not believe they are subject to the same laws as everyone else. They rely on fantastical conspiracy beliefs and pseudo-legal arguments to justify this rejection of society.\n\nThis fundamental rejection of democratic norms means the sovereign citizen movement is not simply a local nuisance: it is a growing national security challenge for many countries around the world. Sovereign citizens have promoted delegitimising narratives against democracies, created alternative structures of authority, committed acts of political violence, fomented civil unrest, engaged in violent confrontations with law enforcement, and threatened elected officials and high office holders.\n\nIn this webinar, Lydia Khalil and Keiran Hardy explore the threats posed by sovereign citizens — both globally and locally — and how law enforcement, governments and society can best respond.",
-    "register_url": "https://deakin.zoom.us/webinar/register/WN_zRFHaRcPQhGYgEFBRXsPzQ",
+    "description": "",
+    "register_url": "",
     "recording_url": ""
   },
   {
-    "type": "upcoming",
+    "type": "past",
     "speaker": "Dr Bettina Rottweiler",
     "speaker_title": "Associate Research Professor, National Counterterrorism Innovation, Technology, and Education Center (NCITE), University of Nebraska Omaha",
-    "speaker_affiliation": "NCITE, University of Nebraska Omaha",
-    "date_aedt": "Wednesday 6 May 2026, 9:00–10:00 AM AEDT",
-    "date_cdt": "Tuesday 5 May 2026, 6:00–7:00 PM CDT",
+    "date_aedt": "Wednesday 6 May 2026",
     "platform": "Zoom",
     "format": "Online Webinar",
     "title": "Introducing the Nihilistic Violent Extremism (NVE) Database: Examining Life-Course Factors, Mobilization Indicators, Motivational Drivers and Patterns of Harm",
-    "description": "Nihilistic violent extremist (NVE) communities such as 764, CVLT, and No Lives Matter represent a rapidly evolving hybrid threat. Actors within these networks often display fluid motivations and encourage and facilitate a broad spectrum of harms, blurring the boundaries between violent extremism, organised crime, and child sexual abuse. Those involved are often children or young adults and frequently target vulnerable individuals, including minors and young people with mental health needs. Victims are manipulated, coerced, or exploited into engaging in escalating harmful behaviour and, in some cases, into becoming perpetrators themselves.\n\nDespite growing concern, little empirical evidence exists on who is vulnerable to involvement in these networks, what shapes their trajectories, and how mobilisation and escalation occur. This webinar introduces the Nihilistic Violent Extremism Database, a new international, live, and continuously updated database of more than 80 individuals charged with, convicted of, or otherwise affiliated with NVE groups. Based on systematic open-source research, several thousand US federal court records, media reporting, and other publicly available materials, the database captures a broad range of NVE-related offences, including child sexual abuse material offences, swatting, incitement to self-harm or suicide, other technology-facilitated harms, and offline violence.\n\nDrawing on this database, the webinar provides a systematic analysis of the life-course factors, mobilisation indicators, and patterns of harm associated with nihilistic violent extremists. It examines key background characteristics, including adverse childhood experiences, mental health conditions, major life events, and motivational drivers, and explores how different risk factors and observable behaviours may be linked to different forms of offending.",
-    "register_url": "https://deakin.zoom.us/webinar/register/WN_aggdDxltRauvnM61sb3K_g",
-    "recording_url": "",
-    "speaker_bio": "Dr Bettina Rottweiler is an Associate Research Professor at the National Counterterrorism Innovation, Technology, and Education Center (NCITE), where she leads the research portfolio on youth mobilisation to violent extremism, including nihilistic violent extremism (NVE). Her research focuses on life-course factors, mobilisation indicators, and the pathways through which young people become involved in violent extremism. She is also a Research Fellow on the Zurich Project on the Social Development from Childhood to Adulthood, where she uses longitudinal data to identify developmental risk and protective factors associated with support for violent extremism among children and adolescents. Her work focuses on producing scientific evidence that can directly inform policy and practice. She has published more than 30 peer-reviewed articles in leading journals. Her research has been funded by the European Union, the UK Home Office, CREST, the United Nations Office of Counter-Terrorism (UNOCT), UK Counter Terrorism Policing, the National Crime Agency, UK Research and Innovation, and Public Safety Canada.",
-    "speaker_image": "220380849bfd77568159726203d17ac9.jpg",
-    "org_logo": "f221a75da23e870ffeedebc3d50ad282.png"
+    "description": "",
+    "register_url": "",
+    "recording_url": ""
+  },
+  {
+    "type": "past",
+    "speaker": "Kat Fuller",
+    "speaker_title": "Co-founder, Canadian Institute for Far-Right Studies; PhD student, University of Nevada",
+    "date_aedt": "2026",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "De/Transition, Disinformation, and Digital Moral Panic: The Politics of Anti-Trans Narratives",
+    "description": "",
+    "register_url": "",
+    "recording_url": ""
   },
   {
     "type": "past",

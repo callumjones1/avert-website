@@ -17,8 +17,10 @@ export default function EventCarousel({ events }) {
       <div className="border border-[#e2e2dc] bg-white overflow-hidden">
         {event.date_aedt && (
           <div className="bg-[#0c7c59] text-white px-5 py-4">
-            <p className="text-xs font-semibold uppercase tracking-wide font-sans opacity-80">AEDT</p>
-            <p className="text-sm font-bold mt-1 font-sans leading-snug">{event.date_aedt}</p>
+            <p className="text-sm font-bold font-sans leading-snug">{event.date_aedt}</p>
+            {event.date_other && (
+              <p className="text-xs opacity-60 mt-1 font-sans">{event.date_other}</p>
+            )}
           </div>
         )}
         <div className="p-4">
