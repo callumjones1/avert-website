@@ -40,6 +40,12 @@ export default async function CommentaryArticle({ params }) {
 
   const related = commentary.filter((a) => a.slug !== article.slug).slice(0, 3)
 
+  // If we're showing a dedicated hero image, strip any leading <img> from body
+  // to avoid duplication (inline image block = same photo as hero)
+  const bodyHtml = article.hero_image
+    ? (article.body_html || '').replace(/^\s*<img[^>]*>\s*/i, '')
+    : (article.body_html || '')
+
   const profileSlug = authorSlug(article.author)
 
   return (
@@ -94,7 +100,7 @@ export default async function CommentaryArticle({ params }) {
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div
           className="max-w-2xl prose-article"
-          dangerouslySetInnerHTML={{ __html: article.body_html || '' }}
+          dangerouslySetInnerHTML={{ __html: bodyHtml }}
         />
         {article.original_url && (
           <div className="mt-10 pt-6 border-t border-[#e2e2dc] max-w-2xl">
