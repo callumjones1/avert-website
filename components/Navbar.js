@@ -117,38 +117,17 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Desktop search */}
-        <div className="hidden md:flex items-center ml-2">
-          {searchOpen ? (
-            <form onSubmit={handleSearchSubmit} className="flex items-center">
-              <input
-                ref={searchInputRef}
-                type="search"
-                value={searchQ}
-                onChange={e => setSearchQ(e.target.value)}
-                onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
-                placeholder="Search…"
-                className="w-48 border border-white/30 bg-white/10 px-3 py-1.5 text-white placeholder-white/60 focus:outline-none focus:border-white text-sm font-sans"
-              />
-              <button type="submit" className="p-2 text-white/80 hover:text-white" aria-label="Submit search">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
-                </svg>
-              </button>
-              <button type="button" onClick={() => setSearchOpen(false)} className="p-2 text-white/60 hover:text-white" aria-label="Close search">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </form>
-          ) : (
-            <button onClick={() => setSearchOpen(true)} className="p-2 text-white/80 hover:text-white" aria-label="Search">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
-              </svg>
-            </button>
-          )}
-        </div>
+        {/* Desktop search icon — always just an icon, no inline expansion */}
+        <button
+          onClick={() => setSearchOpen(v => !v)}
+          className="hidden md:block p-2 ml-2 text-white/80 hover:text-white"
+          aria-label="Search"
+        >
+          {searchOpen
+            ? <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            : <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" /></svg>
+          }
+        </button>
 
         {/* Mobile toggle */}
         <button
@@ -164,6 +143,26 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
+
+      {/* Desktop search dropdown — spans full width below the bar */}
+      {searchOpen && (
+        <div className="hidden md:block bg-[#0a6b4d] border-t border-[#085c41]">
+          <form onSubmit={handleSearchSubmit} className="max-w-7xl mx-auto px-6 py-4 flex gap-0">
+            <input
+              ref={searchInputRef}
+              type="search"
+              value={searchQ}
+              onChange={e => setSearchQ(e.target.value)}
+              onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
+              placeholder="Search news, commentary, people…"
+              className="flex-1 border border-white/30 bg-white/10 px-4 py-2.5 text-white placeholder-white/60 focus:outline-none focus:border-white text-sm font-sans"
+            />
+            <button type="submit" className="bg-white text-[#0c7c59] hover:bg-white/90 px-5 py-2.5 text-sm font-semibold font-sans flex-shrink-0 transition-colors">
+              Search
+            </button>
+          </form>
+        </div>
+      )}
 
       {/* Mobile menu */}
       {mobileOpen && (
