@@ -46,5 +46,6 @@ next-env.d.ts
 
 # raw html source files
 /avert-commentary/
+/avert-impact/
 
 .vercel

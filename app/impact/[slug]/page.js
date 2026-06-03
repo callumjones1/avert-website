@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import impactData from '@/data/impact.json'
 import { notFound } from 'next/navigation'
 
@@ -12,37 +13,8 @@ export async function generateMetadata({ params }) {
   if (!item) return {}
   return {
     title: item.title,
-    description: item.body?.substring(0, 160),
+    description: item.body_html?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 160),
   }
-}
-
-function buildParagraphs(text) {
-  const raw = text.split('\n').map((l) => l.trim()).filter(Boolean)
-  if (!raw.length) return []
-  // Remove common Squarespace cruft at top
-  const cleaned = raw.filter((l) =>
-    !/^Written By$/i.test(l) &&
-    !/^Apple User$/i.test(l) &&
-    !/^\d{1,2}\s+\w{3}$/.test(l)
-  )
-  const paragraphs = []
-  let buf = [cleaned[0]]
-  for (let i = 1; i < cleaned.length; i++) {
-    const prev = buf[buf.length - 1]
-    const curr = cleaned[i]
-    const prevEndsTerminal = /[.!?:"]$/.test(prev)
-    const currStartsLower = /^[a-z(\d]/.test(curr)
-    const prevIsShort = prev.length < 60
-    const currIsShort = curr.length < 60
-    if (currStartsLower || (!prevEndsTerminal && (prevIsShort || currIsShort))) {
-      buf.push(curr)
-    } else {
-      paragraphs.push(buf.join(' '))
-      buf = [curr]
-    }
-  }
-  if (buf.length) paragraphs.push(buf.join(' '))
-  return paragraphs
 }
 
 export default async function ImpactArticle({ params }) {
@@ -50,12 +22,6 @@ export default async function ImpactArticle({ params }) {
   const item = impactData.find((i) => i.slug === slug)
   if (!item) notFound()
 
-  let body = item.body || ''
-  body = body.replace(/^.+?\n/s, '')
-  body = body.replace(/^Written By\s*\n.+\n/im, '')
-  body = body.trim()
-
-  const paragraphs = buildParagraphs(body)
   const related = impactData.filter((i) => i.slug !== slug).slice(0, 3)
 
   return (
@@ -74,15 +40,25 @@ export default async function ImpactArticle({ params }) {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="max-w-2xl">
-          {paragraphs.length > 0
-            ? paragraphs.map((p, i) => (
-                <p key={i} className="mb-5 leading-relaxed text-[#2d2d2d] text-base">{p}</p>
-              ))
-            : <p className="text-[#999999] italic">Content unavailable.</p>
-          }
+      {item.hero_image && (
+        <div className="max-w-4xl mx-auto px-6 pt-10">
+          <div className="relative w-full h-64 md:h-80 overflow-hidden">
+            <Image
+              src={item.hero_image}
+              alt={item.title}
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
         </div>
+      )}
+
+      <div className="max-w-4xl mx-auto px-6 py-12">
+        <div
+          className="max-w-2xl prose-article"
+          dangerouslySetInnerHTML={{ __html: item.body_html || '' }}
+        />
       </div>
 
       {related.length > 0 && (
