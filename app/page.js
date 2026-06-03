@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import impactData from '@/data/impact.json'
+import newsData from '@/data/news.json'
 import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
 import eventsData from '@/data/events.json'
@@ -58,7 +58,7 @@ function getPreview(body, title) {
 }
 
 export default function HomePage() {
-  const newsItems = impactData
+  const newsItems = newsData
     .filter(item => !item.slug.includes('submission'))
     .slice(0, 4)
 
@@ -120,7 +120,7 @@ export default function HomePage() {
           <div className="lg:w-[63%] min-w-0">
             <div className="flex items-baseline justify-between mb-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Latest News</p>
-              <Link href="/impact" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
+              <Link href="/news" className="text-xs text-[#0c7c59] hover:underline font-sans font-medium">
                 All news →
               </Link>
             </div>
@@ -128,7 +128,7 @@ export default function HomePage() {
               {newsItems.map((item) => (
                 <Link
                   key={item.slug}
-                  href={`/impact/${item.slug}`}
+                  href={`/news/${item.slug}`}
                   className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
                 >
                   {item.date && (

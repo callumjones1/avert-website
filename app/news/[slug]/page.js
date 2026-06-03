@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import impactData from '@/data/impact.json'
+import newsData from '@/data/news.json'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  return impactData.map((item) => ({ slug: item.slug }))
+  return newsData.map((item) => ({ slug: item.slug }))
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params
-  const item = impactData.find((i) => i.slug === slug)
+  const item = newsData.find((i) => i.slug === slug)
   if (!item) return {}
   return {
     title: item.title,
@@ -17,19 +17,19 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function ImpactArticle({ params }) {
+export default async function NewsArticle({ params }) {
   const { slug } = await params
-  const item = impactData.find((i) => i.slug === slug)
+  const item = newsData.find((i) => i.slug === slug)
   if (!item) notFound()
 
-  const related = impactData.filter((i) => i.slug !== slug).slice(0, 3)
+  const related = newsData.filter((i) => i.slug !== slug).slice(0, 3)
 
   return (
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
         <div className="max-w-4xl mx-auto">
-          <Link href="/impact" className="text-white/60 hover:text-white text-sm mb-6 inline-block transition-colors font-sans">
-            ← News & Impact
+          <Link href="/news" className="text-white/60 hover:text-white text-sm mb-6 inline-block transition-colors font-sans">
+            ← News
           </Link>
           {item.date && (
             <p className="text-white/60 text-sm mt-4 mb-3 font-sans">{item.date}</p>
@@ -64,12 +64,12 @@ export default async function ImpactArticle({ params }) {
       {related.length > 0 && (
         <div className="bg-[#f7f7f5] border-t border-[#e2e2dc]">
           <div className="max-w-7xl mx-auto px-6 py-12">
-            <h2 className="text-lg font-bold text-[#1a1a1a] mb-6">More News & Impact</h2>
+            <h2 className="text-lg font-bold text-[#1a1a1a] mb-6">More News</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {related.map((r) => (
                 <Link
                   key={r.slug}
-                  href={`/impact/${r.slug}`}
+                  href={`/news/${r.slug}`}
                   className="group bg-white border border-[#e2e2dc] hover:border-[#0c7c59] p-5 transition-colors"
                 >
                   {r.date && (

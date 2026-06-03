@@ -1,24 +1,24 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import impactData from '@/data/impact.json'
+import newsData from '@/data/news.json'
 
 export const metadata = {
-  title: 'News & Impact — AVERT Research Network',
-  description: 'Latest news, impact, and updates from the AVERT Research Network.',
+  title: 'News — AVERT Research Network',
+  description: 'Latest news and updates from the AVERT Research Network.',
 }
 
-export default function ImpactPage() {
-  const featured = impactData[0]
-  const rest = impactData.slice(1)
+export default function NewsPage() {
+  const featured = newsData[0]
+  const rest = newsData.slice(1)
 
   return (
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold mb-3">News & Impact</h1>
+          <h1 className="text-4xl font-bold mb-3">News</h1>
           <div className="w-12 h-0.5 bg-white/40 mb-4" />
           <p className="text-white/80 max-w-2xl leading-relaxed">
-            Research updates, network news, funding opportunities, and impact stories from the AVERT Research Network.
+            Research updates, network news, funding opportunities, and stories from the AVERT Research Network.
           </p>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default function ImpactPage() {
       <div className="max-w-7xl mx-auto px-6 py-14">
         {featured && (
           <Link
-            href={`/impact/${featured.slug}`}
+            href={`/news/${featured.slug}`}
             className="group block border border-[#e2e2dc] hover:border-[#0c7c59] bg-white mb-10 transition-colors overflow-hidden"
           >
             <div className="flex flex-col md:flex-row">
@@ -65,7 +65,7 @@ export default function ImpactPage() {
           {rest.map((item) => (
             <Link
               key={item.slug}
-              href={`/impact/${item.slug}`}
+              href={`/news/${item.slug}`}
               className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white transition-colors overflow-hidden flex flex-col"
             >
               {item.hero_image && (
@@ -96,7 +96,7 @@ export default function ImpactPage() {
           ))}
         </div>
 
-        {impactData.length === 0 && (
+        {newsData.length === 0 && (
           <p className="text-[#999999] italic">No items yet.</p>
         )}
       </div>

@@ -20,7 +20,7 @@ const navItems = [
     children: [
       { label: 'Publications', href: '/publications' },
       { label: 'Commentary', href: '/commentary' },
-      { label: 'Impact', href: '/impact' },
+      { label: 'News', href: '/news' },
       { label: 'Newsletters', href: '/newsletters' },
     ],
   },
