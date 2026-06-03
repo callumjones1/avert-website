@@ -67,9 +67,9 @@ export default function CommentaryPage() {
                 {featured.author && (
                   <p className="text-sm font-semibold text-[#0c7c59] mb-3 font-sans">By {featured.author}</p>
                 )}
-                {featured.body && (
+                {featured.body_html && (
                   <p className="text-[#5a5a5a] leading-relaxed line-clamp-3 text-sm">
-                    {featured.body.replace(/^.+?\n/s, '').replace(/Written By[\s\S]*?\n/i, '').substring(0, 280)}…
+                    {featured.body_html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 280)}…
                   </p>
                 )}
                 {featured.original_publication && (
@@ -117,9 +117,9 @@ export default function CommentaryPage() {
                   <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors flex-1">
                     {article.title}
                   </h3>
-                  {!img && article.body && (
+                  {!img && article.body_html && (
                     <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
-                      {article.body.replace(/^.+?\n/s, '').substring(0, 120)}…
+                      {article.body_html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 120)}…
                     </p>
                   )}
                   {article.original_publication && (

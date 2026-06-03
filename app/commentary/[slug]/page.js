@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import commentary from '@/data/commentary.json'
 import people from '@/data/people.json'
 import { notFound } from 'next/navigation'
@@ -29,80 +28,14 @@ export async function generateMetadata({ params }) {
   if (!article) return {}
   return {
     title: article.title,
-    description: article.body?.substring(0, 160),
+    description: article.body_html?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().substring(0, 160),
   }
-}
-
-// Join lines that are clearly continuations of a sentence (link text orphans etc.)
-function buildParagraphs(text) {
-  const raw = text.split('\n').map((l) => l.trim()).filter(Boolean)
-  if (!raw.length) return []
-  const paragraphs = []
-  let buf = [raw[0]]
-  for (let i = 1; i < raw.length; i++) {
-    const prev = buf[buf.length - 1]
-    const curr = raw[i]
-    const prevEndsWithTerminal = /[.!?:"]$/.test(prev)
-    const currStartsLower = /^[a-z(\d]/.test(curr)
-    const prevIsShort = prev.length < 60
-    const currIsShort = curr.length < 60
-    // join if curr is lowercase start, or either side is a short orphan without terminal punct
-    if (currStartsLower || (!prevEndsWithTerminal && (prevIsShort || currIsShort))) {
-      buf.push(curr)
-    } else {
-      paragraphs.push(buf.join(' '))
-      buf = [curr]
-    }
-  }
-  if (buf.length) paragraphs.push(buf.join(' '))
-  return paragraphs
-}
-
-// Inject hyperlinks back into plain text using external_links array
-function linkifyText(text, externalLinks) {
-  if (!externalLinks?.length) return text
-  // build lookup: link text → href
-  const lookup = {}
-  for (const lnk of externalLinks) {
-    if (lnk.text && lnk.text.length > 3 && lnk.text.length < 120) {
-      lookup[lnk.text] = lnk.href
-    }
-  }
-  if (!Object.keys(lookup).length) return text
-
-  // escape special regex chars in link texts, sort longest first to avoid partial matches
-  const sorted = Object.keys(lookup).sort((a, b) => b.length - a.length)
-  const pattern = sorted.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')
-  const regex = new RegExp(`(${pattern})`, 'g')
-
-  const parts = text.split(regex)
-  return parts.map((part, i) =>
-    lookup[part]
-      ? <a key={i} href={lookup[part]} target="_blank" rel="noopener noreferrer" className="text-[#0c7c59] underline underline-offset-2 hover:text-[#0a6b4d]">{part}</a>
-      : part
-  )
 }
 
 export default async function CommentaryArticle({ params }) {
   const { slug } = await params
   const article = commentary.find((a) => a.slug === slug)
   if (!article) notFound()
-
-  // find hero image: skip AVERT logo images, take first real content image
-  const heroImage = article.hero_image &&
-    !article.hero_image.includes('AVERT_Primary') &&
-    !article.hero_image.includes('AVERT-logo')
-    ? article.hero_image
-    : null
-
-  // clean body text: strip Squarespace header cruft (Photo by, Written By, etc.)
-  let body = article.body || ''
-  // remove photo credit lines that appear at top
-  body = body.replace(/^Photo by[\s\S]*?on\s+Unsplash\s*/i, '')
-  body = body.replace(/^Written By\s*\n.+\n/im, '')
-  body = body.trim()
-
-  const paragraphs = buildParagraphs(body)
 
   const related = commentary.filter((a) => a.slug !== article.slug).slice(0, 3)
 
@@ -141,56 +74,12 @@ export default async function CommentaryArticle({ params }) {
         </div>
       </div>
 
-      {/* Hero image */}
-      {heroImage && (
-        <div className="max-w-4xl mx-auto px-6 pt-10">
-          <div className="relative w-full h-64 md:h-80 overflow-hidden bg-[#f3f3f3]">
-            <Image
-              src={`/images/${heroImage}`}
-              alt={article.title}
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-      )}
-
       {/* Article body */}
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="max-w-2xl">
-          {paragraphs.length > 0
-            ? paragraphs.map((para, i) => (
-                <p key={i} className="mb-5 leading-relaxed text-[#2d2d2d] text-base">
-                  {linkifyText(para, article.external_links)}
-                </p>
-              ))
-            : <p className="text-[#999999] italic">Content unavailable — please visit the original publication.</p>
-          }
-        </div>
-
-        {/* Sources */}
-        {article.external_links?.length > 0 && (
-          <div className="mt-12 pt-8 border-t border-[#e2e2dc] max-w-2xl">
-            <h4 className="text-xs font-semibold uppercase tracking-widest text-[#999999] mb-4 font-sans">Sources & Links</h4>
-            <ul className="space-y-2">
-              {article.external_links
-                .filter((lnk) => lnk.text && !['Unsplash', 'Franco Alva', 'Written By'].includes(lnk.text))
-                .slice(0, 10)
-                .map((lnk, i) => (
-                  <li key={i}>
-                    <a
-                      href={lnk.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-[#0c7c59] hover:underline font-sans"
-                    >
-                      {lnk.text || lnk.href}
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        )}
+        <div
+          className="max-w-2xl prose prose-p:mb-5 prose-p:leading-relaxed prose-p:text-[#2d2d2d] prose-a:text-[#0c7c59] prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-[#0a6b4d] prose-strong:text-[#1a1a1a] prose-em:text-[#2d2d2d]"
+          dangerouslySetInnerHTML={{ __html: article.body_html || '' }}
+        />
       </div>
 
       {/* More commentary */}
