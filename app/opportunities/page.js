@@ -1,4 +1,3 @@
-import staticData from '@/data/static.json'
 import Link from 'next/link'
 
 export const metadata = {
@@ -6,16 +5,7 @@ export const metadata = {
   description: 'Research funding, PhD scholarships, grants, and job postings through the AVERT Research Network.',
 }
 
-function buildParagraphs(text) {
-  if (!text) return []
-  const raw = text.split('\n').map((l) => l.trim()).filter(Boolean)
-  return raw
-}
-
 export default function OpportunitiesPage() {
-  const data = staticData['opportunities'] || {}
-  const paragraphs = buildParagraphs(data.text).filter((l) => l !== 'Research Funding and Other Opportunities')
-
   return (
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
@@ -31,49 +21,20 @@ export default function OpportunitiesPage() {
       <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
-            <div className="prose-article text-[#2d2d2d] space-y-5 mb-12">
-              {paragraphs.map((p, i) => (
-                <p key={i} className="leading-relaxed">{p}</p>
-              ))}
+            <p className="text-[#2d2d2d] leading-relaxed mb-10">
+              AVERT shares relevant research funding calls, PhD scholarships, grants, and job opportunities with our network members as they arise. Subscribe to our newsletter to receive updates directly to your inbox.
+            </p>
+
+            <div className="mb-6">
+              <h2 className="text-lg font-bold text-[#1a1a1a] mb-2">Current Opportunities</h2>
+              <div className="w-12 h-0.5 bg-[#0c7c59] mb-6" />
             </div>
 
-            <div className="space-y-6">
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-[#1a1a1a]">Current Opportunities</h2>
-                <div className="w-12 h-0.5 bg-[#0c7c59] mt-2" />
-              </div>
-              <div className="border border-[#e2e2dc] bg-white p-6">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">PhD Scholarships</p>
-                <h3 className="font-bold text-[#1a1a1a] mb-2">Adelaide University — Terrorism & Extremism</h3>
-                <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">
-                  Multiple funded PhD scholarships available at Adelaide University in the study of terrorism, extremism, and related fields.
-                  Topics include vernacular security, cyberthreats, proscription, and listing regimes.
-                </p>
-                <a
-                  href="https://www.adelaide.edu.au"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-[#0c7c59] hover:underline font-sans font-semibold"
-                >
-                  Learn more →
-                </a>
-              </div>
-              <div className="border border-[#e2e2dc] bg-white p-6">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Call for Proposals</p>
-                <h3 className="font-bold text-[#1a1a1a] mb-2">GNET — New Voices in Extremism Research</h3>
-                <p className="text-sm text-[#5a5a5a] leading-relaxed mb-4">
-                  GNET is seeking proposals from PhD students researching the nexus of technology, violent extremism, and terrorism.
-                  This series highlights new and emerging academic voices. Applications from women and students from underrepresented regions are especially encouraged.
-                </p>
-                <a
-                  href="https://gnet-research.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-[#0c7c59] hover:underline font-sans font-semibold"
-                >
-                  See post →
-                </a>
-              </div>
+            <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8 text-center">
+              <p className="text-[#717171] font-sans text-sm">There are no opportunities listed at this time.</p>
+              <p className="text-[#999999] font-sans text-xs mt-2">
+                Subscribe to the <Link href="/#newsletter" className="text-[#0c7c59] hover:underline">AVERT newsletter</Link> to be notified when new opportunities are posted.
+              </p>
             </div>
           </div>
 
