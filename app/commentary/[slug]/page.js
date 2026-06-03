@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import commentary from '@/data/commentary.json'
 import people from '@/data/people.json'
 import { notFound } from 'next/navigation'
@@ -74,12 +75,39 @@ export default async function CommentaryArticle({ params }) {
         </div>
       </div>
 
+      {/* Hero image */}
+      {article.hero_image && (
+        <div className="max-w-4xl mx-auto px-6 pt-10">
+          <div className="relative w-full h-64 md:h-80 overflow-hidden">
+            <Image
+              src={article.hero_image}
+              alt={article.title}
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
+        </div>
+      )}
+
       {/* Article body */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div
           className="max-w-2xl prose-article"
           dangerouslySetInnerHTML={{ __html: article.body_html || '' }}
         />
+        {article.original_url && (
+          <div className="mt-10 pt-6 border-t border-[#e2e2dc] max-w-2xl">
+            <a
+              href={article.original_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-[#0c7c59] hover:underline font-sans"
+            >
+              Originally published at {new URL(article.original_url).hostname.replace('www.', '')} →
+            </a>
+          </div>
+        )}
       </div>
 
       {/* More commentary */}

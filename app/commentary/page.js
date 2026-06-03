@@ -8,13 +8,8 @@ export const metadata = {
 }
 
 function heroSrc(article) {
-  if (
-    article.hero_image &&
-    !article.hero_image.includes('AVERT_Primary') &&
-    !article.hero_image.includes('AVERT-logo') &&
-    !article.hero_image.endsWith('.gif')
-  ) {
-    return `/images/${article.hero_image}`
+  if (article.hero_image && article.hero_image.startsWith('http')) {
+    return article.hero_image
   }
   return null
 }
