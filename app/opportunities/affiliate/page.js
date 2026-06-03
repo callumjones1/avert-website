@@ -7,9 +7,9 @@ export const metadata = {
 
 const benefits = [
   { title: 'Resources', desc: 'Browse and download publicly available research resources and publications.' },
-  { title: 'Events', desc: 'Advance notice of AVERT events, seminars, symposia, workshops, masterclasses and roundtables.' },
+  { title: 'Events', desc: 'Advance notice of AVERT events, seminars, symposia, workshops, master classes and roundtables.' },
   { title: 'AVERT Newsletter', desc: 'Quarterly round-up of AVERT activities, publications, resources and links.' },
-  { title: 'Engagement & Collaboration', desc: 'Find and collaborate with AVERT members from academia, community and government; share news of related events and activities; propose topics for AVERT seminars or blogs.' },
+  { title: 'Engagement & Collaboration', desc: 'Find and collaborate with AVERT members from academia, community and government; share news of related events and activities through members\' networks; propose topics for AVERT seminars or blogs.' },
 ]
 
 export default function AffiliateMembershipPage() {
@@ -28,14 +28,7 @@ export default function AffiliateMembershipPage() {
           <div className="md:col-span-2">
             <div className="mb-10">
               <p className="text-[#2d2d2d] leading-relaxed mb-5">
-                Affiliate membership of the AVERT Research Network is open to individuals, community organisations
-                and groups, service providers, NGOs, think tanks and government agencies with an interest in AVERT's
-                focus and activities.
-              </p>
-              <p className="text-[#2d2d2d] leading-relaxed mb-5">
-                Affiliate members stay in touch with current research, opportunities for workshops, seminars, policy
-                briefs and roundtables, and opportunities for collaboration with researchers and other potential partners
-                for project ideas and development.
+                Affiliate membership of the AVERT Research Network is open to individuals, community organisations and groups, service providers, NGOs, think tanks and government agencies with an interest in AVERT's focus and activities who wish to stay in touch with current research, opportunities for workshops, seminars, policy briefs and roundtables, and opportunities for collaboration with researchers and other potential partners for project ideas and development.
               </p>
               <p className="text-sm text-[#717171] italic">
                 Note: Masters and Doctoral students are eligible for Affiliate membership. Upon conferral of a doctoral degree,

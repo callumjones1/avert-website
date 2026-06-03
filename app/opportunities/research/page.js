@@ -1,4 +1,3 @@
-import staticData from '@/data/static.json'
 import Link from 'next/link'
 
 export const metadata = {
