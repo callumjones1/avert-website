@@ -44,4 +44,7 @@ next-env.d.ts
 /backend/.venv/
 /backend/__pycache__/
 
+# raw html source files
+/avert-commentary/
+
 .vercel
