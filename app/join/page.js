@@ -18,7 +18,7 @@ export default function JoinPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
 
           <div className="border border-[#e2e2dc] bg-white p-8 flex flex-col">

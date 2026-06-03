@@ -104,7 +104,7 @@ export default function PublicationsPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         {/* Intro */}
         <p className="text-[#2d2d2d] leading-relaxed mb-10 max-w-3xl">
           AVERT members are strongly committed to the accessible dissemination of research findings and outcomes.

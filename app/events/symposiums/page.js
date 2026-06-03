@@ -88,7 +88,7 @@ export default function SymposiumsPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="space-y-8">
           {symposiums.map((sym, i) => (
             <div key={i} className="border border-[#e2e2dc] bg-white p-6">

@@ -65,8 +65,8 @@ export default function FaqsPage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 py-14">
-        <div className="space-y-0 divide-y divide-[#e2e2dc]">
+      <div className="max-w-7xl mx-auto px-6 py-14">
+        <div className="max-w-3xl space-y-0 divide-y divide-[#e2e2dc]">
           {faqs.map((faq, i) => (
             <div key={i} className="py-10 first:pt-0">
               <h2 className="text-lg font-bold text-[#1a1a1a] mb-4 leading-snug">{faq.q}</h2>
@@ -90,7 +90,7 @@ export default function FaqsPage() {
           ))}
         </div>
 
-        <div className="mt-6 bg-[#f7f7f5] border border-[#e2e2dc] p-8">
+        <div className="max-w-3xl mt-6 bg-[#f7f7f5] border border-[#e2e2dc] p-8">
           <h3 className="font-bold text-[#1a1a1a] mb-3">Still have questions?</h3>
           <p className="text-[#2d2d2d] text-sm leading-relaxed mb-4">
             Get in touch with the AVERT team at{' '}

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import newsData from '@/data/news.json'
 import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
@@ -179,37 +178,19 @@ export default function HomePage() {
               <Link
                 key={article.slug}
                 href={`/commentary/${article.slug}`}
-                className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors flex flex-col"
+                className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-5 transition-colors"
               >
-                {article.hero_image && (
-                  <div className="relative w-full h-28 overflow-hidden bg-[#e2e2dc] flex-shrink-0">
-                    <Image
-                      src={article.hero_image}
-                      alt={article.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
-                    />
-                  </div>
-                )}
-                <div className="p-4 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    {article.author && (
-                      <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans">{article.author}</span>
-                    )}
-                    {article.date && (
-                      <span className="text-xs text-[#999999] font-sans">{article.date}</span>
-                    )}
-                  </div>
-                  <h3 className="text-sm font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-1.5">
-                    {article.title}
-                  </h3>
-                  {article.body && (
-                    <p className="text-sm text-[#717171] line-clamp-2 leading-relaxed">
-                      {getPreview(article.body, article.title)}
-                    </p>
+                <div className="flex items-center gap-2 mb-2">
+                  {article.author && (
+                    <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans">{article.author}</span>
+                  )}
+                  {article.date && (
+                    <span className="text-xs text-[#999999] font-sans">{article.date}</span>
                   )}
                 </div>
+                <h3 className="text-sm font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors">
+                  {article.title}
+                </h3>
               </Link>
             ))}
           </div>

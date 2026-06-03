@@ -25,7 +25,7 @@ export default function ResearchMembershipPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <div className="mb-10">

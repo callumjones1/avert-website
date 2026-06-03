@@ -27,7 +27,7 @@ export default async function NewsArticle({ params }) {
   return (
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Link href="/news" className="text-white/60 hover:text-white text-sm mb-6 inline-block transition-colors font-sans">
             ← News
           </Link>
@@ -41,7 +41,7 @@ export default async function NewsArticle({ params }) {
       </div>
 
       {item.hero_image && (
-        <div className="max-w-4xl mx-auto px-6 pt-10">
+        <div className="max-w-7xl mx-auto px-6 pt-10">
           <div className="relative w-full h-64 md:h-80 overflow-hidden">
             <Image
               src={item.hero_image}
@@ -54,7 +54,7 @@ export default async function NewsArticle({ params }) {
         </div>
       )}
 
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         <div
           className="max-w-2xl prose-article"
           dangerouslySetInnerHTML={{ __html: item.body_html || '' }}

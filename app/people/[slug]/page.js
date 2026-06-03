@@ -42,7 +42,7 @@ export default async function PersonPage({ params }) {
     <>
       {/* Header */}
       <div className="bg-[#0c7c59] text-white py-12 px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Link href="/people" className="text-white/60 hover:text-white text-sm mb-6 inline-block transition-colors font-sans">
             ← All Researchers
           </Link>
@@ -82,7 +82,7 @@ export default async function PersonPage({ params }) {
       </div>
 
       {/* Content */}
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
           {/* Sidebar */}

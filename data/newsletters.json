@@ -1,50 +1,85 @@
 [
   {
+    "slug": "newsletter-june-2025",
     "title": "June 2025 Newsletter",
     "date": "June 2025",
-    "slug": "newsletter-june-2025",
-    "url": "/newsletter"
+    "summary": "Phase Two of the National CVE Research Project announced, new members welcomed, and highlights from the 2025 webinar series.",
+    "highlights": [
+      "Six Phase Two National CVE Research Projects announced, each with $200,000 AUD in funding from the Department of Home Affairs",
+      "New research members from Freie Universität Berlin, University of Melbourne, ANU, University of Notre Dame, University of Regina, and IBA Karachi",
+      "Webinar series featured presentations on CVE, religious radicalisation, far-right environmentalism, and conspiracy extremism",
+      "Member publications in Crime & Delinquency, Terrorism and Political Violence, New Media & Society, and the Routledge Handbook of Radicalisation"
+    ],
+    "url": "/newsletters/newsletter-june-2025"
   },
   {
+    "slug": "newsletter-november-2024",
     "title": "November 2024 Newsletter",
     "date": "November 2024",
-    "slug": "newsletter-november-2024",
-    "url": "/newsletter"
+    "summary": "From the Co-Convenors: major milestones in research and symposium activities, Phase Two project announcements, and network awards.",
+    "highlights": [
+      "AVERT Research Symposium 2024 held successfully with network-wide research presentations",
+      "Phase Two National CVE Research Projects announced with $200,000 AUD per project funding",
+      "Mia Bloom received the Lifetime Achievement Award from the Academy of Criminology and Justice Sciences",
+      "Julian Droogan promoted to Professor and Head of School at Macquarie University",
+      "AVERT testimony provided to Senate inquiry on right-wing extremist movements in Australia",
+      "Professor John Horgan joined the Steering Committee"
+    ],
+    "url": "/newsletters/newsletter-november-2024"
   },
   {
+    "slug": "newsletter-may-2024",
     "title": "May 2024 Newsletter",
     "date": "May 2024",
-    "slug": "newsletter-may-2024",
-    "url": "/newsletter"
+    "summary": "Convenor Lydia Khalil highlights network contributions in the first half of 2024, with the 2024 Symposium announced and 12 new members welcomed.",
+    "highlights": [
+      "2024 AVERT Symposium announced: \"People, Places, and Spaces: New Dynamics and Shifting Responses to Violent Extremism\"",
+      "Webinar with Professor John Horgan on \"Terrorist Minds: The Psychology of Violent Extremism\"",
+      "Evening with Professor Bruce Hoffman on \"God, Guns, and Sedition\" at Deakin Downtown Melbourne",
+      "12 new members added from institutions including Oxford, UCL, ANU, and Nanyang Technological University",
+      "Jared Dmello selected as inaugural Early Career Award recipient from the Academy of Criminal Justice Sciences",
+      "AVERT submission published to Senate inquiry on right-wing extremism"
+    ],
+    "url": "/newsletters/newsletter-may-2024"
   },
   {
+    "slug": "newsletter-november-2023",
     "title": "November 2023 Newsletter",
     "date": "November 2023",
-    "slug": "newsletter-november-2023",
+    "summary": "Network updates from the second half of 2023.",
+    "highlights": [],
     "url": "https://www.avert.net.au/newsletter-november-2023"
   },
   {
+    "slug": "newsletter-april-2023",
     "title": "April 2023 Newsletter",
     "date": "April 2023",
-    "slug": "newsletter-april-2023",
+    "summary": "Network updates from the first half of 2023.",
+    "highlights": [],
     "url": "https://www.avert.net.au/april-2023-newsletter"
   },
   {
+    "slug": "newsletter-december-2021",
     "title": "December 2021 Newsletter",
     "date": "December 2021",
-    "slug": "newsletter-03",
+    "summary": "Network updates from late 2021.",
+    "highlights": [],
     "url": "https://www.avert.net.au/newsletter-03"
   },
   {
+    "slug": "newsletter-august-2021",
     "title": "August 2021 Newsletter",
     "date": "August 2021",
-    "slug": "newsletter-02",
+    "summary": "Network updates from mid-2021.",
+    "highlights": [],
     "url": "https://www.avert.net.au/newsletter-02"
   },
   {
+    "slug": "newsletter-april-2021",
     "title": "April 2021 Newsletter",
     "date": "April 2021",
-    "slug": "newsletter-01",
+    "summary": "Network updates from early 2021.",
+    "highlights": [],
     "url": "https://www.avert.net.au/newsletter-01"
   }
 ]

@@ -52,7 +52,7 @@ export default async function CommentaryArticle({ params }) {
     <>
       {/* Header */}
       <div className="bg-[#0c7c59] text-white py-14 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <Link href="/commentary" className="text-white/60 hover:text-white text-sm mb-6 inline-block transition-colors font-sans">
             ← Commentary
           </Link>
@@ -83,7 +83,7 @@ export default async function CommentaryArticle({ params }) {
 
       {/* Hero image */}
       {article.hero_image && (
-        <div className="max-w-4xl mx-auto px-6 pt-10">
+        <div className="max-w-7xl mx-auto px-6 pt-10">
           <div className="relative w-full h-64 md:h-80 overflow-hidden">
             <Image
               src={article.hero_image}
@@ -97,7 +97,7 @@ export default async function CommentaryArticle({ params }) {
       )}
 
       {/* Article body */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         <div
           className="max-w-2xl prose-article"
           dangerouslySetInnerHTML={{ __html: bodyHtml }}

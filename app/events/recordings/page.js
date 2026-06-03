@@ -71,7 +71,7 @@ export default function RecordingsPage() {
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-7xl mx-auto px-6 py-14">
         <div className="space-y-12">
           {years.map((year) => (
             <div key={year}>
