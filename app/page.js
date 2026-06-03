@@ -182,7 +182,7 @@ export default function HomePage() {
                 className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors flex flex-col"
               >
                 {article.hero_image && (
-                  <div className="relative w-full h-40 overflow-hidden bg-[#e2e2dc] flex-shrink-0">
+                  <div className="relative w-full h-28 overflow-hidden bg-[#e2e2dc] flex-shrink-0">
                     <Image
                       src={article.hero_image}
                       alt={article.title}
@@ -192,8 +192,8 @@ export default function HomePage() {
                     />
                   </div>
                 )}
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="p-4 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-2">
                     {article.author && (
                       <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans">{article.author}</span>
                     )}
@@ -201,7 +201,7 @@ export default function HomePage() {
                       <span className="text-xs text-[#999999] font-sans">{article.date}</span>
                     )}
                   </div>
-                  <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-2">
+                  <h3 className="text-sm font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-1.5">
                     {article.title}
                   </h3>
                   {article.body && (
