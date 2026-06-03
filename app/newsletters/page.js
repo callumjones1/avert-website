@@ -47,13 +47,14 @@ export default function NewslettersPage() {
 }
 
 function NewsletterCard({ nl, featured = false }) {
-  const isExternal = nl.url.startsWith('http')
+  const isExternal = !nl.body_html && nl.url.startsWith('http')
+  const href = nl.body_html ? `/newsletters/${nl.slug}` : nl.url
   const hasContent = nl.highlights && nl.highlights.length > 0
 
   const Tag = isExternal ? 'a' : Link
   const linkProps = isExternal
-    ? { href: nl.url, target: '_blank', rel: 'noopener noreferrer' }
-    : { href: nl.url }
+    ? { href, target: '_blank', rel: 'noopener noreferrer' }
+    : { href }
 
   if (featured) {
     return (
@@ -98,9 +99,7 @@ function NewsletterCard({ nl, featured = false }) {
       {nl.summary && (
         <p className="text-sm text-[#717171] leading-relaxed mb-3 line-clamp-2">{nl.summary}</p>
       )}
-      <p className="text-xs text-[#0c7c59] font-semibold font-sans mt-auto">
-        {isExternal ? 'View on AVERT website →' : 'Read newsletter →'}
-      </p>
+      <p className="text-xs text-[#0c7c59] font-semibold font-sans mt-auto">Read newsletter →</p>
     </Tag>
   )
 }

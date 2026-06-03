@@ -97,6 +97,53 @@ nav, button, input, select, textarea, label,
   text-underline-offset: 2px;
 }
 
+/* Newsletter body — same rhythm as prose-article */
+.newsletter-body p {
+  margin-bottom: 1.1rem;
+  line-height: 1.8;
+  color: #2d2d2d;
+}
+
+.newsletter-body h2.nl-h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--green);
+  color: var(--charcoal);
+}
+
+.newsletter-body h3.nl-h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+
+.newsletter-body h4.nl-h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.4rem;
+  color: var(--charcoal-mid);
+}
+
+.newsletter-body li {
+  margin-bottom: 0.35rem;
+  line-height: 1.75;
+  color: #2d2d2d;
+  margin-left: 1.25rem;
+  list-style: disc;
+}
+
+.newsletter-body a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .nav-link {
   position: relative;
 }
