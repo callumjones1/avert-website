@@ -1,29 +1,28 @@
 """
 Parse downloaded AVERT commentary HTML files into commentary.json.
+Also copies article images to public/commentary/.
 Usage: python backend/scripts/parse_commentary.py
 """
 
 import json
 import re
+import shutil
 from pathlib import Path
-from bs4 import BeautifulSoup, Tag, NavigableString
+from bs4 import BeautifulSoup, Tag
 from datetime import datetime
 
 INPUT_DIR = Path("avert-commentary")
 OUTPUT_FILE = Path("data/commentary.json")
+PUBLIC_IMG_DIR = Path("public/commentary")
 
-# Months for parsing byline dates
 MONTHS = ["January", "February", "March", "April", "May", "June",
           "July", "August", "September", "October", "November", "December"]
+MONTH_PAT = "|".join(MONTHS)
+BYLINE_DATE_RE = re.compile(rf"({MONTH_PAT})\s+(\d{{1,2}}),?\s+(\d{{4}})", re.I)
 
 
 def fmt_date(dt: datetime) -> str:
-    """Return e.g. '5 August 2021' without a leading zero (cross-platform)."""
     return f"{dt.day} {dt.strftime('%B')} {dt.year}"
-MONTH_PAT = "|".join(MONTHS)
-BYLINE_DATE_RE = re.compile(
-    rf"({MONTH_PAT})\s+(\d{{1,2}}),?\s+(\d{{4}})", re.I
-)
 
 
 def slugify(text: str) -> str:
@@ -34,21 +33,18 @@ def slugify(text: str) -> str:
     return text[:80]
 
 
-def unwrap_spans(soup_div):
-    """Unwrap <span> tags that only contain text or an <a>, keeping their contents."""
-    for span in soup_div.find_all("span"):
-        if not isinstance(span, Tag):
-            continue
-        span.unwrap()
+def unwrap_spans(div):
+    for span in div.find_all("span"):
+        if isinstance(span, Tag):
+            span.unwrap()
 
 
-def clean_body_html(soup_div) -> str:
-    """Return clean inner HTML from a sqs-html-content div."""
-    unwrap_spans(soup_div)
-    for tag in list(soup_div.find_all(True)):
+def clean_html_block(div) -> str:
+    """Strip squarespace attrs from a text block, keep links and structure."""
+    unwrap_spans(div)
+    for tag in list(div.find_all(True)):
         if not isinstance(tag, Tag) or tag.attrs is None:
             continue
-        # Keep only href, target, rel on <a>; keep src, alt on <img>
         if tag.name == "a":
             href = tag.attrs.get("href", "")
             tag.attrs = {"href": href, "target": "_blank", "rel": "noopener noreferrer"}
@@ -56,36 +52,66 @@ def clean_body_html(soup_div) -> str:
             tag.attrs = {k: tag.attrs[k] for k in ["src", "alt"] if k in tag.attrs}
         else:
             tag.attrs = {}
-        # Remove empty paragraphs
         if tag.name == "p" and not tag.get_text(strip=True) and not tag.find("img"):
             tag.decompose()
-    return soup_div.decode_contents().strip()
+    return div.decode_contents().strip()
+
+
+def copy_image(src_attr: str, html_path: Path, slug: str) -> str | None:
+    """
+    Given an img src like './Article_files/photo.jpg', copy the file to
+    public/commentary/ and return the web path '/commentary/photo.jpg'.
+    """
+    if not src_attr or src_attr.startswith("http"):
+        return src_attr  # external URL — use as-is
+    # Resolve relative to the HTML file's directory
+    src_path = (html_path.parent / src_attr).resolve()
+    if not src_path.exists():
+        # Try finding it in the _files folder
+        fname = Path(src_attr).name
+        files_dir = html_path.parent / (html_path.stem + "_files")
+        candidate = files_dir / fname
+        if candidate.exists():
+            src_path = candidate
+        else:
+            return None
+    dest_name = src_path.name
+    dest = PUBLIC_IMG_DIR / dest_name
+    PUBLIC_IMG_DIR.mkdir(parents=True, exist_ok=True)
+    if not dest.exists():
+        shutil.copy2(src_path, dest)
+    return f"/commentary/{dest_name}"
+
+
+def extract_image_block(block: Tag, html_path: Path, slug: str) -> str:
+    """Turn a sqs-block-image into an <img> tag with a local path."""
+    img = block.find("img")
+    if not img:
+        return ""
+    src = img.get("src") or img.get("data-src") or ""
+    alt = img.get("alt", "")
+    # Skip AVERT logo images
+    if "AVERT_Primary" in src or "AVERT-logo" in src:
+        return ""
+    web_path = copy_image(src, html_path, slug)
+    if not web_path:
+        return ""
+    return f'<img src="{web_path}" alt="{alt}">'
 
 
 def extract_byline(body_html_str: str) -> tuple[str, str]:
-    """
-    Pull author and date from a leading byline like:
-      <p>ANDREW ZAMMIT • April 10, 2021</p>
-      <p>HELEN YOUNG &amp; GEOFF BOUCHER • September 16, 2020</p>
-    Returns (author, date_str) or ("", "").
-    """
     soup = BeautifulSoup(body_html_str, "lxml")
     first_p = soup.find("p")
     if not first_p:
         return "", ""
     text = first_p.get_text(separator=" ", strip=True)
-    # Must contain a bullet separator and a recognisable date
     if "•" not in text:
         return "", ""
     date_m = BYLINE_DATE_RE.search(text)
     if not date_m:
         return "", ""
-    # Author is the text before the bullet
     raw_author = text.split("•")[0].strip()
-    # Title-case (bylines are ALL-CAPS)
     author = " ".join(w.capitalize() for w in raw_author.split())
-    # Handle "&" / "and" compounds: keep as-is after title-casing
-    # Date
     month_str, day_str, year_str = date_m.groups()
     try:
         dt = datetime.strptime(f"{day_str} {month_str.capitalize()} {year_str}", "%d %B %Y")
@@ -96,9 +122,7 @@ def extract_byline(body_html_str: str) -> tuple[str, str]:
 
 
 def strip_byline_paragraph(body_html_str: str) -> str:
-    """Remove the leading byline <p> from body HTML."""
     soup = BeautifulSoup(body_html_str, "lxml")
-    # lxml wraps in <html><body>, work on the body
     body = soup.find("body")
     if not body:
         return body_html_str
@@ -111,15 +135,14 @@ def strip_byline_paragraph(body_html_str: str) -> str:
 
 
 def strip_photo_credit(body_html_str: str) -> str:
-    """Remove leading photo-credit paragraphs (e.g. 'Photo by X on Unsplash')."""
+    """Remove photo-credit paragraphs anywhere near the top."""
     soup = BeautifulSoup(body_html_str, "lxml")
     body = soup.find("body")
     if not body:
         return body_html_str
-    # Remove any leading paragraph that is just a photo credit
-    for p in list(body.find_all("p"))[:3]:
+    for p in list(body.find_all("p"))[:4]:
         txt = p.get_text(strip=True).lower()
-        if re.match(r"^photo\s+by\b", txt) or re.match(r"^image\s+(by|credit)\b", txt):
+        if re.match(r"^photo\s+by\b", txt) or re.match(r"^image\s+(by|credit)\b", txt) or re.match(r"^nikita karimov\b", txt):
             p.decompose()
         else:
             break
@@ -132,28 +155,19 @@ def parse_file(html_path: Path) -> dict | None:
 
     # --- Title ---
     og_title = soup.find("meta", property="og:title")
-    if og_title:
-        raw = og_title.get("content", "")
-    else:
-        title_tag = soup.find("title")
-        raw = title_tag.get_text() if title_tag else html_path.stem
+    raw = og_title.get("content", "") if og_title else (soup.find("title") or Tag(name="title")).get_text()
     title = re.sub(r"\s*[—–-]+\s*AVERT Research Network\s*$", "", raw).strip()
-    # Unescape HTML entities that may still be in og:title
     title = title.replace("&#x27;", "'").replace("&amp;", "&").replace("&quot;", '"')
 
-    # --- Canonical URL ---
+    # --- Canonical URL / slug ---
     url_tag = soup.find("link", rel="canonical")
     canonical = url_tag["href"].strip() if url_tag else ""
-    if canonical:
-        slug = canonical.rstrip("/").split("/")[-1]
-    else:
-        slug = slugify(title)
+    slug = canonical.rstrip("/").split("/")[-1] if canonical else slugify(title)
 
     # --- Original publication URL ---
     original_url = ""
     for string in soup.find_all(string=re.compile(r"[Oo]riginally published", re.I)):
         parent = string.parent
-        # Walk up to find a <p> or similar containing an <a>
         for _ in range(3):
             if hasattr(parent, "find"):
                 link = parent.find("a")
@@ -166,21 +180,30 @@ def parse_file(html_path: Path) -> dict | None:
         if original_url:
             break
 
-    # --- Raw body HTML ---
+    # --- Build body HTML from blocks in document order ---
     body_html = ""
     article_content = soup.find(class_="blog-item-content")
     if article_content:
-        html_blocks = article_content.find_all(class_="sqs-html-content")
+        # Walk direct block containers in order
+        all_blocks = article_content.find_all(attrs={"data-block-type": True})
         parts = []
-        for block in html_blocks:
-            cleaned = clean_body_html(block)
-            if cleaned:
-                parts.append(cleaned)
+        for block in all_blocks:
+            btype = block.get("data-block-type")
+            if btype == "5":  # image block
+                img_html = extract_image_block(block, html_path, slug)
+                if img_html:
+                    parts.append(img_html)
+            elif btype == "1337":  # text block
+                text_div = block.find(class_="sqs-html-content")
+                if text_div:
+                    cleaned = clean_html_block(text_div)
+                    if cleaned:
+                        parts.append(cleaned)
         body_html = "\n".join(parts)
 
     if not body_html:
         for block in soup.find_all(class_="sqs-html-content"):
-            cleaned = clean_body_html(block)
+            cleaned = clean_html_block(block)
             if cleaned and len(cleaned) > 200:
                 body_html = cleaned
                 break
@@ -189,14 +212,12 @@ def parse_file(html_path: Path) -> dict | None:
         print(f"  WARNING: no body found in {html_path.name}")
         return None
 
-    # --- Extract real author + date from byline in body ---
+    # --- Author + date from byline ---
     byline_author, byline_date = extract_byline(body_html)
 
-    # Strip photo credit and byline from the body
     body_html = strip_photo_credit(body_html)
     body_html = strip_byline_paragraph(body_html)
 
-    # --- Fallback author/date from meta if byline extraction failed ---
     if not byline_author:
         meta_author = soup.find("meta", itemprop="author")
         byline_author = meta_author["content"].strip() if meta_author else ""
@@ -204,14 +225,13 @@ def parse_file(html_path: Path) -> dict | None:
     if not byline_date:
         date_tag = soup.find("meta", itemprop="datePublished")
         if date_tag:
-            raw_date = date_tag["content"]
             try:
-                dt = datetime.fromisoformat(raw_date)
+                dt = datetime.fromisoformat(date_tag["content"])
                 byline_date = fmt_date(dt)
             except Exception:
-                byline_date = raw_date[:10]
+                byline_date = date_tag["content"][:10]
 
-    # Strip "Originally published" paragraph from body too
+    # Strip "Originally published" paragraph
     if original_url:
         body_soup = BeautifulSoup(body_html, "lxml")
         body_tag = body_soup.find("body")
@@ -245,19 +265,19 @@ def main():
     for path in html_files:
         entry = parse_file(path)
         if entry:
-            status = f"  author={entry['author']!r:40s} date={entry['date']!r}"
-            print(f"{path.name[:60]}\n{status}\n")
+            imgs = entry["body_html"].count("<img")
+            links = entry["body_html"].count("<a href")
+            print(f"{path.name[:55]}")
+            print(f"  {entry['author']!r:38s} {entry['date']!r}  imgs={imgs} links={links}\n")
             results.append(entry)
 
-    # Sort by date descending
     def sort_key(e):
-        try:
-            return datetime.strptime(e["date"], "%d %B %Y")
-        except Exception:
+        for fmt in ("%d %B %Y", "%Y-%m-%d"):
             try:
-                return datetime.strptime(e["date"], "%Y-%m-%d")
+                return datetime.strptime(e["date"], fmt)
             except Exception:
-                return datetime.min
+                pass
+        return datetime.min
 
     results.sort(key=sort_key, reverse=True)
 

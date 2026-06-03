@@ -41,6 +41,48 @@ nav, button, input, select, textarea, label,
   color: var(--green-dark);
 }
 
+.prose-article h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--charcoal);
+}
+
+.prose-article img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+}
+
+.prose-article blockquote {
+  border-left: 3px solid var(--green);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: var(--charcoal-mid);
+  font-style: italic;
+}
+
+.prose-article strong {
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.prose-article em {
+  font-style: italic;
+}
+
+.prose-article ul, .prose-article ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-article li {
+  margin-bottom: 0.4rem;
+  line-height: 1.75;
+  color: #2d2d2d;
+}
+
 .prose-article a {
   color: var(--green);
   text-decoration: underline;

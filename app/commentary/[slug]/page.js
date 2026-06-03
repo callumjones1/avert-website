@@ -77,7 +77,7 @@ export default async function CommentaryArticle({ params }) {
       {/* Article body */}
       <div className="max-w-4xl mx-auto px-6 py-12">
         <div
-          className="max-w-2xl prose prose-p:mb-5 prose-p:leading-relaxed prose-p:text-[#2d2d2d] prose-a:text-[#0c7c59] prose-a:underline prose-a:underline-offset-2 hover:prose-a:text-[#0a6b4d] prose-strong:text-[#1a1a1a] prose-em:text-[#2d2d2d]"
+          className="max-w-2xl prose-article"
           dangerouslySetInnerHTML={{ __html: article.body_html || '' }}
         />
       </div>
