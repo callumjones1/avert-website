@@ -33,6 +33,23 @@ export default async function SymposiumPage({ params }) {
 
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-14">
 
+        {/* Program download — top of page */}
+        {sym.program_url && (
+          <section>
+            <a
+              href={sym.program_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              </svg>
+              Download Program
+            </a>
+          </section>
+        )}
+
         {/* Description */}
         {sym.description && (
           <section className="max-w-3xl space-y-4">
@@ -103,19 +120,6 @@ export default async function SymposiumPage({ params }) {
           </section>
         )}
 
-        {/* Program download */}
-        {sym.program_url && (
-          <section>
-            <a
-              href={sym.program_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block border border-[#0c7c59] text-[#0c7c59] hover:bg-[#0c7c59] hover:text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-            >
-              Download Program →
-            </a>
-          </section>
-        )}
 
       </div>
     </>
