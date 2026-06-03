@@ -1,7 +1,8 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 const navItems = [
   {
@@ -47,6 +48,24 @@ const navItems = [
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState(null)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQ, setSearchQ] = useState('')
+  const searchInputRef = useRef(null)
+  const router = useRouter()
+
+  useEffect(() => {
+    if (searchOpen) searchInputRef.current?.focus()
+  }, [searchOpen])
+
+  function handleSearchSubmit(e) {
+    e.preventDefault()
+    const q = searchQ.trim()
+    if (q) {
+      router.push(`/search?q=${encodeURIComponent(q)}`)
+      setSearchOpen(false)
+      setSearchQ('')
+    }
+  }
 
   return (
     <nav className="bg-[#0c7c59] text-white sticky top-0 z-50 shadow-md">
@@ -74,7 +93,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className="nav-link px-4 py-2 text-sm text-white/90 hover:text-white transition-colors inline-block font-sans"
+                className="nav-link px-4 py-2 text-base text-white/90 hover:text-white transition-colors inline-block font-sans"
               >
                 {item.label}
                 {item.children && (
@@ -98,6 +117,39 @@ export default function Navbar() {
           ))}
         </div>
 
+        {/* Desktop search */}
+        <div className="hidden md:flex items-center ml-2">
+          {searchOpen ? (
+            <form onSubmit={handleSearchSubmit} className="flex items-center">
+              <input
+                ref={searchInputRef}
+                type="search"
+                value={searchQ}
+                onChange={e => setSearchQ(e.target.value)}
+                onKeyDown={e => e.key === 'Escape' && setSearchOpen(false)}
+                placeholder="Search…"
+                className="w-48 border border-white/30 bg-white/10 px-3 py-1.5 text-white placeholder-white/60 focus:outline-none focus:border-white text-sm font-sans"
+              />
+              <button type="submit" className="p-2 text-white/80 hover:text-white" aria-label="Submit search">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+                </svg>
+              </button>
+              <button type="button" onClick={() => setSearchOpen(false)} className="p-2 text-white/60 hover:text-white" aria-label="Close search">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </form>
+          ) : (
+            <button onClick={() => setSearchOpen(true)} className="p-2 text-white/80 hover:text-white" aria-label="Search">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+              </svg>
+            </button>
+          )}
+        </div>
+
         {/* Mobile toggle */}
         <button
           className="md:hidden text-white/80 hover:text-white"
@@ -116,6 +168,20 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden bg-[#0a6b4d] border-t border-[#085c41]">
+          <form onSubmit={e => { e.preventDefault(); const q = searchQ.trim(); if (q) { router.push(`/search?q=${encodeURIComponent(q)}`); setMobileOpen(false); setSearchQ('') } }} className="flex px-6 py-3 gap-0">
+            <input
+              type="search"
+              value={searchQ}
+              onChange={e => setSearchQ(e.target.value)}
+              placeholder="Search…"
+              className="flex-1 border border-white/30 bg-white/10 px-3 py-2 text-white placeholder-white/60 focus:outline-none focus:border-white text-sm font-sans"
+            />
+            <button type="submit" className="bg-white/20 hover:bg-white/30 px-3 py-2 text-white" aria-label="Search">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+              </svg>
+            </button>
+          </form>
           {navItems.map((item) => (
             <div key={item.label}>
               <Link

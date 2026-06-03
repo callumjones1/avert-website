@@ -4,6 +4,7 @@ import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
 import eventsData from '@/data/events.json'
 import SubscribeForm from '@/components/SubscribeForm'
+import SearchBar from '@/components/SearchBar'
 import WebinarCarousel from '@/components/WebinarCarousel'
 import EventCarousel from '@/components/EventCarousel'
 
@@ -84,7 +85,7 @@ export default function HomePage() {
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
               AVERT brings together Australia's leading social scientists and humanities researchers to produce evidence-based research that matters — for policy, practice, and public good.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 mb-8">
               <Link
                 href="/publications"
                 className="bg-white text-[#0c7c59] hover:bg-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
@@ -104,6 +105,7 @@ export default function HomePage() {
                 Stay Informed
               </a>
             </div>
+            <SearchBar className="max-w-xl" />
           </div>
         </div>
       </section>
