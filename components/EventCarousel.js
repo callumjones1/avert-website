@@ -1,5 +1,5 @@
 'use client'
-import { useState, useCallback } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 
 export default function EventCarousel({ events }) {
@@ -9,6 +9,12 @@ export default function EventCarousel({ events }) {
 
   const next = useCallback(() => setIdx(i => i >= max ? 0 : i + 1), [max])
   const prev = useCallback(() => setIdx(i => i <= 0 ? max : i - 1), [max])
+
+  useEffect(() => {
+    if (!multi) return
+    const id = setInterval(next, 5000)
+    return () => clearInterval(id)
+  }, [next, multi])
 
   const event = events[idx]
 
