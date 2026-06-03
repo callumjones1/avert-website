@@ -77,59 +77,49 @@ export default function PeoplePage() {
         </p>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((person) => (
             <Link
               key={person.slug}
               href={`/people/${person.slug}`}
-              className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-5 transition-colors flex flex-col"
+              className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors flex"
             >
-              {/* Headshot or initials */}
-              <div className="mb-4">
+              {/* Headshot — large, fills left side */}
+              <div className="flex-shrink-0 w-28 relative overflow-hidden bg-[#e8f5f0]">
                 {person.headshot ? (
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-[#e8f5f0]">
-                    <Image
-                      src={`/headshots/${person.headshot}`}
-                      alt={person.name}
-                      width={64}
-                      height={64}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+                  <Image
+                    src={`/headshots/${person.headshot}`}
+                    alt={person.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="112px"
+                  />
                 ) : (
-                  <div className="w-16 h-16 rounded-full bg-[#e8f5f0] text-[#0c7c59] flex items-center justify-center text-xl font-bold">
-                    {person.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+                  <div className="absolute inset-0 flex items-center justify-center bg-[#e8f5f0]">
+                    <span className="text-2xl font-bold text-[#0c7c59]">
+                      {person.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
+                    </span>
                   </div>
                 )}
               </div>
 
-              <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors text-sm mb-1">
-                {person.name}
-              </h3>
-              {person.title && (
-                <p className="text-xs text-[#717171] mb-0.5 leading-snug">{person.title}</p>
-              )}
-              {person.institution && (
-                <p className="text-xs text-[#999999] mb-3">{person.institution}</p>
-              )}
-
-              {/* Role badge */}
-              <div className="mt-auto pt-3">
-                <span className={`text-xs font-semibold px-2 py-0.5 font-sans ${ROLE_COLOURS[person.role] || ROLE_COLOURS['Research Member']}`}>
-                  {person.role}
-                </span>
-              </div>
-
-              {/* Research area tags — show up to 3 */}
-              {person.research_areas && (
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {person.research_areas.split(/[;,]/).map((k) => k.trim()).filter(Boolean).slice(0, 3).map((k) => (
-                    <span key={k} className="text-xs bg-[#f7f7f5] text-[#717171] px-2 py-0.5 border border-[#e2e2dc] font-sans leading-snug">
-                      {k}
-                    </span>
-                  ))}
+              {/* Text — beside photo */}
+              <div className="flex-1 min-w-0 p-4 flex flex-col">
+                <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors text-sm mb-1">
+                  {person.name}
+                </h3>
+                {person.title && (
+                  <p className="text-xs text-[#717171] mb-0.5 leading-snug line-clamp-2">{person.title}</p>
+                )}
+                {person.institution && (
+                  <p className="text-xs text-[#999999] leading-snug">{person.institution}</p>
+                )}
+                <div className="mt-auto pt-3">
+                  <span className={`text-xs font-semibold px-2 py-0.5 font-sans ${ROLE_COLOURS[person.role] || ROLE_COLOURS['Research Member']}`}>
+                    {person.role}
+                  </span>
                 </div>
-              )}
+              </div>
             </Link>
           ))}
         </div>
