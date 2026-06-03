@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import impactData from '@/data/impact.json'
 import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
@@ -178,24 +179,36 @@ export default function HomePage() {
               <Link
                 key={article.slug}
                 href={`/commentary/${article.slug}`}
-                className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
+                className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors flex flex-col"
               >
-                <div className="flex items-center gap-2 mb-3">
-                  {article.author && (
-                    <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans">{article.author}</span>
-                  )}
-                  {article.date && (
-                    <span className="text-xs text-[#999999] font-sans">{article.date}</span>
+                {article.hero_image && (
+                  <div className="relative w-full overflow-hidden bg-[#e2e2dc]" style={{ aspectRatio: '16/9' }}>
+                    <Image
+                      src={article.hero_image}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:opacity-90 transition-opacity duration-200"
+                    />
+                  </div>
+                )}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    {article.author && (
+                      <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans">{article.author}</span>
+                    )}
+                    {article.date && (
+                      <span className="text-xs text-[#999999] font-sans">{article.date}</span>
+                    )}
+                  </div>
+                  <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-2">
+                    {article.title}
+                  </h3>
+                  {article.body && (
+                    <p className="text-sm text-[#717171] line-clamp-2 leading-relaxed">
+                      {getPreview(article.body, article.title)}
+                    </p>
                   )}
                 </div>
-                <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-2">
-                  {article.title}
-                </h3>
-                {article.body && (
-                  <p className="text-sm text-[#717171] line-clamp-2 leading-relaxed">
-                    {getPreview(article.body, article.title)}
-                  </p>
-                )}
               </Link>
             ))}
           </div>
