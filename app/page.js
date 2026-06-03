@@ -182,12 +182,13 @@ export default function HomePage() {
                 className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors flex flex-col"
               >
                 {article.hero_image && (
-                  <div className="relative w-full overflow-hidden bg-[#e2e2dc]" style={{ aspectRatio: '16/9' }}>
+                  <div className="relative w-full h-40 overflow-hidden bg-[#e2e2dc] flex-shrink-0">
                     <Image
                       src={article.hero_image}
                       alt={article.title}
                       fill
-                      className="object-cover group-hover:opacity-90 transition-opacity duration-200"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
                     />
                   </div>
                 )}
