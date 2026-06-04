@@ -69,22 +69,23 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#0c7c59] text-white sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-6 flex items-center h-16 gap-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center flex-shrink-0">
-          <Image
-            src="/avert-logo-inverse.png"
-            alt="AVERT Research Network"
-            width={140}
-            height={40}
-            className="h-9 w-auto"
-            priority
-          />
-        </Link>
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+        {/* Left: logo + nav */}
+        <div className="flex items-center gap-2">
+          <Link href="/" className="flex items-center flex-shrink-0 mr-2">
+            <Image
+              src="/avert-logo-inverse.png"
+              alt="AVERT Research Network"
+              width={140}
+              height={40}
+              className="h-9 w-auto"
+              priority
+            />
+          </Link>
 
-        {/* Desktop nav — left-aligned after logo */}
-        <div className="hidden md:flex items-center gap-1 flex-1">
-          {navItems.map((item) => (
+          {/* Desktop nav — left-aligned after logo */}
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
             <div
               key={item.label}
               className="relative"
@@ -115,33 +116,35 @@ export default function Navbar() {
               )}
             </div>
           ))}
+          </div>
         </div>
 
-        {/* Desktop search icon — always just an icon, no inline expansion */}
-        <button
-          onClick={() => setSearchOpen(v => !v)}
-          className="hidden md:block p-2 ml-auto text-white/80 hover:text-white"
-          aria-label="Search"
-        >
-          {searchOpen
-            ? <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            : <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" /></svg>
-          }
-        </button>
-
-        {/* Mobile toggle */}
-        <button
-          className="md:hidden text-white/80 hover:text-white"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle menu"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {mobileOpen
-              ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+        {/* Right: search icon + mobile toggle */}
+        <div className="flex items-center">
+          <button
+            onClick={() => setSearchOpen(v => !v)}
+            className="hidden md:block p-2 text-white/80 hover:text-white"
+            aria-label="Search"
+          >
+            {searchOpen
+              ? <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              : <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" /></svg>
             }
-          </svg>
-        </button>
+          </button>
+
+          <button
+            className="md:hidden text-white/80 hover:text-white"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {mobileOpen
+                ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              }
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Desktop search dropdown — spans full width below the bar */}
