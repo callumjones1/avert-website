@@ -26,6 +26,7 @@ const ROLE_COLOURS = {
   'Convenor': 'bg-[#0c7c59] text-white',
   'Coordinator': 'bg-[#0c7c59]/80 text-white',
   'Technical Coordinator': 'bg-[#0c7c59]/80 text-white',
+  'HDR Coordinator': 'bg-[#0c7c59]/80 text-white',
   'Executive Committee': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/30',
   'Research Member': 'bg-[#f3f3f3] text-[#5a5a5a]',
   'Affiliate Member': 'bg-[#f3f3f3] text-[#717171]',
