@@ -46,8 +46,17 @@ function Publications({ sections }) {
             <tbody>
               {section.items.map((item, i) => (
                 <tr key={i} className="border-b border-[#f0f0ec] last:border-b-0">
-                  <td className="py-3 pr-4 align-top text-[#1a1a1a] leading-snug font-medium w-2/3">
-                    {item.title}
+                  <td className="py-3 pr-4 align-top text-[#1a1a1a] leading-snug w-2/3">
+                    <span className="font-medium">{item.title}</span>
+                    {item.in && (
+                      <span className="block text-xs text-[#888888] mt-0.5">
+                        in <em>{item.in}</em>
+                        {item.editors ? `, ${item.editors}` : ''}
+                      </span>
+                    )}
+                    {item.funder && (
+                      <span className="block text-xs text-[#888888] mt-0.5">{item.funder}</span>
+                    )}
                   </td>
                   <td className="py-3 align-top text-[#666666] leading-snug text-xs w-1/3">
                     {item.authors || ''}
