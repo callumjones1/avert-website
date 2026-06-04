@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { assetUrl } from '@/lib/base-path'
 
 export const metadata = {
   title: 'Publications — AVERT Research Network',
@@ -126,7 +127,7 @@ export default function PublicationsPage() {
                 {byYear[year].map((pub, i) => (
                   <a
                     key={i}
-                    href={pub.url}
+                    href={assetUrl(pub.url)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-start gap-5 border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
