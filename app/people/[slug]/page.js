@@ -25,9 +25,41 @@ function buildBio(text) {
 const ROLE_COLOURS = {
   'Convenor': 'bg-[#0c7c59] text-white',
   'Coordinator': 'bg-[#0c7c59]/80 text-white',
+  'Technical Coordinator': 'bg-[#0c7c59]/80 text-white',
   'Executive Committee': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/30',
   'Research Member': 'bg-[#f3f3f3] text-[#5a5a5a]',
   'Affiliate Member': 'bg-[#f3f3f3] text-[#717171]',
+}
+
+function Publications({ sections }) {
+  if (!sections || sections.length === 0) return null
+
+  return (
+    <div className="mt-10 pt-10 border-t border-[#e2e2dc]">
+      <h2 className="text-lg font-bold text-[#1a1a1a] mb-8 font-sans tracking-tight">Key Publications</h2>
+      {sections.map((section) => (
+        <div key={section.type} className="mb-8">
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-[#999999] mb-3 font-sans">
+            {section.type}
+          </h3>
+          <table className="w-full text-sm border-collapse">
+            <tbody>
+              {section.items.map((item, i) => (
+                <tr key={i} className="border-b border-[#f0f0ec] last:border-b-0">
+                  <td className="py-3 pr-4 align-top text-[#1a1a1a] leading-snug font-medium w-2/3">
+                    {item.title}
+                  </td>
+                  <td className="py-3 align-top text-[#666666] leading-snug text-xs w-1/3">
+                    {item.authors || ''}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 export default async function PersonPage({ params }) {
@@ -37,6 +69,7 @@ export default async function PersonPage({ params }) {
 
   const initials = person.name.split(' ').map((n) => n[0]).join('').slice(0, 2).toUpperCase()
   const bioParagraphs = buildBio(person.bio)
+  const publications = person.publications || []
 
   return (
     <>
@@ -70,7 +103,7 @@ export default async function PersonPage({ params }) {
                 </span>
               )}
               <h1 className="text-3xl md:text-4xl font-bold leading-tight">{person.name}</h1>
-              {person.title && (
+              {person.title && person.title !== person.name && (
                 <p className="text-white/80 mt-1 text-sm">{person.title}</p>
               )}
               {person.institution && (
@@ -121,7 +154,7 @@ export default async function PersonPage({ params }) {
             )}
           </div>
 
-          {/* Bio */}
+          {/* Bio + Publications */}
           <div className="md:col-span-2">
             {bioParagraphs.length > 0 ? (
               <div className="prose-article text-[#2d2d2d]">
@@ -132,6 +165,7 @@ export default async function PersonPage({ params }) {
             ) : (
               <p className="text-[#999999] italic">No biography available.</p>
             )}
+            <Publications sections={publications} />
           </div>
         </div>
       </div>

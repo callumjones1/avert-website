@@ -28,21 +28,33 @@ function cleanTitle(title) {
   return title.replace(/<[^>]*>/g, '').trim()
 }
 
-function getPreview(body, title) {
-  if (!body) return ''
-  const lines = body.split('\n').map(l => l.trim()).filter(Boolean)
+function stripHtml(html) {
+  if (!html) return ''
+  return html
+    .replace(/<\/?(p|h[1-6]|li|br|div)[^>]*>/gi, '\n')
+    .replace(/<[^>]*>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&#\d+;/g, '')
+}
+
+function getPreview(bodyHtml, title) {
+  if (!bodyHtml) return ''
+  const plain = stripHtml(bodyHtml)
+  const lines = plain.split('\n').map(l => l.trim()).filter(Boolean)
   const junk = new RegExp(
     [
       '^Written By$',
       '^Apple User$',
       '^AVERT Research Network$',
       '^Lydia Khalil$',
-      // short date lines like "17 Apr" or "3 May"
       '^\\d{1,2}\\s+\\w{3,}$',
-      // photo credits — lines containing "on Unsplash" or "Photo:"
       'on Unsplash',
       '^Photo:',
-      // lines that are just the title repeated
+      '^Originally published',
+      '^Orginally published',
     ].join('|'),
     'i'
   )
@@ -136,9 +148,9 @@ export default function HomePage() {
                   <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors">
                     {cleanTitle(item.title)}
                   </h3>
-                  {item.body && (
-                    <p className="text-sm text-[#717171] mt-2 line-clamp-2 leading-relaxed">
-                      {getPreview(item.body, item.title)}
+                  {item.body_html && (
+                    <p className="text-sm text-[#717171] mt-3 line-clamp-3 leading-relaxed">
+                      {getPreview(item.body_html, item.title)}
                     </p>
                   )}
                 </Link>
@@ -191,6 +203,11 @@ export default function HomePage() {
                 <h3 className="text-sm font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors">
                   {article.title}
                 </h3>
+                {article.body_html && (
+                  <p className="text-sm text-[#717171] mt-2 line-clamp-3 leading-relaxed">
+                    {getPreview(article.body_html, article.title)}
+                  </p>
+                )}
               </Link>
             ))}
           </div>
