@@ -38,7 +38,10 @@ export default function EventCarousel({ events }) {
               <span className="text-xs bg-[#ebebeb] text-[#717171] px-1.5 py-0.5 font-sans">{event.format}</span>
             )}
           </div>
-          <h3 className="text-sm font-bold text-[#1a1a1a] mb-3 leading-snug">{event.title}</h3>
+          <h3 className="text-sm font-bold text-[#1a1a1a] mb-2 leading-snug">{event.title}</h3>
+          {event.description && (
+            <p className="text-xs text-[#5a5a5a] leading-relaxed mb-3 line-clamp-3">{event.description}</p>
+          )}
           {event.speakers ? (
             <div className="flex flex-col gap-2">
               {event.speakers.map((s, si) => (
