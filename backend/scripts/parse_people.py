@@ -46,12 +46,16 @@ PUB_SECTION_TYPES = {
     "key\xa0publications", "key publications",
 }
 
-FOOTER_MARKERS = (
+# Exact-match footer markers (text nodes that signal end of person content)
+FOOTER_MARKERS_EXACT = {
+    "social media",
+    "subscribe",
+}
+# Prefix-match footer markers
+FOOTER_MARKERS_PREFIX = (
     "back to avert members page",
     "back to avert member page",
-    "social media",
     "we acknowledge the traditional custodians",
-    "subscribe",
     "sign up with your email address",
 )
 
@@ -104,7 +108,7 @@ class PageParser(HTMLParser):
 
 def is_footer(t: str) -> bool:
     tl = t.strip().lower()
-    return any(tl.startswith(m) for m in FOOTER_MARKERS)
+    return tl in FOOTER_MARKERS_EXACT or any(tl.startswith(m) for m in FOOTER_MARKERS_PREFIX)
 
 
 def is_badge(t: str) -> bool:
