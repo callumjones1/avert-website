@@ -70,20 +70,21 @@ export default function Navbar() {
   return (
     <nav className="bg-[#0c7c59] text-white sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        {/* Left: logo + nav */}
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center flex-shrink-0 mr-2">
-            <Image
-              src="/avert-logo-inverse.png"
-              alt="AVERT Research Network"
-              width={140}
-              height={40}
-              className="h-9 w-auto"
-              priority
-            />
-          </Link>
+        {/* Left: logo */}
+        <Link href="/" className="flex items-center flex-shrink-0">
+          <Image
+            src="/avert-logo-inverse.png"
+            alt="AVERT Research Network"
+            width={140}
+            height={40}
+            className="h-9 w-auto"
+            priority
+          />
+        </Link>
 
-          {/* Desktop nav — left-aligned after logo */}
+        {/* Right: nav + search */}
+        <div className="flex items-center gap-2">
+          {/* Desktop nav — right-aligned */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
             <div
@@ -117,10 +118,7 @@ export default function Navbar() {
             </div>
           ))}
           </div>
-        </div>
 
-        {/* Right: search icon + mobile toggle */}
-        <div className="flex items-center">
           <button
             onClick={() => setSearchOpen(v => !v)}
             className="hidden md:block p-2 text-white/80 hover:text-white"
@@ -144,7 +142,7 @@ export default function Navbar() {
               }
             </svg>
           </button>
-        </div>
+        </div>{/* end right group */}
       </div>
 
       {/* Desktop search dropdown — spans full width below the bar */}
