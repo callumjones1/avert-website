@@ -7,8 +7,6 @@ export const metadata = {
 }
 
 export default function NewslettersPage() {
-  const [featured, ...rest] = newslettersData
-
   return (
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
@@ -22,15 +20,8 @@ export default function NewslettersPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-14">
-
-        {/* Featured latest */}
-        {featured && (
-          <NewsletterCard nl={featured} featured />
-        )}
-
-        {/* Archive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-6">
-          {rest.map((nl) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {newslettersData.map((nl) => (
             <NewsletterCard key={nl.slug} nl={nl} />
           ))}
         </div>
@@ -46,46 +37,14 @@ export default function NewslettersPage() {
   )
 }
 
-function NewsletterCard({ nl, featured = false }) {
+function NewsletterCard({ nl }) {
   const isExternal = !nl.body_html && nl.url.startsWith('http')
   const href = nl.body_html ? `/newsletters/${nl.slug}` : nl.url
-  const hasContent = nl.highlights && nl.highlights.length > 0
 
   const Tag = isExternal ? 'a' : Link
   const linkProps = isExternal
     ? { href, target: '_blank', rel: 'noopener noreferrer' }
     : { href }
-
-  if (featured) {
-    return (
-      <Tag
-        {...linkProps}
-        className="group block border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-8 transition-colors mb-0"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-widest font-sans">Latest Issue</span>
-          <span className="text-xs text-[#999999] font-sans">{nl.date}</span>
-        </div>
-        <h2 className="text-xl font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-3">
-          {nl.title}
-        </h2>
-        {nl.summary && (
-          <p className="text-[#5a5a5a] text-sm leading-relaxed mb-5">{nl.summary}</p>
-        )}
-        {hasContent && (
-          <ul className="space-y-2">
-            {nl.highlights.map((h, i) => (
-              <li key={i} className="flex gap-3 text-sm text-[#2d2d2d]">
-                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#0c7c59] mt-1.5" />
-                <span>{h}</span>
-              </li>
-            ))}
-          </ul>
-        )}
-        <p className="text-sm text-[#0c7c59] font-semibold mt-5 font-sans">Read newsletter →</p>
-      </Tag>
-    )
-  }
 
   return (
     <Tag
