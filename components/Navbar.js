@@ -69,9 +69,9 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#0c7c59] text-white sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-6 flex items-center h-16 gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center flex-shrink-0">
           <Image
             src="/avert-logo-inverse.png"
             alt="AVERT Research Network"
@@ -82,8 +82,8 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Desktop nav — left-aligned after logo */}
+        <div className="hidden md:flex items-center gap-1 flex-1">
           {navItems.map((item) => (
             <div
               key={item.label}
@@ -120,7 +120,7 @@ export default function Navbar() {
         {/* Desktop search icon — always just an icon, no inline expansion */}
         <button
           onClick={() => setSearchOpen(v => !v)}
-          className="hidden md:block p-2 ml-2 text-white/80 hover:text-white"
+          className="hidden md:block p-2 ml-auto text-white/80 hover:text-white"
           aria-label="Search"
         >
           {searchOpen

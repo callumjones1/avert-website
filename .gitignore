@@ -44,8 +44,23 @@ next-env.d.ts
 /backend/.venv/
 /backend/__pycache__/
 
-# raw html source files
+# raw html source files (scraped source, not needed in repo)
 /avert-commentary/
 /avert-impact/
+/avert-about/
+/avert-join/
+/avert-newsletters/
+/avert-past-symposiums/
+/avert-people/
+/avert-webinars/
+
+# google drive temp uploads
+/.tmp.driveupload/
+
+# design assets
+*.pdf
+
+# local claude settings
+.claude/settings.local.json
 
 .vercel

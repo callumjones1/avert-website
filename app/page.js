@@ -4,7 +4,6 @@ import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
 import eventsData from '@/data/events.json'
 import SubscribeForm from '@/components/SubscribeForm'
-import SearchBar from '@/components/SearchBar'
 import WebinarCarousel from '@/components/WebinarCarousel'
 import EventCarousel from '@/components/EventCarousel'
 
@@ -105,7 +104,6 @@ export default function HomePage() {
                 Stay Informed
               </a>
             </div>
-            <SearchBar className="max-w-xl" />
           </div>
         </div>
       </section>
