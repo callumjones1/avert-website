@@ -4,10 +4,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import people from '@/data/people.json'
 
-const ROLE_ORDER = { 'Convenor': 0, 'Coordinator': 1, 'Executive Committee': 2, 'Research Member': 3, 'Affiliate Member': 4 }
+const ROLE_ORDER = { 'Convenor': 0, 'Coordinator': 1, 'Technical Coordinator': 1, 'Executive Committee': 2, 'Research Member': 3, 'Affiliate Member': 4 }
 const ROLE_COLOURS = {
   'Convenor': 'bg-[#0c7c59] text-white',
   'Coordinator': 'bg-[#0c7c59]/80 text-white',
+  'Technical Coordinator': 'bg-[#0c7c59]/80 text-white',
   'Executive Committee': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/30',
   'Research Member': 'bg-[#f3f3f3] text-[#5a5a5a]',
   'Affiliate Member': 'bg-[#f3f3f3] text-[#717171]',
@@ -37,7 +38,7 @@ export default function PeoplePage() {
       })
   }, [search, roleFilter])
 
-  const roles = ['Convenor', 'Coordinator', 'Executive Committee', 'Research Member', 'Affiliate Member']
+  const roles = ['Convenor', 'Coordinator', 'Technical Coordinator', 'Executive Committee', 'Research Member', 'Affiliate Member']
 
   return (
     <>
