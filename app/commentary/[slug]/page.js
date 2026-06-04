@@ -83,7 +83,7 @@ export default async function CommentaryArticle({ params }) {
 
       {/* Hero image */}
       {article.hero_image && (
-        <div className="max-w-7xl mx-auto px-6 pt-10">
+        <div className="max-w-2xl mx-auto px-6 pt-10">
           <div className="relative w-full h-64 md:h-80 overflow-hidden">
             <Image
               src={article.hero_image}
@@ -97,13 +97,13 @@ export default async function CommentaryArticle({ params }) {
       )}
 
       {/* Article body */}
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-2xl mx-auto px-6 py-12">
         <div
-          className="max-w-2xl prose-article"
+          className="prose-article"
           dangerouslySetInnerHTML={{ __html: bodyHtml }}
         />
         {article.original_url && (
-          <div className="mt-10 pt-6 border-t border-[#e2e2dc] max-w-2xl">
+          <div className="mt-10 pt-6 border-t border-[#e2e2dc]">
             <a
               href={article.original_url}
               target="_blank"
