@@ -1,14 +1,26 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 
-const VISIBLE = 3
+function useVisible() {
+  const [visible, setVisible] = useState(3)
+  useEffect(() => {
+    const update = () => setVisible(window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
+  return visible
+}
 
 export default function WebinarCarousel({ webinars }) {
-  const max = Math.max(0, webinars.length - VISIBLE)
+  const visible = useVisible()
+  const max = Math.max(0, webinars.length - visible)
   const [idx, setIdx] = useState(0)
 
   const next = useCallback(() => setIdx(i => i >= max ? 0 : i + 1), [max])
   const prev = () => setIdx(i => i <= 0 ? max : i - 1)
+
+  useEffect(() => { setIdx(i => Math.min(i, max)) }, [max])
 
   useEffect(() => {
     const id = setInterval(next, 5000)
@@ -20,10 +32,10 @@ export default function WebinarCarousel({ webinars }) {
       <div className="overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${idx * (100 / VISIBLE)}%)` }}
+          style={{ transform: `translateX(-${idx * (100 / visible)}%)` }}
         >
           {webinars.map((w, i) => (
-            <div key={i} className="flex-shrink-0 px-3" style={{ width: `${100 / VISIBLE}%` }}>
+            <div key={i} className="flex-shrink-0 px-3" style={{ width: `${100 / visible}%` }}>
               {w.videoId ? (
                 <a
                   href={`https://www.youtube.com/watch?v=${w.videoId}`}
