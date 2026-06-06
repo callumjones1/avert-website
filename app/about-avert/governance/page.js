@@ -51,7 +51,7 @@ function PersonCard({ person, size = 'sm' }) {
 
 export default function GovernancePage() {
   const convenors = peopleData.filter(p => p.role === 'Convenor')
-  const coordinators = peopleData.filter(p => p.role === 'Coordinator')
+  const coordinators = peopleData.filter(p => p.role?.includes('Coordinator'))
   const execCommittee = peopleData.filter(p => p.role === 'Executive Committee')
 
   return (
