@@ -4,45 +4,38 @@ import peopleData from '@/data/people.json'
 
 export const metadata = { title: 'Structure & Governance — AVERT Research Network' }
 
-function PersonCard({ person, size = 'sm' }) {
-  const imgSrc = person.headshot ? `/headshots/${person.headshot}` : null
-  const large = size === 'lg'
-
+function PersonCard({ person }) {
   return (
     <Link
       href={`/people/${person.slug}`}
-      className="group flex flex-col border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors"
+      className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white overflow-hidden transition-colors flex"
     >
-      <div className={`relative w-full overflow-hidden bg-[#f3f3f3] flex-shrink-0 ${large ? 'h-52' : 'h-36'}`}>
-        {imgSrc ? (
+      <div className="flex-shrink-0 w-28 relative overflow-hidden bg-[#e8f5f0]">
+        {person.headshot ? (
           <Image
-            src={imgSrc}
+            src={`/headshots/${person.headshot}`}
             alt={person.name}
             fill
             className="object-cover object-top"
-            sizes={large ? '(max-width:768px) 100vw, 33vw' : '(max-width:768px) 50vw, 20vw'}
+            sizes="112px"
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-3xl font-bold text-[#c8c8c8]">
+          <div className="absolute inset-0 flex items-center justify-center bg-[#e8f5f0]">
+            <span className="text-2xl font-bold text-[#0c7c59]">
               {person.name.split(' ').map(w => w[0]).join('').slice(0, 2)}
             </span>
           </div>
         )}
       </div>
-      <div className={`${large ? 'p-5' : 'p-3'}`}>
-        <p className={`font-bold text-[#0c7c59] group-hover:text-[#0a6b4d] leading-snug transition-colors ${large ? 'text-sm' : 'text-xs'}`}>
+      <div className="flex-1 min-w-0 p-4 flex flex-col">
+        <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors text-sm mb-1">
           {person.name}
-        </p>
+        </h3>
         {person.title && (
-          <p className={`text-[#717171] mt-0.5 leading-snug ${large ? 'text-xs' : 'text-xs'}`}>
-            {person.title}
-          </p>
+          <p className="text-xs text-[#717171] mb-0.5 leading-snug line-clamp-2">{person.title}</p>
         )}
         {person.institution && (
-          <p className={`text-[#999999] mt-0.5 ${large ? 'text-xs' : 'text-xs'}`}>
-            {person.institution}
-          </p>
+          <p className="text-xs text-[#999999] leading-snug">{person.institution}</p>
         )}
       </div>
     </Link>
@@ -86,8 +79,8 @@ export default function GovernancePage() {
               <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Convenors</h2>
               <div className="flex-1 h-px bg-[#e2e2dc]" />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {convenors.map(p => <PersonCard key={p.slug} person={p} size="lg" />)}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {convenors.map(p => <PersonCard key={p.slug} person={p} />)}
             </div>
           </section>
         )}
@@ -99,8 +92,8 @@ export default function GovernancePage() {
               <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Executive Committee</h2>
               <div className="flex-1 h-px bg-[#e2e2dc]" />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {execCommittee.map(p => <PersonCard key={p.slug} person={p} size="sm" />)}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {execCommittee.map(p => <PersonCard key={p.slug} person={p} />)}
             </div>
           </section>
         )}
@@ -112,8 +105,8 @@ export default function GovernancePage() {
               <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Coordinators</h2>
               <div className="flex-1 h-px bg-[#e2e2dc]" />
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {coordinators.map(p => <PersonCard key={p.slug} person={p} size="sm" />)}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {coordinators.map(p => <PersonCard key={p.slug} person={p} />)}
             </div>
           </section>
         )}
