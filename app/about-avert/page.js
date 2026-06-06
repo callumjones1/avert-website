@@ -69,8 +69,8 @@ export default function AboutPage() {
             <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-6">
               <h3 className="font-bold text-[#1a1a1a] text-xs uppercase tracking-wide mb-4 font-sans">About the Network</h3>
               <ul className="space-y-3 text-sm">
-                <li><Link href="/about/governance" className="text-[#0c7c59] hover:underline">Structure & Governance →</Link></li>
-                <li><Link href="/about/faqs" className="text-[#0c7c59] hover:underline">FAQs →</Link></li>
+                <li><Link href="/about-avert/governance" className="text-[#0c7c59] hover:underline">Structure & Governance →</Link></li>
+                <li><Link href="/about-avert/faqs" className="text-[#0c7c59] hover:underline">FAQs →</Link></li>
                 <li><Link href="/people" className="text-[#0c7c59] hover:underline">Our Researchers →</Link></li>
                 <li><Link href="/opportunities" className="text-[#0c7c59] hover:underline">Join AVERT →</Link></li>
               </ul>

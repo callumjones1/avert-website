@@ -221,7 +221,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold text-[#1a1a1a]">Recent Webinars</h2>
             <div className="w-12 h-0.5 bg-[#0c7c59] mt-2" />
           </div>
-          <Link href="/events/webinars" className="text-sm text-[#0c7c59] hover:underline font-medium font-sans">
+          <Link href="/events-webinars" className="text-sm text-[#0c7c59] hover:underline font-medium font-sans">
             Full archive →
           </Link>
         </div>

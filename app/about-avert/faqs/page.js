@@ -59,7 +59,7 @@ export default function FaqsPage() {
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
         <div className="max-w-7xl mx-auto">
-          <Link href="/about" className="text-white/60 hover:text-white text-sm mb-6 inline-block font-sans transition-colors">← About</Link>
+          <Link href="/about-avert" className="text-white/60 hover:text-white text-sm mb-6 inline-block font-sans transition-colors">← About</Link>
           <h1 className="text-4xl font-bold mb-3 mt-4">Frequently Asked Questions</h1>
           <div className="w-12 h-0.5 bg-white/40" />
         </div>

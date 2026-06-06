@@ -137,7 +137,7 @@ export default function EventsPage() {
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/events/webinars"
+              href="/events-webinars"
               className="flex-1 border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors group"
             >
               <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Archive</p>

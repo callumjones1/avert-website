@@ -7,11 +7,11 @@ import { useRouter } from 'next/navigation'
 const navItems = [
   {
     label: 'About',
-    href: '/about',
+    href: '/about-avert',
     children: [
-      { label: 'About AVERT', href: '/about' },
-      { label: 'Structure & Governance', href: '/about/governance' },
-      { label: 'FAQs', href: '/about/faqs' },
+      { label: 'About AVERT', href: '/about-avert' },
+      { label: 'Structure & Governance', href: '/about-avert/governance' },
+      { label: 'FAQs', href: '/about-avert/faqs' },
     ],
   },
   { label: 'People', href: '/people' },
@@ -30,7 +30,7 @@ const navItems = [
     href: '/events',
     children: [
       { label: 'Upcoming Events', href: '/events' },
-      { label: 'Webinars', href: '/events/webinars' },
+      { label: 'Webinars', href: '/events-webinars' },
       { label: 'Symposiums', href: '/events/symposiums' },
     ],
   },
