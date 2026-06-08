@@ -48,7 +48,11 @@ function Publications({ sections }) {
               {section.items.map((item, i) => (
                 <tr key={i} className="border-b border-[#f0f0ec] last:border-b-0">
                   <td className="py-3 pr-4 align-top text-[#1a1a1a] leading-snug w-2/3">
-                    <span className="font-medium">{item.title}</span>
+                    {item.url ? (
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="font-medium text-[#0c7c59] hover:underline">{item.title}</a>
+                    ) : (
+                      <span className="font-medium">{item.title}</span>
+                    )}
                     {item.in && (
                       <span className="block text-xs text-[#888888] mt-0.5">
                         in <em>{item.in}</em>

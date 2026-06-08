@@ -5075,16 +5075,36 @@
     "name": "Dr Andrew Zammit",
     "title": "Dr Andrew Zammit, Postdoctoral Research Fellow",
     "institution": "Victoria University",
-    "role": "Research Member",
-    "research_areas": "Terrorism; Violent extremism; Security; National security; International relations; Human rights.",
-    "bio": "Dr. Andrew Zammit is a Postdoctoral Research Fellow at Victoria University, focusing on terrorism and security studies, including violent extremism in Australia and the relationship between terrorism and transnational dimensions of armed conflict. Since 2010, he has been employed on terrorism and security related research projects at Monash University and Victoria University with government partners including Victoria Police, the Department of Justice and Community Safety Victoria, the Defence Science and Technology Group, the Australian Federal Police and the NSW Premier's Department. He is on the editorial board of the Journal of Policing, Intelligence and Counter Terrorism, and is a member of the Victorian Government’s Expert Advisory Committee on Countering Violent Extremism. He was recently awarded a National Intelligence Postdoctoral Grant for the project “How events abroad shape threats at home: grounded approaches for forecasting violent extremism”.",
-    "email": "contact@andrewzammit.org",
+    "role": "Executive Committee",
+    "research_areas": "Terrorism; Violent extremism; Security; National security; International relations; Human rights; Intelligence studies; Public policy",
+    "bio": "Dr. Andrew Zammit is a Postdoctoral Research Fellow at Victoria University. His research career in political science, including both public-facing research and applied research with government partners, has focused on terrorism and violent extremism in Australia along with other areas of public policy and national security. He is an Associate Editor of the Journal of Policing, Intelligence and Counter Terrorism and a member of the Victorian Government’s Expert Advisory Committee on Countering Violent Extremism. He was recently awarded a National Intelligence Postdoctoral Grant for the project “How events abroad shape threats at home: grounded approaches for forecasting violent extremism”.",
+    "email": "Andrew.zammit@vu.edu.au",
     "headshot": "andrew-zammit.jpg",
     "image_url": "https://images.squarespace-cdn.com/content/v1/6155080406f6bc53e0ef6a1b/1647304642778-UITN2OO9WVU92FV9EA16/andrew.png",
     "publications": [
       {
         "type": "Journal Articles",
         "items": [
+          {
+            "title": "The Bondi Attack: The Islamic State’s Strategic Shifts and Jihadi Tactics in Australia (2026)",
+            "authors": "Zammit A and West LJ",
+            "url": "https://ctc.westpoint.edu/the-bondi-attack-the-islamic-states-strategic-shifts-and-jihadi-tactics-in-australia/"
+          },
+          {
+            "title": "Countering violent extremism research and practice in a time of upheaval: the FBI’s Beyond Belief handbook (2025)",
+            "authors": "Zammit A",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/18335330.2025.2511102"
+          },
+          {
+            "title": "Composite violent extremism: conceptualizing attackers who increasingly challenge traditional categories of terrorism (2025)",
+            "authors": "Gartenstein-Ross D, Chace-Donahue E, Urban M and Zammit A",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/1057610X.2023.2194133?src="
+          },
+          {
+            "title": "“The smallest act you do in their lands is more beloved to us than the biggest act done here”: when do an armed movement’s transnational supporters turn to terrorism at home? (2024)",
+            "authors": "Zammit A",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/1057610X.2024.2403059"
+          },
           {
             "title": "Revisiting the relationship between academics and national security practitioners (2021)",
             "authors": "Ilardi GJ, Smith D and Zammit A"
@@ -5108,13 +5128,20 @@
           {
             "title": "What is countering violent extremism? Exploring CVE policy and practice in Australia (2016)",
             "authors": "Harris-Hogan S, Barrelle K and Zammit A"
-          },
+          }
+        ]
+      },
+      {
+        "type": "Book Chapters",
+        "items": [
           {
-            "title": "Book Chapters"
+            "title": "What strategic competition means for counterterrorism (2022)",
+            "authors": "Zammit A",
+            "url": "https://ad-aspi.s3.ap-southeast-2.amazonaws.com/2022-11/ASPI%20Counterterrorism%20YB2022-v2.pdf?VersionId=L0obL2v5GNW7aM0SCRPw0pmNC5F08Td9"
           },
           {
             "title": "Counterterrorism yearbook 2019: Australia (2019)",
-            "authors": "In  Counterterrorism yearbook 2019,  Kfir I and Grice G"
+            "authors": "In Counterterrorism yearbook 2019, Kfir I and Grice G"
           }
         ]
       },
@@ -5128,6 +5155,39 @@
           {
             "title": "Australian foreign fighters: risks and responses (2015)",
             "authors": "Zammit A"
+          }
+        ]
+      },
+      {
+        "type": "Grants and Projects",
+        "items": [
+          {
+            "title": "How events abroad shape threats at home: grounded approaches for forecasting violent extremism",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC) funded by the Australian Government through the Office of National Intelligence. 2025–2027."
+          },
+          {
+            "title": "The use of media baiting strategies by hate groups and extremists",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC) partnered with the New South Wales Premier’s Department. 2025–2026."
+          },
+          {
+            "title": "National Security Prioritisation Assessment Tool (NS-PAT) validity and reliability assessment",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC) partnered with Victoria Police. 2024–2025."
+          },
+          {
+            "title": "Applied Security Science Partnership (ASSP) research database",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC) partnered with the Department of Home Affairs. 2024–2025."
+          },
+          {
+            "title": "Strengthening processes to monitor client progress within CVE interventions",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC) partnered with Victoria Police. 2024–2025."
+          },
+          {
+            "title": "REAP Training Refresh",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC) partnered with the Department of Justice and Community Safety Victoria. 2022–2024."
+          },
+          {
+            "title": "Destroying the world to save it: Why security studies needs to engage with the planetary health agenda",
+            "funder": "Victoria University’s Institute for Sustainable Industries & Liveable Cities (ISILC), funded by an internal grant from Victoria University and with in-kind support from the Defence Science and Technology Group. 2020–2021."
           }
         ]
       }
@@ -5164,6 +5224,65 @@
           {
             "title": "Training Modules on Gender and Violent Extremism in Asia (2020)",
             "authors": "Bronitt S, Teitt S, Dunn M, Duriesmith D, Zarrabi B, Vogel L, Ryan L, and Zimmerman S."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "maria-osullivan",
+    "name": "Associate Professor Maria O’Sullivan",
+    "title": "Associate Professor Maria O’Sullivan",
+    "institution": "Deakin University",
+    "role": "Research Member",
+    "research_areas": "Human rights law; Protest; Political violence; Hate speech; Counter-extremism; Terrorism law",
+    "bio": "Maria O’Sullivan is an Associate Professor at the Deakin Law School and has written on a broad range of human rights issues relating to counter-extremism and terrorism law. Her work has included scholarly papers on pseudolaw and sovereign citizens, the human rights implications of national security and the use of political violence. She is currently undertaking a three-year research project on the right to protest and has made a number of submissions to government inquiries on hate speech and counter-extremism measures. She is a regular media commentator on a broad range of rights issues.",
+    "email": "m.osullivan@deakin.edu.au",
+    "headshot": "maria-osullivan.jpg",
+    "profile_url": "https://experts.deakin.edu.au/63718-maria-o'sullivan",
+    "orcid": "https://orcid.org/0000-0003-4673-5240",
+    "linkedin": "linkedin.com/in/maria-o-sullivan-5b17795",
+    "publications": [
+      {
+        "type": "Books",
+        "items": [
+          {
+            "title": "International Law and the Regulation of Protest (2026)",
+            "authors": "Dastyari A and O’Sullivan M (eds)",
+            "in": "Routledge",
+            "url": "https://www.taylorfrancis.com/books/edit/10.4324/9781003527176/international-law-regulation-protest-azadeh-dastyari-maria-sullivan"
+          }
+        ]
+      },
+      {
+        "type": "Journal Articles",
+        "items": [
+          {
+            "title": "Climate Protest and the Right of Resistance in International Law (2026)",
+            "authors": "O’Sullivan M",
+            "in": "Heidelberg Journal of International Law, Issue 2"
+          },
+          {
+            "title": "The Role of Electoral Commissions in Countering Disinformation — Implications for Neutrality and Trust (2025)",
+            "authors": "O’Sullivan M",
+            "in": "Public Law 16–24"
+          }
+        ]
+      },
+      {
+        "type": "Book Chapters",
+        "items": [
+          {
+            "title": "Pseudolaw and Legal Fictions: Vaccine Mandate Claims During the Covid-19 Pandemic and Future Implications (2025)",
+            "authors": "O’Sullivan M",
+            "in": "Pseudolaw and Sovereign Citizens",
+            "editors": "Hobbs H, Young S and McIntyre J (eds), Hart"
+          },
+          {
+            "title": "National Security and Human Rights (2024)",
+            "authors": "O’Sullivan M",
+            "in": "National Security Law in Australia",
+            "editors": "Ireland-Piper D (ed), Federation Press"
           }
         ]
       }
