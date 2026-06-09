@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import newsData from '@/data/news.json'
 import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
@@ -85,8 +86,8 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="bg-[#0c7c59] text-white">
-        <div className="max-w-[1440px] mx-auto px-6 py-14 md:py-20">
-          <div className="max-w-3xl">
+        <div className="max-w-[1440px] mx-auto px-6 py-14 md:py-20 flex items-center gap-12">
+          <div className="flex-1 max-w-2xl">
             <div className="inline-block border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-6 font-sans">
               Addressing Violent Extremism and Radicalisation to Terrorism Research Network
             </div>
@@ -116,6 +117,15 @@ export default function HomePage() {
                 Stay Informed
               </a>
             </div>
+          </div>
+          <div className="hidden lg:flex flex-1 justify-center items-center">
+            <Image
+              src="/AVERT_Mark_Inverse.png"
+              alt="AVERT mark"
+              width={420}
+              height={420}
+              className="w-full max-w-[420px] opacity-90"
+            />
           </div>
         </div>
       </section>
