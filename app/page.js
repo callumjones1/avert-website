@@ -88,7 +88,7 @@ export default function HomePage() {
         <div className="max-w-[1440px] mx-auto px-6 py-14 md:py-20">
           <div className="max-w-3xl">
             <div className="inline-block border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-6 font-sans">
-              Australian Research Network
+              Addressing Violent Extremism and Radicalisation to Terrorism Research Network
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
               Understanding and Reducing Violent Extremism
