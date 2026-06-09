@@ -46,7 +46,11 @@ export default async function CommentaryArticle({ params }) {
     ? (article.body_html || '').replace(/^\s*<img[^>]*>\s*/i, '')
     : (article.body_html || '')
 
-  const profileSlug = authorSlug(article.author)
+  // Split "A and B" into individually-resolved author parts
+  const authorParts = (article.author || '').split(' and ').map(name => ({
+    name: name.trim(),
+    slug: authorSlug(name.trim()),
+  }))
 
   return (
     <>
@@ -61,13 +65,17 @@ export default async function CommentaryArticle({ params }) {
           </h1>
           <div className="flex items-center gap-3 flex-wrap border-t border-white/20 pt-5">
             {article.author && (
-              profileSlug
-                ? <Link href={`/people/${profileSlug}`} className="text-sm font-bold text-white hover:text-white/80 uppercase tracking-wide font-sans transition-colors">
-                    {article.author}
-                  </Link>
-                : <span className="text-sm font-bold text-white uppercase tracking-wide font-sans">
-                    {article.author}
+              <span className="text-sm font-bold text-white uppercase tracking-wide font-sans">
+                {authorParts.map((part, i) => (
+                  <span key={part.name}>
+                    {i > 0 && ' and '}
+                    {part.slug
+                      ? <Link href={`/people/${part.slug}`} className="hover:text-white/80 transition-colors">{part.name}</Link>
+                      : part.name
+                    }
                   </span>
+                ))}
+              </span>
             )}
             {article.date && (
               <span className="text-white/60 text-sm font-sans">· {article.date}</span>
