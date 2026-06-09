@@ -88,16 +88,22 @@ export default function HomePage() {
       <section className="bg-[#0c7c59] text-white">
         <div className="max-w-[1440px] mx-auto px-6 py-14 md:py-20 flex items-center gap-12">
           <div className="flex-1 max-w-2xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 font-sans">
+              Understanding and Reducing Violent Extremism
+            </h1>
             <div className="inline-block border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-6 font-sans">
               Addressing Violent Extremism and Radicalisation to Terrorism
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 font-sans">
-              Understanding and Reducing Violent Extremism
-            </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
               AVERT brings together Australia's leading social scientists and humanities researchers to produce evidence-based research that matters — for policy, practice, and public good.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
+              <Link
+                href="/about-avert"
+                className="bg-white text-[#0c7c59] hover:bg-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+              >
+                About
+              </Link>
               <Link
                 href="/publications"
                 className="bg-white text-[#0c7c59] hover:bg-white/90 px-7 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
