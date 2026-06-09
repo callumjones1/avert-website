@@ -90,7 +90,7 @@ export default function HomePage() {
             <div className="inline-block border border-white/30 text-white/80 text-xs font-semibold uppercase tracking-widest px-3 py-1 mb-6 font-sans">
               Addressing Violent Extremism and Radicalisation to Terrorism Research Network
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 font-sans">
               Understanding and Reducing Violent Extremism
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
