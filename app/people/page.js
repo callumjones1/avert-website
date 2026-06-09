@@ -90,7 +90,7 @@ export default function PeoplePage() {
               <div className="flex-shrink-0 w-28 relative overflow-hidden bg-[#e8f5f0]">
                 {person.headshot ? (
                   <Image
-                    src={`/headshots/${person.headshot}`}
+                    src={`/headshots-thumb/${person.headshot}`}
                     alt={person.name}
                     fill
                     className="object-cover object-top"

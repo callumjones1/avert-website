@@ -98,7 +98,7 @@ export default async function PersonPage({ params }) {
             {person.headshot ? (
               <div className="w-20 h-20 rounded-full overflow-hidden bg-white/20 flex-shrink-0 border-2 border-white/40">
                 <Image
-                  src={`/headshots/${person.headshot}`}
+                  src={`/headshots-thumb/${person.headshot}`}
                   alt={person.name}
                   width={80}
                   height={80}
