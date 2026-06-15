@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import newsData from '@/data/news.json'
 
 export const metadata = {
@@ -28,17 +27,6 @@ export default function NewsPage() {
               href={`/news/${item.slug}`}
               className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white transition-colors overflow-hidden flex flex-col"
             >
-              {item.hero_image && (
-                <div className="relative w-full h-40 overflow-hidden bg-[#e8f5f0] flex-shrink-0">
-                  <Image
-                    src={item.hero_image}
-                    alt={item.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    unoptimized
-                  />
-                </div>
-              )}
               <div className="p-6 flex flex-col flex-1">
                 {item.date && (
                   <p className="text-xs text-[#999999] uppercase tracking-wide mb-3 font-sans">{item.date}</p>
