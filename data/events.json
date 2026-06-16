@@ -43,6 +43,26 @@
     "type": "upcoming",
     "speakers": [
       {
+        "name": "Dr Ashton Kingdon",
+        "title": "Lecturer in Criminology and Director of the Centre for Criminology in the Digital Age, University of Southampton",
+        "bio": "Ashton Kingdon is a Lecturer in Criminology and Director of the Centre for Criminology in the Digital Age at the University of Southampton. She is also an Advisory Board Member at the Accelerationism Research Consortium, a research fellow at VOX-Pol, a core member of the Extremism and Gaming Research Network (EGRN), a member of the steering committee for the British Society of Criminology's Hate Crime Network and former head of Technology and Research Ethics at the Centre for Analysis of the Radical Right. Her research is interdisciplinary, combining criminology, history, and computer science to explore the ways in which technology and imagery accelerate radicalisation, as well as the relationship between climate change and terrorism.",
+        "image": "ashton-kingdon.png",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Thursday 30 July 2026, 16:00–17:00 AEST",
+    "date_other": "7:00–8:00 AM BST",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "Built to Burn: AI Data Centre Infrastructure and the Emerging Landscape of Political Violence",
+    "description": "In this presentation, Dr Kingdon will examine whether artificial intelligence (AI) data centres are emerging as targets for terrorism and political violence. Drawing on 30 expert interviews and a series of multi-stakeholder workshops involving intelligence practitioners, terrorism researchers, AI security specialists, and civil society organisations, the research finds broad agreement that data centres represent a growing security concern, but significant disagreement over who the primary threat actors are.\n\nThe research argues that current debates focus too narrowly on environmental activists while overlooking how environmental harm, resource competition, perceived exclusion, and the criminalisation of protest can contribute to grievance accumulation and, in some contexts, political violence. It explores how AI infrastructure is situated within a diverse threat landscape that includes jihadist, far-right, anarchist, and other politically motivated actors, and considers the implications for assessing and mitigating emerging threats to critical digital infrastructure.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_-egz4Af6T1KP9gdpB8RoPA",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
+    "speakers": [
+      {
         "name": "Daniel Koehler",
         "title": "Head of Research, Terrorism Analysis and Research Unit, Joint Counterterrorism Center at the State Bureau of Investigation; Co-Director, Competence Center Against Extremism",
         "bio": "Daniel Koehler holds a PhD in political science and studied comparative religion, political science and economics at Princeton University and Free University Berlin. His work focuses on terrorism (far-right, jihadist and left-wing), radicalisation, and deradicalisation processes and programs. He is co-founder of the first peer-reviewed open-access journal on deradicalisation (journal-derad.com). He has served as a court expert on deradicalisation in the United States and as a Research Fellow at the Royal United Services Institute (RUSI). Currently, Daniel is Head of Research at the Terrorism Analysis and Research Unit within the Joint Counterterrorism Center at the State Bureau of Investigation, and co-Director at the Competence Center Against Extremism in Baden-Württemberg.",
