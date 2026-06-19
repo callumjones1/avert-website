@@ -30,11 +30,25 @@ export default function OpportunitiesPage() {
               <div className="w-12 h-0.5 bg-[#0c7c59] mb-6" />
             </div>
 
-            <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8 text-center">
-              <p className="text-[#717171] font-sans text-sm">There are no opportunities listed at this time.</p>
-              <p className="text-[#999999] font-sans text-xs mt-2">
-                Subscribe to the <Link href="/#newsletter" className="text-[#0c7c59] hover:underline">AVERT newsletter</Link> to be notified when new opportunities are posted.
+            <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8">
+              <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">Call for Papers</p>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
+                18th Annual International Conference of the Society for Terrorism Research (STR): Continuity and Change in the Character of Terrorism
+              </h3>
+              <p className="text-[#5a5a5a] text-sm font-sans mb-4">
+                9–11 December 2026 &middot; Coogee Bay Hotel, Sydney, Australia &middot; Abstract submissions due 31 August 2026
               </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                The Society for Terrorism Research invites submissions addressing evolving profiles, motivations, actors, tactics, ideologies, and strategies of terrorism, and their implications for counter-terrorism and prevention/countering violent extremism policy and practice. Track categories include conceptual and definitional debates, causes and consequences of terrorism, (de-)radicalisation, psychology and ideologies of terrorism, single-issue and lone-actor terrorism, cyber-terrorism, gender and race and terrorism, (pro-)state terrorism, the crime-terror nexus, warfare and terrorism, and counter-terrorism. Papers, posters, panels (4+ authors), roundtables (3+ discussants), and book talks (3+ discussants) are welcome.
+              </p>
+              <a
+                href="https://indico.global/event/18285/abstracts/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+              >
+                Submit an Abstract →
+              </a>
             </div>
           </div>
 
