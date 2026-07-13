@@ -111,16 +111,26 @@ export default function EventsPage() {
                           <Image src={`/images/${event.org_logo}`} alt="Organisation logo" fill className="object-contain object-left" />
                         </div>
                       )}
-                      {event.register_url && (
-                        <a
-                          href={event.register_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-block bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-                        >
-                          Register via Zoom →
-                        </a>
-                      )}
+                      <div className="flex flex-wrap items-center gap-4">
+                        {event.register_url && (
+                          <a
+                            href={event.register_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                          >
+                            Register via Zoom →
+                          </a>
+                        )}
+                        {event.detail_url && (
+                          <Link
+                            href={event.detail_url}
+                            className="inline-block bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                          >
+                            {event.detail_label || 'Learn More →'}
+                          </Link>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

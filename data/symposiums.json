@@ -1,5 +1,78 @@
 [
   {
+    "year": "2026",
+    "slug": "2026",
+    "title": "AVERT National Research Symposium 2026",
+    "theme": "Youth and Extremism: Thresholds, Interventions, Connections",
+    "dates": "26–27 November 2026",
+    "location": "Macquarie University City Campus, Sydney, Australia",
+    "description": "The 2026 AVERT National Research Symposium is an invitation-only in-person event taking place on 26–27 November 2026 at Macquarie University's City Campus (Level 24/123 Pitt St), Sydney, Australia.\n\nThis year, we are offering a nationally focused symposium that allows a deep dive into issues of national and strategic priority for the CVE (countering violent extremism) and CT (counterterrorism) research and practitioner communities in Australia.\n\nBringing together researchers, practitioners, analysts and policymakers from across Australia, this year's National Symposium will explore pressing and unresolved challenges in understanding and addressing youth radicalisation, online influences and resources; challenges in youth engagement with violent extremist narratives and subcultures, and the growing involvement of young people in diverse expressions of extremist intent and violence.\n\nOverseas presenters can register to present virtually. Australian presenters may also be able to present online in very limited circumstances, at the discretion of, and with approval from, the Symposium Organising Committee.",
+    "keynotes": [
+      {
+        "name": "Dr Ghayda Hassan",
+        "institution": "Professor of Clinical Psychology, Université du Québec à Montréal (UQÀM); Director & Founder, CPN-PREV",
+        "bio": "Dr Ghayda Hassan is a clinical psychologist and professor of clinical psychology at UQÀM. She has several research, clinical, and community-based national and international affiliations. She is the director of the Canada Practitioners Network for the Prevention of Extremist Violence (CPN-PREV, funded by Public Safety Canada). She is also a UNESCO co-chair on Prevention of Violence Radicalisation, as well as a researcher and clinical consultant at the SHERPA-RAPS team and the CIUSSS-COIM. She is a researcher, clinician, and policy consultant in matters of intervention in the context of violence (radicalisation, family violence, and war). Her systematic reviews, research, and clinical activities are centred around four main areas of clinical cultural psychology: social suffering, inter-community relations, radicalisation, and extremist violence; intervention in family violence and cultural diversity; identity, belonging, and mental health of children and adolescents from ethnic/religious minorities; and working with vulnerable immigrants and refugees.",
+        "image": "ghayda-hassan.webp",
+        "image_dir": "headshots"
+      }
+    ],
+    "cfp": {
+      "themes": [
+        "Radicalisation pathways, risk factors, and threshold indicators for violent extremism among young people",
+        "Assessment, intervention, diversion, and treatment approaches in youth CVE contexts",
+        "The role of parents/guardians/caretakers for young people in either prevention and intervention approaches and frameworks or in cross-generational radicalisation pathways",
+        "Issues in assessing risk and threat related to youth radicalisation (including various risk and threat assessment tools and measures)",
+        "The role of online environments, peer networks, and family dynamics in youth radicalisation",
+        "Psychologies of youth violent extremism, including mental health and neurodiversity",
+        "Gendered dimensions of youth violent extremism, including misogyny and the manosphere",
+        "Demographic and criminogenic risk factors (including gender, age, upbringing, socio-economic status)",
+        "Education system responses and primary prevention strategies",
+        "Non-extremist criminal justice intersections with youth violent extremism",
+        "Practitioner and policymaker perspectives, including de-identified case studies"
+      ],
+      "encouraged": [
+        "Offer innovative perspectives and conceptual approaches to youth radicalisation",
+        "Consider the perspectives and voices of young people and their experiences navigating violent extremist propaganda and environments",
+        "Where possible, draw on empirical or primary de-identified data"
+      ],
+      "categories": [
+        {
+          "name": "Individual Papers",
+          "description": "Traditional academic papers may be for a maximum of 20 minutes, not including question time. Please include the name and title of the lead presenter and any co-presenters along with a 300-word maximum abstract."
+        },
+        {
+          "name": "Themed Presentation Panels",
+          "description": "Panels consist of a maximum of 3 papers of up to 15 minutes each, not including question time, that address a common question or research/policy area. Please provide the title of the panel, details of the panel moderator and panel presenters (name, title, affiliation and paper abstracts), a 200-word maximum abstract for the panel overview, and individual panel paper abstracts (200-word maximum). Panels generally have up to 4 participants (including the panel chair). We encourage panels that combine academic and practitioner contributors."
+        },
+        {
+          "name": "Roundtables and Discussion Panels",
+          "description": "Roundtable and Discussion panels allow for shorter presentations (maximum 5–7 minutes each) and curated discussions led by a chair (approximately 25 minutes in total), not including audience question time. Please provide the title of the roundtable/discussion panel, details of the panel moderator and panel presenters (name, title, affiliation), along with a 200-word maximum abstract. Roundtables and Discussion Panels can have a maximum of 4 participants (including the chair) — this format may be best suited for policy, community, or industry stakeholders."
+        },
+        {
+          "name": "Interactive Sessions or Workshops",
+          "description": "Workshops can be a maximum of 45 minutes. They are meant to be interactive and led by a moderator, and must include hands-on exercises or interactions between moderators and participants. Please provide a 200-word maximum abstract, presentation title, and details of the moderator (name, title, affiliation), and indicate how the session will be conducted and what interactive techniques will be used."
+        }
+      ],
+      "requirements": [
+        "Title and abstract (refer to word limits and requirements for each category above)",
+        "Names, titles and institutional affiliations of presenters/participants/moderator (for paper presentations, please include any co-authors while indicating the presenter)",
+        "A 150-word maximum bio for each presenter/participant/moderator",
+        "Contact email and telephone number for each presenter/participant/moderator",
+        "Social media handles of presenter/participant/moderator (where possible/available)"
+      ],
+      "key_dates": [
+        { "label": "Proposal submission deadline", "date": "Monday, 17 August 2026, 11:59 PM AEST" },
+        { "label": "Presenters notified", "date": "First week of September 2026" },
+        { "label": "Symposium registrations open", "date": "Monday, 7 September 2026" },
+        { "label": "Symposium dates", "date": "26–27 November 2026" }
+      ],
+      "submission_url": "https://forms.cloud.microsoft/r/gXVV3zwgdP",
+      "enquiries_email": "avertsymposium@deakin.edu.au",
+      "enquiries_contact": "AVERT Coordinator, Ms Isel Ras"
+    },
+    "recordings": []
+  },
+  {
     "year": "2025",
     "slug": "2025",
     "title": "AVERT International Research Symposium 2025",

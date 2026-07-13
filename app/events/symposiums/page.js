@@ -47,9 +47,13 @@ export default function SymposiumsPage() {
                     </p>
                   )}
                   <div className="flex items-center gap-4 mt-4">
-                    <span className="text-xs font-semibold text-[#0c7c59] font-sans">
-                      {sym.recordings.length} session recording{sym.recordings.length !== 1 ? 's' : ''} →
-                    </span>
+                    {sym.recordings?.length > 0 ? (
+                      <span className="text-xs font-semibold text-[#0c7c59] font-sans">
+                        {sym.recordings.length} session recording{sym.recordings.length !== 1 ? 's' : ''} →
+                      </span>
+                    ) : sym.cfp ? (
+                      <span className="text-xs font-semibold text-[#0c7c59] font-sans">Call for Proposals Open →</span>
+                    ) : null}
                   </div>
                 </div>
               </div>

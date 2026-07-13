@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import symposiumsData from '@/data/symposiums.json'
 import { notFound } from 'next/navigation'
 
@@ -27,6 +28,11 @@ export default async function SymposiumPage({ params }) {
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2">{sym.title}</h1>
           {sym.theme && (
             <p className="text-white/80 text-lg italic mt-2">{sym.theme}</p>
+          )}
+          {sym.cfp && (
+            <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 mt-5 font-sans">
+              Call for Proposals Open
+            </span>
           )}
         </div>
       </div>
@@ -59,6 +65,91 @@ export default async function SymposiumPage({ params }) {
           </section>
         )}
 
+        {/* Call for Proposals */}
+        {sym.cfp && (
+          <section className="max-w-3xl space-y-10">
+            <div>
+              <div className="flex items-baseline gap-3 mb-6">
+                <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Call for Proposals</h2>
+                <div className="flex-1 h-px bg-[#e2e2dc]" />
+              </div>
+              {sym.cfp.themes?.length > 0 && (
+                <>
+                  <p className="text-[#2d2d2d] leading-relaxed mb-3">
+                    AVERT invites proposals that address the theme of {sym.theme}, including but not limited to:
+                  </p>
+                  <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed">
+                    {sym.cfp.themes.map((t, i) => <li key={i}>{t}</li>)}
+                  </ul>
+                </>
+              )}
+              {sym.cfp.encouraged?.length > 0 && (
+                <div className="mt-6">
+                  <p className="text-[#2d2d2d] leading-relaxed mb-3">We particularly encourage proposals from practitioners and researchers that:</p>
+                  <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed">
+                    {sym.cfp.encouraged.map((t, i) => <li key={i}>{t}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
+
+            {sym.cfp.categories?.length > 0 && (
+              <div>
+                <h3 className="font-bold text-[#1a1a1a] mb-4">Submission Categories</h3>
+                <div className="space-y-5">
+                  {sym.cfp.categories.map((c, i) => (
+                    <div key={i} className="border-l-2 border-[#0c7c59]/30 pl-4">
+                      <p className="font-semibold text-[#1a1a1a] text-sm mb-1 font-sans">{c.name}</p>
+                      <p className="text-sm text-[#5a5a5a] leading-relaxed">{c.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {sym.cfp.requirements?.length > 0 && (
+              <div>
+                <h3 className="font-bold text-[#1a1a1a] mb-3">All Proposals Should Include</h3>
+                <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed text-sm">
+                  {sym.cfp.requirements.map((r, i) => <li key={i}>{r}</li>)}
+                </ul>
+              </div>
+            )}
+
+            {sym.cfp.key_dates?.length > 0 && (
+              <div>
+                <h3 className="font-bold text-[#1a1a1a] mb-4">Key Dates</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {sym.cfp.key_dates.map((d, i) => (
+                    <div key={i} className="border border-[#e2e2dc] bg-[#f7f7f5] px-4 py-3">
+                      <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-1">{d.label}</p>
+                      <p className="text-sm text-[#2d2d2d] font-sans">{d.date}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
+              {sym.cfp.submission_url && (
+                <a
+                  href={sym.cfp.submission_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                >
+                  Submit a Proposal →
+                </a>
+              )}
+              {sym.cfp.enquiries_email && (
+                <p className="text-sm text-[#5a5a5a] font-sans">
+                  Enquiries: <a href={`mailto:${sym.cfp.enquiries_email}`} className="text-[#0c7c59] hover:underline font-semibold">{sym.cfp.enquiries_contact || sym.cfp.enquiries_email}</a>
+                </p>
+              )}
+            </div>
+          </section>
+        )}
+
         {/* Keynotes */}
         {sym.keynotes?.length > 0 && (
           <section>
@@ -71,6 +162,11 @@ export default async function SymposiumPage({ params }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
               {sym.keynotes.map((k, i) => (
                 <div key={i} className="border border-[#e2e2dc] bg-white p-6">
+                  {k.image && (
+                    <div className="relative w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3] mb-4">
+                      <Image src={`/${k.image_dir}/${k.image}`} alt={k.name} fill className="object-cover object-top" />
+                    </div>
+                  )}
                   <p className="font-bold text-[#1a1a1a] leading-snug mb-1">{k.name}</p>
                   <p className="text-xs text-[#0c7c59] font-semibold font-sans mb-3">{k.institution}</p>
                   <p className="text-sm text-[#5a5a5a] leading-relaxed">{k.bio}</p>
