@@ -1,18 +1,5 @@
 [
   {
-    "type": "upcoming",
-    "date_aedt": "26–27 November 2026",
-    "date_other": "Sydney, Australia",
-    "platform": "In-person",
-    "format": "Symposium",
-    "title": "AVERT National Research Symposium 2026 — Call for Proposals",
-    "description": "AVERT is calling for proposals for its 2026 National Research Symposium, Youth and Extremism: Thresholds, Interventions, Connections, taking place 26–27 November 2026 at Macquarie University's City Campus, Sydney. Submissions are open for papers, panels, roundtables, and workshops addressing youth radicalisation and violent extremism.",
-    "register_url": "",
-    "detail_url": "/events/symposiums/2026",
-    "detail_label": "View Symposium & Call for Proposals →",
-    "recording_url": ""
-  },
-  {
     "type": "past",
     "speakers": [
       {
@@ -70,6 +57,19 @@
     "title": "Teenage Terrorism in Germany: Findings from the First National Study of Terrorgram Police Files",
     "description": "This webinar examines the criminal investigation files on Germany's Terrorgram milieu — the online ecosystem driving militant accelerationism and siege culture. The session presents findings from a landmark new study exploring Terrorgram membership and what draws people into the network. Beyond ideology, the study examines the socio-biographic pathways and mental health dimensions that shape radicalisation in this space — findings with direct implications for practitioners and policymakers. The session closes by situating these insights within the broader P/CVE landscape, highlighting what works, what gaps remain, and what this milieu demands of our prevention strategies going forward.",
     "register_url": "https://deakin.zoom.us/webinar/register/WN_AMrg4VpJT5uIw6MRUEskaQ",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
+    "date_aedt": "26–27 November 2026",
+    "date_other": "Sydney, Australia",
+    "platform": "In-person",
+    "format": "Symposium",
+    "title": "AVERT National Research Symposium 2026 — Call for Proposals",
+    "description": "AVERT is calling for proposals for its 2026 National Research Symposium, Youth and Extremism: Thresholds, Interventions, Connections, taking place 26–27 November 2026 at Macquarie University's City Campus, Sydney. Submissions are open for papers, panels, roundtables, and workshops addressing youth radicalisation and violent extremism.",
+    "register_url": "",
+    "detail_url": "/events/symposiums/2026",
+    "detail_label": "View Symposium & Call for Proposals →",
     "recording_url": ""
   },
   {
