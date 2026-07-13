@@ -65,6 +65,50 @@ export default async function SymposiumPage({ params }) {
           </section>
         )}
 
+        {/* Keynotes — surfaced high on the page */}
+        {sym.keynotes?.length > 0 && (
+          <section>
+            <div className="flex items-baseline gap-3 mb-6">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">
+                Keynote Speaker{sym.keynotes.length > 1 ? 's' : ''}
+              </h2>
+              <div className="flex-1 h-px bg-[#e2e2dc]" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
+              {sym.keynotes.map((k, i) => (
+                <div key={i} className="border border-[#e2e2dc] bg-white p-6">
+                  {k.image && (
+                    <div className="relative w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3] mb-4">
+                      <Image src={`/${k.image_dir}/${k.image}`} alt={k.name} fill className="object-cover object-top" />
+                    </div>
+                  )}
+                  <p className="font-bold text-[#1a1a1a] leading-snug mb-1">{k.name}</p>
+                  <p className="text-xs text-[#0c7c59] font-semibold font-sans mb-3">{k.institution}</p>
+                  <p className="text-sm text-[#5a5a5a] leading-relaxed">{k.bio}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Key Dates — surfaced high on the page (repeated below near the submission link) */}
+        {sym.cfp?.key_dates?.length > 0 && (
+          <section className="max-w-3xl">
+            <div className="flex items-baseline gap-3 mb-6">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Key Dates</h2>
+              <div className="flex-1 h-px bg-[#e2e2dc]" />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {sym.cfp.key_dates.map((d, i) => (
+                <div key={i} className="border border-[#e2e2dc] bg-[#f7f7f5] px-4 py-3">
+                  <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-1">{d.label}</p>
+                  <p className="text-sm text-[#2d2d2d] font-sans">{d.date}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Call for Proposals */}
         {sym.cfp && (
           <section className="max-w-3xl space-y-10">
@@ -146,32 +190,6 @@ export default async function SymposiumPage({ params }) {
                   Enquiries: <a href={`mailto:${sym.cfp.enquiries_email}`} className="text-[#0c7c59] hover:underline font-semibold">{sym.cfp.enquiries_contact || sym.cfp.enquiries_email}</a>
                 </p>
               )}
-            </div>
-          </section>
-        )}
-
-        {/* Keynotes */}
-        {sym.keynotes?.length > 0 && (
-          <section>
-            <div className="flex items-baseline gap-3 mb-6">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">
-                Keynote Speaker{sym.keynotes.length > 1 ? 's' : ''}
-              </h2>
-              <div className="flex-1 h-px bg-[#e2e2dc]" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
-              {sym.keynotes.map((k, i) => (
-                <div key={i} className="border border-[#e2e2dc] bg-white p-6">
-                  {k.image && (
-                    <div className="relative w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3] mb-4">
-                      <Image src={`/${k.image_dir}/${k.image}`} alt={k.name} fill className="object-cover object-top" />
-                    </div>
-                  )}
-                  <p className="font-bold text-[#1a1a1a] leading-snug mb-1">{k.name}</p>
-                  <p className="text-xs text-[#0c7c59] font-semibold font-sans mb-3">{k.institution}</p>
-                  <p className="text-sm text-[#5a5a5a] leading-relaxed">{k.bio}</p>
-                </div>
-              ))}
             </div>
           </section>
         )}
