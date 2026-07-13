@@ -76,7 +76,7 @@ export default async function SymposiumPage({ params }) {
               {sym.cfp.themes?.length > 0 && (
                 <>
                   <p className="text-[#2d2d2d] leading-relaxed mb-3">
-                    AVERT invites proposals that address the theme of {sym.theme}, including but not limited to:
+                    AVERT invites proposals that address the theme of <em className="italic underline">{sym.theme}</em>, including but not limited to:
                   </p>
                   <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed">
                     {sym.cfp.themes.map((t, i) => <li key={i}>{t}</li>)}
