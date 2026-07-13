@@ -137,6 +137,9 @@ export default function EventsPage() {
                           </Link>
                         )}
                       </div>
+                      {event.note && (
+                        <p className="text-xs text-[#888888] italic font-sans mt-3">{event.note}</p>
+                      )}
                     </div>
                   </div>
                 </div>
