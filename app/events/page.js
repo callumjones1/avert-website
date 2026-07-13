@@ -59,7 +59,7 @@ export default function EventsPage() {
                             <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{s.title}</p>
                           </div>
                         ))
-                      ) : (event.speaker || event.speaker_image) && (
+                      ) : (event.speaker || event.speaker_image) ? (
                         <div className="border-t border-[#e2e2dc] p-4">
                           {event.speaker_image && (
                             <div className="relative w-full overflow-hidden bg-[#f3f3f3] mb-3" style={{ aspectRatio: '1/1' }}>
@@ -68,6 +68,12 @@ export default function EventsPage() {
                           )}
                           {event.speaker && <p className="text-sm font-bold text-[#0c7c59] font-sans leading-snug">{event.speaker}</p>}
                           {event.speaker_title && <p className="text-xs text-[#717171] font-sans mt-0.5 leading-snug">{event.speaker_title}</p>}
+                        </div>
+                      ) : (
+                        <div className="border-t border-[#e2e2dc] p-4">
+                          <div className="relative w-full overflow-hidden bg-[#f3f3f3]" style={{ aspectRatio: '1/1' }}>
+                            <Image src="/avert-logo-no-text.png" alt="AVERT" fill className="object-contain p-6" />
+                          </div>
                         </div>
                       )}
                     </div>
