@@ -9,21 +9,21 @@ export const metadata = {
 const publications = [
   {
     title: 'Public Release: Profiles of Individual Radicalisation in Australia (PIRA) Database',
-    authors: 'AVERT Research Network',
-    year: '2024',
+    authors: 'Emma Belton and Adrian Cherney',
+    year: '2025',
     type: 'Database',
     url: 'https://espace.library.uq.edu.au/view/UQ:0798ead',
   },
   {
     title: 'New Directions in Radicalisation and Violent Extremism: A Literature Review',
-    authors: 'Emma Belton and Adrian Cherney',
-    year: '2025',
+    authors: 'Josh Roose, Shahram Akbarzadeh and Vivian Gerrand',
+    year: '2024',
     type: 'Report',
     url: '/publications/National-Research-Project-Phase-1-Report.pdf',
   },
   {
     title: 'AVERT Submission to the Legal and Constitutional Affairs References Committee of the Senate',
-    authors: 'Josh Roose, Shahram Akbarzadeh and Vivian Gerrand',
+    authors: 'AVERT Research Network',
     year: '2024',
     type: 'Submission',
     url: '/publications/AVERT-Senate-Submission-2024.pdf',
