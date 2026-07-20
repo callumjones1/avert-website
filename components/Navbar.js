@@ -30,6 +30,7 @@ const navItems = [
     href: '/events',
     children: [
       { label: 'Upcoming Events', href: '/events' },
+      { label: '2026 Symposium', href: '/events/symposiums/2026' },
       { label: 'Webinars', href: '/events-webinars' },
       { label: 'Symposiums', href: '/events/symposiums' },
     ],
