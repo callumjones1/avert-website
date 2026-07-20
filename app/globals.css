@@ -89,6 +89,8 @@ nav, button, input, select, textarea, label,
   margin-bottom: 0.4rem;
   line-height: 1.75;
   color: #2d2d2d;
+  margin-left: 1.25rem;
+  list-style: disc;
 }
 
 .prose-article a {
