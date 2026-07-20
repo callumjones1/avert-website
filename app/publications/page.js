@@ -8,6 +8,13 @@ export const metadata = {
 
 const publications = [
   {
+    title: 'Submission to the Independent National Security Legislation Monitor: Defining Terrorism — Review of the Definition of a ‘Terrorist Act’ in section 100.1 of the Criminal Code Act 1995',
+    authors: 'Keiran Hardy, Michele Grossman, Lydia Khalil, Helen Young, Winnifred Louis, Matteo Vergani, Mario Peucker, Mark Duckworth and Julian Droogan',
+    year: '2025',
+    type: 'Submission',
+    url: '/publications/AVERT-INSLM-Submission-2025.pdf',
+  },
+  {
     title: 'Public Release: Profiles of Individual Radicalisation in Australia (PIRA) Database',
     authors: 'Emma Belton and Adrian Cherney',
     year: '2025',
