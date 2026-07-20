@@ -58,7 +58,7 @@ const publications = [
   },
   {
     title: 'AVERT Submission to the Parliamentary Joint Committee on Intelligence and Security Inquiry into Extremist Movements and Radicalism in Australia',
-    authors: 'Michele Grossman, Adrian Cherney, Hass Dellal, Joshua M. Roose, Mark Duckworth and Lydia Khalil',
+    authors: 'AVERT Research Network',
     year: '2021',
     type: 'Submission',
     url: '/publications/AVERT-PJCIS-Inquiry-2021.pdf',
