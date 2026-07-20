@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { assetUrl } from '@/lib/base-path'
+import PublicationsList from '@/components/PublicationsList'
 
 export const metadata = {
   title: 'Publications — AVERT Research Network',
@@ -86,20 +86,7 @@ const publications = [
   },
 ]
 
-const typeColour = {
-  'Database': 'bg-[#0c7c59] text-white',
-  'Report': 'bg-[#e8f5f0] text-[#0c7c59] border border-[#0c7c59]/20',
-  'Submission': 'bg-[#f3f3f3] text-[#5a5a5a]',
-}
-
 export default function PublicationsPage() {
-  const byYear = {}
-  for (const pub of publications) {
-    if (!byYear[pub.year]) byYear[pub.year] = []
-    byYear[pub.year].push(pub)
-  }
-  const years = Object.keys(byYear).sort((a, b) => b - a)
-
   return (
     <>
       <div className="bg-[#0c7c59] text-white py-14 px-6">
@@ -122,43 +109,8 @@ export default function PublicationsPage() {
           Below you can find research publications commissioned or facilitated by the AVERT Network.
         </p>
 
-        {/* Publications by year */}
-        <div className="space-y-12">
-          {years.map((year) => (
-            <div key={year}>
-              <div className="flex items-center gap-4 mb-6">
-                <h2 className="text-2xl font-bold text-[#1a1a1a]">{year}</h2>
-                <div className="flex-1 h-px bg-[#e2e2dc]" />
-              </div>
-              <div className="space-y-4">
-                {byYear[year].map((pub, i) => (
-                  <a
-                    key={i}
-                    href={assetUrl(pub.url)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-start gap-5 border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
-                  >
-                    <div className="flex-1 min-w-0">
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <span className={`text-xs font-semibold px-2 py-0.5 font-sans ${typeColour[pub.type] || typeColour['Report']}`}>
-                          {pub.type}
-                        </span>
-                      </div>
-                      <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors mb-1">
-                        {pub.title}
-                      </h3>
-                      <p className="text-sm text-[#717171]">{pub.authors}</p>
-                    </div>
-                    <span className="text-xs font-semibold text-[#0c7c59] uppercase tracking-wide font-sans flex-shrink-0 mt-1">
-                      Read →
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Publications by year, filterable by type */}
+        <PublicationsList publications={publications} />
 
         {/* Separator */}
         <div className="border-t border-[#e2e2dc] mt-14 pt-10">
