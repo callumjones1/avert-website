@@ -8,6 +8,13 @@ export const metadata = {
 
 const publications = [
   {
+    title: 'AVERT Submission to the New South Wales Inquiry into Measures to Combat Right-Wing Extremism',
+    authors: 'AVERT Research Network',
+    year: '2026',
+    type: 'Submission',
+    url: '/publications/AVERT-NSW-Submission-2026.pdf',
+  },
+  {
     title: 'AVERT Submission to the Independent National Security Legislation Monitor (INSLM)',
     authors: 'AVERT Research Network',
     year: '2025',
