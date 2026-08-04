@@ -21,6 +21,14 @@ export default async function SymposiumPage({ params }) {
 
   return (
     <>
+      {sym.international_note && (
+        <div className="bg-[#e8f5f0] border-b border-[#0c7c59]/20 px-6 py-3">
+          <p className="max-w-7xl mx-auto text-sm text-[#0a6b4d] font-sans">
+            <strong className="font-semibold">International submissions welcome:</strong>
+            {' '}{sym.international_note}
+          </p>
+        </div>
+      )}
       <div className="bg-[#0c7c59] text-white py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <Link href="/events/symposiums" className="text-white/60 hover:text-white text-sm mb-6 inline-block font-sans transition-colors">← Symposiums</Link>
