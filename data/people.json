@@ -5287,5 +5287,76 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "anthony-ware",
+    "name": "Associate Professor Anthony Ware",
+    "title": "Associate Professor Anthony Ware",
+    "institution": "Deakin University",
+    "role": "Research Member",
+    "research_areas": "P/CVE; Humanitarianism; Development; Conflict; Everyday peace; Rohingya",
+    "bio": "I am a teaching and research Associate Professor of Humanitarianism and Development. My research is problem-oriented and impact-focussed. My expertise is around conflict-affected humanitarian-development situations, including analysis of both the conflict and the theory and practice of international responses. I am particularly interested in everyday peace and bottom-up, civil society or community-led peacebuilding/conflict transformation, preventing violent extremism (PVE), conflict analysis, and conflict-sensitivity and do no harm (DNH). Geographically, my fieldwork primarily focussed on Myanmar until recently, particularly Rakhine State and the Rohingya conflict—but more recently I have conducted detailed fieldwork in Bangladesh, Philippines, Indonesia, Kenya and Mozambique.",
+    "email": "",
+    "headshot": "anthony-ware.jpg",
+    "profile_url": "https://experts.deakin.edu.au/12683-anthony-ware",
+    "linkedin": "https://www.linkedin.com/in/anthony-ware-deakin/",
+    "publications": [
+      {
+        "type": "Journal Articles",
+        "items": [
+          {
+            "title": "Preventing and countering violent extremism (P/CVE) through development CSO/NGOs: A systematic review of the empirical evidence (2026)",
+            "authors": "Kelly L, Barton G and Ware A",
+            "in": "World Development, 107510",
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0305750X26002007"
+          },
+          {
+            "title": "Development NGO responses to countering violent extremism and hate (2023)",
+            "authors": "Ware A, Kelly L and Barton G",
+            "in": "Conflict, Security and Development, Vol.23, Iss.5, pp.367-384",
+            "url": "https://doi.org/10.1080/14678802.2023.2283335"
+          },
+          {
+            "title": "Moro Voices from Mindanao: Addressing extremism in the Bangsamoro Autonomous Region (2025)",
+            "authors": "Kelly L, Barton G, Ware A, Ragandang P and Moner Y",
+            "in": "Journal of Deradicalization, Vol.44, Fall, pp.1-33",
+            "url": "https://journals.sfu.ca/jd/index.php/jd/article/view/1099"
+          }
+        ]
+      },
+      {
+        "type": "Books",
+        "items": [
+          {
+            "title": "Civil Society Responses to Extremism in the Philippine Bangsamoro (2026)",
+            "authors": "Kelly L, Ragandang P, Ware A and Moner Y (eds)",
+            "in": "Palgrave Macmillan, Basingstoke. ISBN 9781041047216",
+            "url": "https://www.routledge.com/Civil-Society-Responses-to-Extremism-in-the-Philippine-Bangsamoro/Kelly-Ragandang-Ware-Moner/p/book/9781041047216"
+          }
+        ]
+      },
+      {
+        "type": "Book Chapters",
+        "items": [
+          {
+            "title": "Conflict Sensitivity and Do No Harm: The nexus between development CSOs/NGOs and P/CVE (2024)",
+            "authors": "Ware A, Kelly L and Barton G",
+            "in": "Bridging Research & Practice in Countering Extremism & Violent Extremism, pp.58-66",
+            "editors": "Allen E & Suljic D (eds), Hedayah, the International Center of Excellence for Countering Extremism and Violent Extremism (UAE)"
+          }
+        ]
+      },
+      {
+        "type": "Reports and Projects",
+        "items": [
+          {
+            "title": "Protection of Vulnerable Youth from Recruitment in the Rohingya Refugee camps, Cox’s Bazaar (2026)",
+            "authors": "Ware A and Siddiqi B",
+            "in": "Alfred Deakin Institute for Citizenship and Globalisation, Deakin University: Melbourne, and North-South University: Dhaka",
+            "url": "https://adi.deakin.edu.au/project/everyday-peace-and-rohingya-refugees/"
+          }
+        ]
+      }
+    ]
   }
 ]
