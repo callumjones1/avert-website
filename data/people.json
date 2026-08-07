@@ -5358,5 +5358,67 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "corinne-seals",
+    "name": "Associate Professor Corinne Seals",
+    "title": "Associate Professor Corinne Seals",
+    "institution": "Victoria University of Wellington",
+    "role": "Research Member",
+    "research_areas": "Forensic linguistics; Multilingualism; Authorship attribution; Sociolinguistic identity; Discourse analysis; Language and social meaning",
+    "bio": "AProf Corinne Seals is an academic researcher and forensic linguist interested in what close analysis of language can reveal. Her work looks at language in social and legal contexts, including how people communicate identity, meaning, and authorship. In forensic linguistics, she applies scientific linguistic methods to questions that arise in legal and investigative settings, such as speaker identification, interpreting language evidence, and analysing targeted communication. Her wider research spans sociolinguistics, multilingualism, and applied linguistics. As Associate Dean (Research), she also works to support research activity and collaboration. Her career has focused on connecting language research with practical questions in society.",
+    "email": "corinne.seals@vuw.ac.nz",
+    "headshot": "corinne-seals.jpg",
+    "profile_url": "",
+    "orcid": "https://orcid.org/0000-0001-7261-6662",
+    "linkedin": "https://www.linkedin.com/in/corinneseals/",
+    "publications": [
+      {
+        "type": "Journal Articles",
+        "items": [
+          {
+            "title": "Creating a safe space for storytelling: navigating symbolic violence in the research encounter (2026)",
+            "authors": "Seals C, Stepura O, Kindon S and Krtalić M",
+            "in": "Multilingua",
+            "url": "https://doi.org/10.1515/multi-2025-0200"
+          },
+          {
+            "title": "Aspirational family language policy (2023)",
+            "authors": "Seals C and Beliaeva N",
+            "in": "Language Policy, Vol.22, pp.501-521",
+            "url": "https://doi.org/10.1007/s10993-023-09674-3"
+          }
+        ]
+      },
+      {
+        "type": "Book Chapters",
+        "items": [
+          {
+            "title": "Whakahokia te reo ki ngā uri whakaheke (2025)",
+            "authors": "Te Huia A, Seals C, Muller M and Wallace S",
+            "in": "The Handbook of Translanguaging",
+            "editors": "Li W, Phyak P, Lee JW and García O (eds)",
+            "url": "https://doi.org/10.1002/9781394227167.ch18"
+          },
+          {
+            "title": "Sociolinguistic Perspective on Discourse and Second Language Research (2024)",
+            "authors": "Seals C and Salanoa H",
+            "in": "Routledge Handbook of Second Language Acquisition and Discourse. Open Access Te Herenga Waka — Victoria University of Wellington",
+            "url": "https://doi.org/10.25455/wgtn.29661599"
+          }
+        ]
+      },
+      {
+        "type": "Reports and Projects",
+        "items": [
+          {
+            "title": "Can people really disguise themselves when writing or speaking? (2020)",
+            "authors": "Seals C and Schilling N",
+            "in": "Open Access Te Herenga Waka — Victoria University of Wellington",
+            "url": "https://doi.org/10.25455/wgtn.29661668"
+          }
+        ]
+      }
+    ]
   }
 ]
