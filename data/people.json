@@ -5420,5 +5420,44 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "katherine-reid",
+    "name": "Dr Katherine Reid",
+    "title": "Assistant Professor of Intelligence and Security Studies",
+    "institution": "University of Texas at El Paso",
+    "role": "Research Member",
+    "research_areas": "Terrorism; Online extremism; Weapons inscriptions",
+    "bio": "Dr Katherine Reid is an Assistant Professor of Intelligence and Security Studies in the Department of Criminal Justice and Security Studies at the University of Texas at El Paso. Her recent work focuses on weapons inscription as an emerging phenomenon in contemporary terrorism, documenting how perpetrators embed propaganda directly onto firearms. Her research has appeared in the Journal for Deradicalization, Journal of Gender Studies, and Deviant Behavior. Dr Reid has presented her research internationally and has delivered briefings to law enforcement agencies.",
+    "email": "",
+    "headshot": "katherine-reid.jpg",
+    "profile_url": "",
+    "orcid": "https://orcid.org/0000-0002-3373-7696",
+    "linkedin": "https://www.linkedin.com/in/katherine-reid-phd",
+    "publications": [
+      {
+        "type": "Journal Articles",
+        "items": [
+          {
+            "title": "Organizational Approaches to Incel Deradicalization: A Systematic Review (2026)",
+            "authors": "Reid K, Collins CJ and Tasci Z",
+            "in": "Journal for Deradicalization, No.46",
+            "url": "https://journal-derad.com/index.php/jd/article/view/1201"
+          },
+          {
+            "title": "A review of anti-misogyny interventions for children and adolescents: recommendations for the future (2025)",
+            "authors": "Collins CJ, Reid K, Reaves J and Spiegler J",
+            "in": "Journal of Gender Studies",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/09589236.2025.2552805"
+          },
+          {
+            "title": "Incel Perpetrated Violence: Distal and Proximal Risk Factors and Pathways (2026)",
+            "authors": "Collins CJ, Murphy MG, Reid K and Clark JJ",
+            "in": "Deviant Behavior",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/01639625.2024.2417824"
+          }
+        ]
+      }
+    ]
   }
 ]
