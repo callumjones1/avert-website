@@ -21,26 +21,6 @@
   },
   {
     "type": "upcoming",
-    "speakers": [
-      {
-        "name": "Daniel Koehler",
-        "title": "Head of Research, Terrorism Analysis and Research Unit, Joint Counterterrorism Center at the State Bureau of Investigation; Co-Director, Competence Center Against Extremism",
-        "bio": "Daniel Koehler holds a PhD in political science and studied comparative religion, political science and economics at Princeton University and Free University Berlin. His work focuses on terrorism (far-right, jihadist and left-wing), radicalisation, and deradicalisation processes and programs. He is co-founder of the first peer-reviewed open-access journal on deradicalisation (journal-derad.com). He has served as a court expert on deradicalisation in the United States and as a Research Fellow at the Royal United Services Institute (RUSI). Currently, Daniel is Head of Research at the Terrorism Analysis and Research Unit within the Joint Counterterrorism Center at the State Bureau of Investigation, and co-Director at the Competence Center Against Extremism in Baden-Württemberg.",
-        "image": "daniel-koehler.jpg",
-        "image_dir": "headshots"
-      }
-    ],
-    "date_aedt": "Thursday 6 August 2026, 15:00–16:00 AEST",
-    "date_other": "7:00–8:00 AM CEST",
-    "platform": "Zoom",
-    "format": "Online Webinar",
-    "title": "Teenage Terrorism in Germany: Findings from the First National Study of Terrorgram Police Files",
-    "description": "This webinar examines the criminal investigation files on Germany's Terrorgram milieu — the online ecosystem driving militant accelerationism and siege culture. The session presents findings from a landmark new study exploring Terrorgram membership and what draws people into the network. Beyond ideology, the study examines the socio-biographic pathways and mental health dimensions that shape radicalisation in this space — findings with direct implications for practitioners and policymakers. The session closes by situating these insights within the broader P/CVE landscape, highlighting what works, what gaps remain, and what this milieu demands of our prevention strategies going forward.",
-    "register_url": "https://deakin.zoom.us/webinar/register/WN_AMrg4VpJT5uIw6MRUEskaQ",
-    "recording_url": ""
-  },
-  {
-    "type": "upcoming",
     "date_aedt": "26–27 November 2026",
     "date_other": "Sydney, Australia",
     "platform": "In-person",
