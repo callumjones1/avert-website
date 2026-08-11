@@ -21,6 +21,7 @@
   },
   {
     "type": "upcoming",
+    "banner_image": "/images/symposium-2026-banner.png",
     "date_aedt": "26–27 November 2026",
     "date_other": "Sydney, Australia",
     "platform": "In-person",

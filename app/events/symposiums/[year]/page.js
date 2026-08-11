@@ -45,6 +45,14 @@ export default async function SymposiumPage({ params }) {
         </div>
       </div>
 
+      {sym.hero_image && (
+        <div className="max-w-7xl mx-auto px-6 pt-10">
+          <div className="relative w-full h-64 md:h-80 overflow-hidden">
+            <Image src={sym.hero_image} alt={sym.title} fill className="object-cover" unoptimized />
+          </div>
+        </div>
+      )}
+
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-14">
 
         {/* Program download — top of page */}

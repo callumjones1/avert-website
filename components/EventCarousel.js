@@ -21,6 +21,11 @@ export default function EventCarousel({ events }) {
   return (
     <div>
       <div className="border border-[#e2e2dc] bg-white overflow-hidden">
+        {event.banner_image && (
+          <div className="relative w-full h-28 overflow-hidden">
+            <Image src={event.banner_image} alt={event.title} fill className="object-cover" unoptimized />
+          </div>
+        )}
         {event.date_aedt && (
           <div className="bg-[#0c7c59] text-white px-5 py-4">
             <p className="text-sm font-bold font-sans leading-snug">{event.date_aedt}</p>
