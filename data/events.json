@@ -21,6 +21,26 @@
   },
   {
     "type": "upcoming",
+    "speakers": [
+      {
+        "name": "Viktoria Rösch",
+        "title": "Research Associate, GERDEA and DEMOREG Projects, Frankfurt University of Applied Sciences",
+        "bio": "Viktoria Rösch is a sociologist and research associate in the joint research projects GERDEA and DEMOREG at Frankfurt University of Applied Sciences. Her research focuses on far-right women, gender, and visual politics. She is a doctoral candidate at Friedrich Schiller University Jena and serves on the board of the Working Group Sociology of the Far Right within the German Sociological Association (DGS).",
+        "image": "viktoria-rosch.jpg",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Wednesday 7 October 2026, 16:30–17:30 AEDT",
+    "date_other": "07:30–08:30 AM CEST",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "Bodies of Defence: Far-Right Women and Militant Femininities in Germany and Europe",
+    "description": "This webinar will explore how women in far-right movements across Germany and Europe use social media, particularly Instagram, to shape and promote far-right ideas and identities. It will examine how female influencers and networks from a range of far-right communities - including New Right groups, ethnonationalist movements, political parties, music scenes, and football supporter networks - use images to spread common messages and connect with one another across national borders.\n\nThe webinar will look at how these women combine themes of threat, protection, rebellion, and strength to portray themselves as defenders of the nation and Europe. It will also examine how these visual narratives are shared between countries, helping to increase the visibility and influence of far-right women across Europe. Rather than arguing that these images directly encourage violence, the webinar will explore how they reinforce ideas about conflict, sacrifice, enemies, and the need to defend society. It argues that while women have long played roles in far-right movements, social media has given them a much more prominent and influential public role in shaping the movement's identity and messaging.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_oXIa6ikVQ_uDadfTMYxNDg",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
     "banner_image": "/images/symposium-2026-banner.png",
     "date_aedt": "26–27 November 2026",
     "date_other": "Sydney, Australia",
