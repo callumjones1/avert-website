@@ -4,6 +4,7 @@ import newsData from '@/data/news.json'
 import commentaryData from '@/data/commentary.json'
 import webinarsData from '@/data/webinars.json'
 import eventsData from '@/data/events.json'
+import newslettersData from '@/data/newsletters.json'
 import WebinarCarousel from '@/components/WebinarCarousel'
 import EventCarousel from '@/components/EventCarousel'
 
@@ -69,9 +70,11 @@ function getPreview(bodyHtml, title) {
 }
 
 export default function HomePage() {
+  const latestNewsletter = newslettersData[0]
+
   const newsItems = newsData
     .filter(item => !item.slug.includes('submission'))
-    .slice(0, 4)
+    .slice(0, 3)
 
   const latestCommentary = commentaryData
     .filter(item => !item.slug.startsWith('category') && !item.slug.startsWith('tag'))
@@ -151,6 +154,24 @@ export default function HomePage() {
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              {latestNewsletter && (
+                <Link
+                  href={`/newsletters/${latestNewsletter.slug}`}
+                  className="group border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors"
+                >
+                  <p className="text-xs text-[#0c7c59] font-semibold uppercase tracking-wide mb-3 font-sans">
+                    Newsletter · {latestNewsletter.date}
+                  </p>
+                  <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] leading-snug transition-colors">
+                    {latestNewsletter.title}
+                  </h3>
+                  {latestNewsletter.summary && (
+                    <p className="text-sm text-[#717171] mt-3 line-clamp-3 leading-relaxed">
+                      {latestNewsletter.summary}
+                    </p>
+                  )}
+                </Link>
+              )}
               {newsItems.map((item) => (
                 <Link
                   key={item.slug}
