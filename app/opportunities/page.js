@@ -50,6 +50,30 @@ export default function OpportunitiesPage() {
                 Submit an Abstract →
               </a>
             </div>
+
+            <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8 mt-6">
+              <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">Save the Date</p>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
+                Hedayah International Research Conference 2026 (RC26)
+              </h3>
+              <p className="text-[#5a5a5a] text-sm font-sans mb-4">
+                26–28 October 2026 &middot; Valletta, Malta
+              </p>
+              <img
+                src="/images/hedayah-rc26-save-the-date.jpg"
+                alt="Hedayah International Research Conference 2026 — 26-28 October 2026, Valletta, Malta"
+                className="w-full max-w-md rounded mb-4"
+              />
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                Hedayah, the International Centre of Excellence for Countering Extremism and Violent Extremism, invites you to save the date for its upcoming International Research Conference 2026 (RC26). Hosted by Hedayah in partnership with the International Institute for Justice and the Rule of Law (IIJ), RC26 will bring together policymakers, practitioners and researchers to exchange cutting-edge and actionable research on countering extremism and violent extremism, with the aim of strengthening collective approaches and fostering new partnerships. Conference registration details will be shared in August 2026.
+              </p>
+              <a
+                href="mailto:events@hedayah.ae"
+                className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+              >
+                Contact events@hedayah.ae →
+              </a>
+            </div>
           </div>
 
           <div className="space-y-4">
