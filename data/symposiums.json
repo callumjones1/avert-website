@@ -5,6 +5,7 @@
     "hero_image": "/images/symposium-2026-banner.png",
     "title": "AVERT National Research Symposium 2026",
     "theme": "Youth and Extremism: Thresholds, Interventions, Connections",
+    "cfp_closed": true,
     "international_note": "Researchers and practitioners from any country are warmly invited to submit proposals. The 2026 AVERT Youth and Extremism Symposium welcomes and strongly encourages international paper and session proposals.",
     "dates": "26–27 November 2026",
     "location": "Macquarie University City Campus, Sydney, Australia",
@@ -64,7 +65,7 @@
       ],
       "key_dates": [
         { "label": "Proposal submission deadline", "date": "Monday, 17 August 2026, 11:59 PM AEST" },
-        { "label": "Presenters notified", "date": "First week of September 2026" },
+        { "label": "Presenters notified", "date": "15 September 2026" },
         { "label": "Symposium registrations open", "date": "Monday, 7 September 2026" },
         { "label": "Symposium dates", "date": "26–27 November 2026" }
       ],

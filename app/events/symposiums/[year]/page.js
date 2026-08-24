@@ -39,7 +39,7 @@ export default async function SymposiumPage({ params }) {
           )}
           {sym.cfp && (
             <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 mt-5 font-sans">
-              Call for Proposals Open
+              {sym.cfp_closed ? 'Call for Proposals Closed' : 'Call for Proposals Open'}
             </span>
           )}
         </div>
@@ -133,10 +133,15 @@ export default async function SymposiumPage({ params }) {
                 <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Call for Proposals</h2>
                 <div className="flex-1 h-px bg-[#e2e2dc]" />
               </div>
+              {sym.cfp_closed && (
+                <p className="text-[#2d2d2d] leading-relaxed mb-6 font-semibold">
+                  The Call for Proposals have now closed and we would like to thank everyone who submitted a proposal.
+                </p>
+              )}
               {sym.cfp.themes?.length > 0 && (
                 <>
                   <p className="text-[#2d2d2d] leading-relaxed mb-3">
-                    AVERT invites proposals that address the theme of <em className="italic">{sym.theme}</em>, including but not limited to:
+                    AVERT {sym.cfp_closed ? 'invited' : 'invites'} proposals that address the theme of <em className="italic">{sym.theme}</em>, including but not limited to:
                   </p>
                   <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed">
                     {sym.cfp.themes.map((t, i) => <li key={i}>{t}</li>)}
@@ -145,7 +150,7 @@ export default async function SymposiumPage({ params }) {
               )}
               {sym.cfp.encouraged?.length > 0 && (
                 <div className="mt-6">
-                  <p className="text-[#2d2d2d] leading-relaxed mb-3">We particularly encourage proposals from practitioners and researchers that:</p>
+                  <p className="text-[#2d2d2d] leading-relaxed mb-3">We particularly {sym.cfp_closed ? 'encouraged' : 'encourage'} proposals from practitioners and researchers that:</p>
                   <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed">
                     {sym.cfp.encouraged.map((t, i) => <li key={i}>{t}</li>)}
                   </ul>
@@ -191,7 +196,7 @@ export default async function SymposiumPage({ params }) {
             )}
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
-              {sym.cfp.submission_url && (
+              {sym.cfp.submission_url && !sym.cfp_closed && (
                 <a
                   href={sym.cfp.submission_url}
                   target="_blank"

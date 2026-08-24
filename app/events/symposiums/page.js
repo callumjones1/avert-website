@@ -52,7 +52,9 @@ export default function SymposiumsPage() {
                         {sym.recordings.length} session recording{sym.recordings.length !== 1 ? 's' : ''} →
                       </span>
                     ) : sym.cfp ? (
-                      <span className="text-xs font-semibold text-[#0c7c59] font-sans">Call for Proposals Open →</span>
+                      <span className="text-xs font-semibold text-[#0c7c59] font-sans">
+                        {sym.cfp_closed ? 'Call for Proposals Closed' : 'Call for Proposals Open →'}
+                      </span>
                     ) : null}
                   </div>
                 </div>
