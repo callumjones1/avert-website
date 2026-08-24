@@ -6,6 +6,16 @@ import { useState } from 'react'
 // Web3Forms dashboard for this form (Settings tab), not here.
 const WEB3FORMS_ACCESS_KEY = 'b05751e6-3f51-4d9f-ad87-55b01935f0b2'
 
+// Same Mailchimp audience as the newsletter signup (components/SubscribeForm.js),
+// posted to directly so applicants are auto-subscribed. FNAME/LNAME/EMAIL are
+// Mailchimp's built-in fields and always save; the rest (ORG, ROLE, COUNTRY, PHONE,
+// KEYWORDS, PROGRAMS, REASONS, COLLAB) only save if merge fields with those exact
+// tags exist in the audience (Audience > Settings > Audience fields) — otherwise
+// Mailchimp silently drops them.
+const MAILCHIMP_ACTION_URL =
+  'https://avert.us16.list-manage.com/subscribe/post?u=a9901935e5a771f85b149cd5d&id=461c2a97ef&f_id=000f06e0f0'
+const MAILCHIMP_HONEYPOT_NAME = 'b_a9901935e5a771f85b149cd5d_461c2a97ef'
+
 const REASONS = [
   'To connect with potential research partners for project development and/or funding bids on AVERT-related topics',
   'To source research expertise relevant to our organisational focus on policy and/or practice related to AVERT issues',
@@ -37,6 +47,25 @@ export default function AffiliateMembershipForm() {
     data.append('access_key', WEB3FORMS_ACCESS_KEY)
     data.append('subject', 'AVERT Affiliate Membership Application')
     data.append('reasons_for_joining', reasons.join('; '))
+
+    // Fire-and-forget: add them to the Mailchimp audience in parallel with the
+    // Web3Forms email. Mailchimp's endpoint doesn't support CORS so the response
+    // is opaque (mode: 'no-cors') — we can't confirm success, but the request still lands.
+    const mcBody = new URLSearchParams()
+    mcBody.append('FNAME', data.get('first_name') || '')
+    mcBody.append('LNAME', data.get('last_name') || '')
+    mcBody.append('EMAIL', data.get('email') || '')
+    mcBody.append('TITLE', data.get('title') || '')
+    mcBody.append('ORG', data.get('organisation') || '')
+    mcBody.append('ROLE', data.get('role') || '')
+    mcBody.append('COUNTRY', data.get('country') || '')
+    mcBody.append('PHONE', data.get('phone') || '')
+    mcBody.append('KEYWORDS', data.get('keywords') || '')
+    mcBody.append('PROGRAMS', data.get('programs') || '')
+    mcBody.append('REASONS', reasons.join('; '))
+    mcBody.append('COLLAB', data.get('collaborations') || '')
+    mcBody.append(MAILCHIMP_HONEYPOT_NAME, '')
+    fetch(MAILCHIMP_ACTION_URL, { method: 'POST', mode: 'no-cors', body: mcBody }).catch(() => {})
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
