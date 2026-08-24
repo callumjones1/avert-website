@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 // Web3Forms "AVERT_Affiliate_Members" form — destination email is set in the
 // Web3Forms dashboard for this form (Settings tab), not here.
@@ -31,6 +31,7 @@ const labelClass = 'block text-sm font-semibold text-[#1a1a1a] mb-1 font-sans'
 export default function AffiliateMembershipForm() {
   const [status, setStatus] = useState('idle') // idle | submitting | success | error
   const [reasons, setReasons] = useState([])
+  const mailchimpFormRef = useRef(null)
 
   function toggleReason(value) {
     setReasons((prev) =>
@@ -48,24 +49,25 @@ export default function AffiliateMembershipForm() {
     data.append('subject', 'AVERT Affiliate Membership Application')
     data.append('reasons_for_joining', reasons.join('; '))
 
-    // Fire-and-forget: add them to the Mailchimp audience in parallel with the
-    // Web3Forms email. Mailchimp's endpoint doesn't support CORS so the response
-    // is opaque (mode: 'no-cors') — we can't confirm success, but the request still lands.
-    const mcBody = new URLSearchParams()
-    mcBody.append('FNAME', data.get('first_name') || '')
-    mcBody.append('LNAME', data.get('last_name') || '')
-    mcBody.append('EMAIL', data.get('email') || '')
-    mcBody.append('TITLE', data.get('title') || '')
-    mcBody.append('ORG', data.get('organisation') || '')
-    mcBody.append('ROLE', data.get('role') || '')
-    mcBody.append('COUNTRY', data.get('country') || '')
-    mcBody.append('PHONE', data.get('phone') || '')
-    mcBody.append('KEYWORDS', data.get('keywords') || '')
-    mcBody.append('PROGRAMS', data.get('programs') || '')
-    mcBody.append('REASONS', reasons.join('; '))
-    mcBody.append('COLLAB', data.get('collaborations') || '')
-    mcBody.append(MAILCHIMP_HONEYPOT_NAME, '')
-    fetch(MAILCHIMP_ACTION_URL, { method: 'POST', mode: 'no-cors', body: mcBody }).catch(() => {})
+    // Add them to the Mailchimp audience in parallel with the Web3Forms email, via a
+    // real hidden-iframe form POST (same mechanism as the working newsletter signup)
+    // rather than fetch — Mailchimp's endpoint doesn't behave reliably with fetch/no-cors.
+    const mc = mailchimpFormRef.current
+    if (mc) {
+      mc.elements.FNAME.value = data.get('first_name') || ''
+      mc.elements.LNAME.value = data.get('last_name') || ''
+      mc.elements.EMAIL.value = data.get('email') || ''
+      mc.elements.TITLE.value = data.get('title') || ''
+      mc.elements.ORG.value = data.get('organisation') || ''
+      mc.elements.ROLE.value = data.get('role') || ''
+      mc.elements.COUNTRY.value = data.get('country') || ''
+      mc.elements.PHONE.value = data.get('phone') || ''
+      mc.elements.KEYWORDS.value = data.get('keywords') || ''
+      mc.elements.PROGRAMS.value = data.get('programs') || ''
+      mc.elements.REASONS.value = reasons.join('; ')
+      mc.elements.COLLAB.value = data.get('collaborations') || ''
+      mc.submit()
+    }
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
@@ -208,6 +210,32 @@ export default function AffiliateMembershipForm() {
           {status === 'submitting' ? 'Submitting…' : 'Submit'}
         </button>
       </form>
+
+      {/* Hidden form that mirrors the visible one, POSTed to Mailchimp on submit so
+          applicants are auto-subscribed. Targets a hidden iframe so it doesn't navigate
+          the page away — same technique as the working newsletter signup, just silent. */}
+      <form
+        ref={mailchimpFormRef}
+        action={MAILCHIMP_ACTION_URL}
+        method="post"
+        target="mailchimp_affiliate_iframe"
+        style={{ display: 'none' }}
+      >
+        <input type="text" name="FNAME" defaultValue="" readOnly />
+        <input type="text" name="LNAME" defaultValue="" readOnly />
+        <input type="email" name="EMAIL" defaultValue="" readOnly />
+        <input type="text" name="TITLE" defaultValue="" readOnly />
+        <input type="text" name="ORG" defaultValue="" readOnly />
+        <input type="text" name="ROLE" defaultValue="" readOnly />
+        <input type="text" name="COUNTRY" defaultValue="" readOnly />
+        <input type="text" name="PHONE" defaultValue="" readOnly />
+        <input type="text" name="KEYWORDS" defaultValue="" readOnly />
+        <input type="text" name="PROGRAMS" defaultValue="" readOnly />
+        <input type="text" name="REASONS" defaultValue="" readOnly />
+        <input type="text" name="COLLAB" defaultValue="" readOnly />
+        <input type="text" name={MAILCHIMP_HONEYPOT_NAME} defaultValue="" readOnly />
+      </form>
+      <iframe name="mailchimp_affiliate_iframe" title="" style={{ display: 'none' }} />
     </div>
   )
 }
