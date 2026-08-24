@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ResearchMembershipForm from '../../../components/ResearchMembershipForm'
 
 export const metadata = {
   title: 'Research Membership — AVERT Research Network',
@@ -76,19 +77,7 @@ export default function ResearchMembershipPage() {
               </div>
             </div>
 
-            <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-8">
-              <h3 className="font-bold text-[#1a1a1a] mb-3">Apply for Research Membership</h3>
-              <p className="text-sm text-[#2d2d2d] leading-relaxed mb-6">
-                If you are interested in joining AVERT as a research member and fulfil the above criteria,
-                please contact us to begin your application.
-              </p>
-              <a
-                href="mailto:adi-avert@deakin.edu.au?subject=Research Membership Application"
-                className="inline-block bg-[#0c7c59] text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide hover:bg-[#0a6b4d] transition-colors font-sans"
-              >
-                Apply Now
-              </a>
-            </div>
+            <ResearchMembershipForm />
           </div>
 
           <div className="space-y-4">

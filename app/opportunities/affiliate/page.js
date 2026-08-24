@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AffiliateMembershipForm from '../../../components/AffiliateMembershipForm'
 
 export const metadata = {
   title: 'Affiliate Membership — AVERT Research Network',
@@ -51,18 +52,7 @@ export default function AffiliateMembershipPage() {
               </div>
             </div>
 
-            <div className="bg-[#f7f7f5] border border-[#e2e2dc] p-8">
-              <h3 className="font-bold text-[#1a1a1a] mb-3">Become an Affiliate Member</h3>
-              <p className="text-sm text-[#2d2d2d] leading-relaxed mb-6">
-                If you are interested in joining AVERT as an affiliate member, please contact us to begin your application.
-              </p>
-              <a
-                href="mailto:adi-avert@deakin.edu.au?subject=Affiliate Membership Application"
-                className="inline-block bg-[#0c7c59] text-white px-6 py-3 text-sm font-semibold uppercase tracking-wide hover:bg-[#0a6b4d] transition-colors font-sans"
-              >
-                Apply Now
-              </a>
-            </div>
+            <AffiliateMembershipForm />
           </div>
 
           <div className="space-y-4">
