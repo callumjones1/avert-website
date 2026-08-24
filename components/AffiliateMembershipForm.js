@@ -212,13 +212,14 @@ export default function AffiliateMembershipForm() {
       </form>
 
       {/* Hidden form that mirrors the visible one, POSTed to Mailchimp on submit so
-          applicants are auto-subscribed. Targets a hidden iframe so it doesn't navigate
-          the page away — same technique as the working newsletter signup, just silent. */}
+          applicants are auto-subscribed. target="_blank" is the same proven mechanism
+          the newsletter signup (components/SubscribeForm.js) already uses — it opens
+          Mailchimp's own confirmation page in a new tab. */}
       <form
         ref={mailchimpFormRef}
         action={MAILCHIMP_ACTION_URL}
         method="post"
-        target="mailchimp_affiliate_iframe"
+        target="_blank"
         style={{ display: 'none' }}
       >
         <input type="text" name="FNAME" defaultValue="" readOnly />
@@ -235,7 +236,6 @@ export default function AffiliateMembershipForm() {
         <input type="text" name="COLLAB" defaultValue="" readOnly />
         <input type="text" name={MAILCHIMP_HONEYPOT_NAME} defaultValue="" readOnly />
       </form>
-      <iframe name="mailchimp_affiliate_iframe" title="" style={{ display: 'none' }} />
     </div>
   )
 }
