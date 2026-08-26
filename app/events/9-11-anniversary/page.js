@@ -55,6 +55,16 @@ function PersonCard({ person, roleLabel }) {
           />
         </div>
       )}
+      {person.logo && (
+        <div className="relative h-12 w-40 mb-4">
+          <Image
+            src={`/logos/anniversary-2026/${person.logo}`}
+            alt={person.name}
+            fill
+            className="object-contain object-left"
+          />
+        </div>
+      )}
       {roleLabel && (
         <p className="text-[11px] font-semibold uppercase tracking-widest text-[#0c7c59] font-sans mb-1.5">{roleLabel}</p>
       )}

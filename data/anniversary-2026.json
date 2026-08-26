@@ -86,14 +86,15 @@
           "title": "Professor of Law, Swansea University",
           "bio": "Stuart Macdonald is Professor of Law at the Hillary Rodham Clinton School of Law, Swansea University, UK. He is Co-Director of the University’s Cyber Threats Research Centre (CYTREC) and Coordinator of the VOX-Pol Network. Stuart’s research focuses on terrorists’ use of the internet. Most recently, he has examined jihadist narratives, the strategies used to disseminate terrorist propaganda online, and regulatory responses. He has received research funding from the British Academy, Welsh Government, US Government, NATO and the EU, among others. Stuart is the lead organiser of the biennial Terrorism and Social Media (TASM) conference, a member of Europol’s Advisory Network on terrorism and propaganda, a Senior Fellow at Hedayah and an Associate Fellow at the International Centre for Counter-Terrorism – The Hague. In 2016/17 he was also the holder of a Fulbright Cyber Security Award.",
           "linkedin": "https://www.linkedin.com/in/drstuartmacdonald/",
-          "image": null
+          "image": "stuart-macdonald.png"
         },
         {
           "name": "Christchurch Call Foundation",
           "title": "Co-panellist organisation",
           "bio": "The Christchurch Call Foundation is the independent nonprofit organisation driving the Christchurch Call — a global commitment by governments and technology platforms, supported by civil society and multilateral partners — to eliminate terrorist and violent extremist content (TVEC) online while protecting human rights and the open internet. Born from the March 15, 2019 terrorist attack at two mosques in Christchurch, CCF operates as the multistakeholder mechanism coordinating crisis response, tackling pathways to online radicalisation, enabling algorithmic research, and driving the development of open-source safety tools.",
           "linkedin": "https://www.linkedin.com/company/christchurch-call-foundation/posts/?feedView=all",
-          "image": null
+          "image": null,
+          "logo": "christchurch-call-foundation.png"
         }
       ],
       "register_url": "https://deakin.zoom.us/webinar/register/WN_zNKTaBYjRK-Dnupn_L9-cA",
