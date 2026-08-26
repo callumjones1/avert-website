@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function EventCarousel({ events }) {
   const [idx, setIdx] = useState(0)
@@ -74,7 +75,7 @@ export default function EventCarousel({ events }) {
               </div>
             </div>
           )}
-          {event.register_url && (
+          {event.register_url ? (
             <a
               href={event.register_url}
               target="_blank"
@@ -83,6 +84,13 @@ export default function EventCarousel({ events }) {
             >
               Register →
             </a>
+          ) : event.detail_url && (
+            <Link
+              href={event.detail_url}
+              className="inline-block mt-4 bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+            >
+              {event.detail_label || 'Learn More →'}
+            </Link>
           )}
         </div>
       </div>

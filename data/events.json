@@ -21,6 +21,20 @@
   },
   {
     "type": "upcoming",
+    "banner_image": "/images/anniversary-2026/hero.jpg",
+    "date_aedt": "7–11 September 2026",
+    "date_other": "Online & In-Person",
+    "platform": "Zoom & In-person",
+    "format": "Event Series",
+    "title": "Legacies of 9/11: 25 Years of Changing Global Security",
+    "description": "A week-long series of panel discussions marking the 25th anniversary of the September 11 terrorist attacks, presented by the AVERT Research Network with partner organisations including ANU, Moonshot, Macquarie University, and the Institute for Strategic Dialogue. Each session is separately hosted and requires its own registration.",
+    "register_url": "",
+    "detail_url": "/events/9-11-anniversary",
+    "detail_label": "View Programme & Register →",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
     "speakers": [
       {
         "name": "Viktoria Rösch",
