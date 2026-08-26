@@ -209,12 +209,22 @@ function SessionSection({ session }) {
 export default function AnniversaryEventPage() {
   return (
     <>
-      <div className="bg-[#0c7c59] text-white py-14 px-6">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-white/60 text-sm mb-2 font-sans">{data.dates}</p>
-          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2">{data.title}</h1>
-          <p className="text-white/80 text-lg italic mt-2">A week-long series marking 25 years since the September 11 terrorist attacks</p>
+      <div className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url(/images/anniversary-2026/hero.jpg)' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0c7c59]/80 to-[#0c7c59]" />
+        <div className="relative text-white py-20 px-6">
+          <div className="max-w-7xl mx-auto">
+            <p className="text-white/60 text-sm mb-2 font-sans">{data.dates}</p>
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2">{data.title}</h1>
+            <p className="text-white/80 text-lg italic mt-2">A week-long series marking 25 years since the September 11 terrorist attacks</p>
+          </div>
         </div>
+        <p className="relative text-white/40 text-[11px] font-sans text-right pr-4 pb-2">
+          Photo: Julien Maculan / Unsplash
+        </p>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
