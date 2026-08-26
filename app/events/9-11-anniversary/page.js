@@ -218,10 +218,16 @@ export default function AnniversaryEventPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-10">
-        <div className="relative w-full h-64 md:h-80 overflow-hidden">
-          <Image src="/images/anniversary-2026/hero.jpg" alt="Tribute in Light, New York City" fill className="object-cover" />
+        <div className="max-w-3xl">
+          <Image
+            src="/images/anniversary-2026/hero.jpg"
+            alt="Tribute in Light, New York City"
+            width={1600}
+            height={900}
+            className="w-full h-auto"
+          />
+          <p className="text-[#9a9a9a] text-[11px] font-sans text-right mt-1.5">Photo: Julien Maculan / Unsplash</p>
         </div>
-        <p className="text-[#9a9a9a] text-[11px] font-sans text-right mt-1.5">Photo: Julien Maculan / Unsplash</p>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">

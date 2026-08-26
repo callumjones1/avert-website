@@ -42,13 +42,13 @@ export default async function NewsArticle({ params }) {
 
       {item.hero_image && (
         <div className="max-w-7xl mx-auto px-6 pt-10">
-          <div className="relative w-full flex justify-center">
+          <div className="max-w-2xl">
             <Image
               src={item.hero_image}
               alt={item.title}
               width={1600}
               height={900}
-              className="w-full h-auto max-h-[28rem] object-contain"
+              className="w-full h-auto"
               unoptimized
             />
           </div>
