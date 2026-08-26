@@ -7,11 +7,12 @@ export const metadata = {
 }
 
 function LogoStrip({ logos }) {
+  const track = [...logos, ...logos]
   return (
-    <div className="bg-white border border-[#e2e2dc] px-6 py-8">
-      <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-        {logos.map((l, i) => (
-          <div key={i} className="relative h-12 md:h-14 w-32 md:w-40">
+    <div className="bg-white border border-[#e2e2dc] py-10 overflow-hidden logo-marquee-mask">
+      <div className="flex items-center gap-20 w-max logo-marquee-track">
+        {track.map((l, i) => (
+          <div key={i} className="relative h-20 md:h-24 w-48 md:w-56 flex-shrink-0">
             <Image
               src={`/logos/anniversary-2026/${l.logo}`}
               alt={l.name}
@@ -214,10 +215,6 @@ export default function AnniversaryEventPage() {
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2">{data.title}</h1>
           <p className="text-white/80 text-lg italic mt-2">A week-long series marking 25 years since the September 11 terrorist attacks</p>
         </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-6 pt-10">
-        <LogoStrip logos={data.co_host_logos} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
