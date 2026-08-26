@@ -2,7 +2,14 @@
   "slug": "9-11-anniversary",
   "title": "Legacies of 9/11: 25 Years of Changing Global Security",
   "dates": "7–11 September 2026",
-  "overview": "On 11 September 2026, the world will mark the 25th anniversary of the September 11 terrorist attacks — one of the most consequential terrorist incidents in modern history. The attacks reshaped global security priorities, led to the launch of the “War on Terror,” and significantly influenced international law, intelligence cooperation, military interventions, border security, and approaches to countering violent extremism.\n\nTo mark this milestone, the AVERT Research Network is convening a week-long series of panel discussions bringing together leading Australian and international researchers, policymakers, practitioners, and civil society representatives. Rather than a purely commemorative programme, the series is intended as a substantive discussion of how the threat landscape has evolved over the past twenty-five years and what priorities should shape the next decade.\n\nEach session is co-hosted with a partner organisation and run independently, with its own registration link — join whichever sessions are most relevant to you.",
+  "co_host_logos": [
+    { "name": "Australian National University", "logo": "anu.jpg" },
+    { "name": "Moonshot", "logo": "moonshot.png" },
+    { "name": "Macquarie University", "logo": "macquarie.png" },
+    { "name": "Institute for Strategic Dialogue", "logo": "isd.png" },
+    { "name": "AVERT Research Network", "logo": "avert.png" }
+  ],
+  "overview": "On 11 September 2026, the world will mark the 25th anniversary of the September 11 terrorist attacks — one of the most consequential terrorist incidents in modern history. The attacks reshaped global security priorities, led to the launch of the “War on Terror,” and significantly influenced international law, intelligence cooperation, military interventions, border security, and approaches to countering violent extremism.\n\nTo mark this milestone, the AVERT Research Network is convening a week-long series of panel discussions bringing together leading Australian and international researchers, policymakers, practitioners, and civil society representatives. Rather than a purely commemorative programme, the series is intended as a substantive discussion of how the threat landscape has evolved over the past twenty-five years and what priorities should shape the next decade.\n\nEach session is co-hosted with a partner organisation and requires separate registration for each session — please see below.",
   "objectives": [
     "Reflect on key lessons learned since 9/11 across policy, law, prevention, and operational practice",
     "Examine how terrorism and violent extremism have evolved over the past twenty-five years",
@@ -21,12 +28,14 @@
       "co_host": "Research School of Social Sciences, Australian National University",
       "co_host_bio": "The Research School of Social Sciences (RSSS) is Australia's major institution for theoretical and empirical research in the social sciences, and a significant presence in the nation's undergraduate, postgraduate and postdoctoral training in the field. One of the four foundation research schools of the Institute of Advanced Studies at ANU, RSSS has for decades been a forerunner in social sciences research, with a proud history and an international reputation for exceptional scholarship, and both undergraduate and graduate teaching programs grounded in what we research. We contribute to public debate in Australia and internationally across the whole social sciences spectrum, convening workshops, public lectures, debates and roundtables on issues of public and community importance.",
       "co_host_logo": "anu.jpg",
-      "co_host_linkedin": null,
+      "co_host_linkedin": "https://rsss.cass.anu.edu.au/",
       "title": "25 Years Later: Counter Terrorism and the Evolution of the Terrorist Threat",
       "abstract": "This seminar will discuss how the terrorist threat has evolved over the quarter century since 9/11. In doing so, the speakers will critically consider the impacts and implications of counter terrorism (CT) efforts that have been undertaken since 2001, and how the changing character of terrorist threats potentially demands reconsideration and recalibration of how counter terrorism and preventing/countering violent extremism policies and practices are conceived and implemented. Terrorism continues to manifest in increasingly diverse, complex, and novel ways and the speakers will seek to articulate how these threats are changing, across ideologies, actors, tactics, and strategies. The discussion will address the growing diversity of terrorist threats, the challenges these present for existing frameworks, and how new contexts, both social, geopolitical and technological, are impacting the terrorism threat landscape.",
+      "combined_lineup": true,
       "moderator": {
         "name": "Levi West",
-        "title": "Research Fellow, Australian National University — also on the panel",
+        "also_panellist": true,
+        "title": "Research Fellow, Australian National University",
         "bio": "Dr Levi West is an internationally recognised expert on terrorism and counter-terrorism and a Research Fellow at the Australian National University, where he researches radicalisation. Previously Director of Terrorism Studies at Charles Sturt University, his research focuses on the intersection of terrorism, communication and technology. He holds a PhD from Victoria University, for which he received the Terrorism Research Initiative Thesis of the Year award, and regularly advises government, intelligence, law enforcement and military stakeholders in Australia and internationally.",
         "linkedin": "https://www.linkedin.com/in/levi-west-862267256/",
         "image": "levi-west.jpg"
@@ -48,13 +57,14 @@
         }
       ],
       "register_url": "https://deakin.zoom.us/webinar/register/WN_5s7s8mSeRa2H0rGQq5EqeQ",
-      "pending_note": ""
+      "pending_note": "",
+      "in_person_note": "If you are interested in attending this event in person, please email Ms Isel Ras at isel.ras@deakin.edu.au."
     },
     {
       "day": "Day 2",
       "date": "Tuesday, 8 September 2026",
-      "time_aedt": "16:00–17:00 AEST",
-      "time_other": "07:00–08:00 BST",
+      "time_aedt": "17:00–18:00 AEST",
+      "time_other": "08:00–09:00 AM BST",
       "location": "Online via Zoom",
       "co_host": "Moonshot",
       "co_host_bio": "Moonshot is a social impact business with a mission to end online harms, applying evidence, ethics and human rights. Moonshot supports the governments of Australia, Canada, New Zealand, the United Kingdom, and the United States with efforts to improve risk assessment, prevention, and interventions in the online environment. Our work is rooted in the fundamental belief that people can change. We specialise in delivering programs that connect people at-risk of violence with content and services that reduce their vulnerability to, and support their disengagement from, violent extremism. This work is delivered to the highest data privacy standards, and always protects individual rights and freedoms.",
@@ -62,6 +72,7 @@
       "co_host_linkedin": "https://www.linkedin.com/company/moonshotteam/posts/?feedView=all",
       "title": "Digital Frontlines: Online Extremism and Prevention Since 9/11",
       "abstract": "In the 25 years since 9/11, the frontline against violent extremism has shifted from physical spaces to digital ones, and online violence prevention has grown to meet it, spanning law, multilateral diplomacy and multistakeholder cooperation across governments, industry and civil society. Its goal has always been the same: to stop online violent extremism from taking root and spreading into real world violence.\n\nYet one thread runs through nearly all of it, often unacknowledged at the outset: gender. From the earliest counter-terrorism frameworks to today's fastest-growing online harms, misogyny and violence against women have moved from the margins of the field to its centre.\n\nThis panel, moderated by Moonshot, brings together researchers and practitioners to take stock of how online extremism has evolved and what prevention has achieved. The discussion will trace how gendered narratives, grievance and radicalisation have shaped extremist movements throughout the past 25 years, and why the manosphere, tech-facilitated gender-based violence and misogynistic content in gaming spaces have become some of the most pressing online harms of the current moment.",
+      "combined_lineup": true,
       "moderator": {
         "name": "Theresa Rajah",
         "title": "Director of Online Violence Prevention, Moonshot",
@@ -69,9 +80,24 @@
         "linkedin": "https://www.linkedin.com/in/theresa-rajah-268696190/",
         "image": null
       },
-      "panellists": [],
-      "register_url": null,
-      "pending_note": "Panellists and registration details to be confirmed — check back soon."
+      "panellists": [
+        {
+          "name": "Stuart Macdonald",
+          "title": "Professor of Law, Swansea University",
+          "bio": "Stuart Macdonald is Professor of Law at the Hillary Rodham Clinton School of Law, Swansea University, UK. He is Co-Director of the University’s Cyber Threats Research Centre (CYTREC) and Coordinator of the VOX-Pol Network. Stuart’s research focuses on terrorists’ use of the internet. Most recently, he has examined jihadist narratives, the strategies used to disseminate terrorist propaganda online, and regulatory responses. He has received research funding from the British Academy, Welsh Government, US Government, NATO and the EU, among others. Stuart is the lead organiser of the biennial Terrorism and Social Media (TASM) conference, a member of Europol’s Advisory Network on terrorism and propaganda, a Senior Fellow at Hedayah and an Associate Fellow at the International Centre for Counter-Terrorism – The Hague. In 2016/17 he was also the holder of a Fulbright Cyber Security Award.",
+          "linkedin": "https://www.linkedin.com/in/drstuartmacdonald/",
+          "image": null
+        },
+        {
+          "name": "Christchurch Call Foundation",
+          "title": "Co-panellist organisation",
+          "bio": "The Christchurch Call Foundation is the independent nonprofit organisation driving the Christchurch Call — a global commitment by governments and technology platforms, supported by civil society and multilateral partners — to eliminate terrorist and violent extremist content (TVEC) online while protecting human rights and the open internet. Born from the March 15, 2019 terrorist attack at two mosques in Christchurch, CCF operates as the multistakeholder mechanism coordinating crisis response, tackling pathways to online radicalisation, enabling algorithmic research, and driving the development of open-source safety tools.",
+          "linkedin": "https://www.linkedin.com/company/christchurch-call-foundation/posts/?feedView=all",
+          "image": null
+        }
+      ],
+      "register_url": "https://deakin.zoom.us/webinar/register/WN_zNKTaBYjRK-Dnupn_L9-cA",
+      "pending_note": "A further panellist for this session is being confirmed."
     },
     {
       "day": "Day 3",
@@ -105,7 +131,8 @@
           "title": "Counter Terrorism and Countering Violent Extremism, UK Police",
           "bio": "Ian Cherrington is a former Detective Chief Inspector and Counter Terrorism Senior Investigating Officer (CT SIO) from the UK. During his policing career, Ian led teams responsible for Countering Violent Extremism (CVE) in Prevent and oversaw numerous live operations involving individuals suspected of planning terrorist attacks. He has also led investigations into completed terrorist attacks and their associated inquests. He led the initial response to the Reading terrorist attack, carried out by a lone actor Jihadist and was also the CT SIO for two significant high profile international events. Prior to this, Ian worked as a Senior Behavioural Analyst with the UK National Crime Agency (NCA), where he contributed to linking serial homicide and sexual offences cases across the UK. He holds a Master's degree in Forensic Psychology, and subsequently became the UK national lead for Counter Terrorism Policing in understanding the pathway to violence for lone actors. His work focused on identifying behavioural warning signs before an attack occurs, with the aim of improving early intervention and prevention. He has trained extensively across the UK and Europe and has led large scale research collaborations between law enforcement, academia and UK government research departments. Since moving to Australia, Ian has continued to train and consult with law enforcement, CVE practitioners and government on lone-actor violence and behavioural threat assessment. He teaches post graduate students at Macquarie University on both the advanced terrorism studies and extremism courses. He is currently developing a PhD proposal with Western Sydney University examining the late stage warning signs preceding lone actor attacks and how recognition of these behaviours can be improved. His work is driven by a commitment to preventing lone actor attacks and reducing their devastating impact.",
           "linkedin": "https://www.linkedin.com/in/ian-cherrington-msc-ma-8685b3321/",
-          "image": "ian-cherrington.jpg"
+          "image": "ian-cherrington.jpg",
+          "image_position": "center 15%"
         },
         {
           "name": "John Fahey",
@@ -122,7 +149,7 @@
       "day": "Day 4",
       "date": "Thursday, 10 September 2026",
       "time_aedt": "16:00–17:00 AEST",
-      "time_other": "07:00–08:00 BST",
+      "time_other": "07:00–08:00 AM BST",
       "location": "Online via Zoom",
       "co_host": "Institute for Strategic Dialogue",
       "co_host_bio": "The Institute for Strategic Dialogue (ISD) is fiercely independent and dedicated to safeguarding individual rights, democratic process, national security and public safety against the rising tide of authoritarianism and extremism globally.",
@@ -140,11 +167,10 @@
       "panellists": [
         {
           "name": "Susan Carland",
-          "title": "Monash University",
-          "bio": null,
-          "linkedin": null,
-          "image": null,
-          "pending": true
+          "title": "Deputy Director of Research, Impact and Engagement, School of Social Sciences, Monash University",
+          "bio": "Dr Susan Carland is a sociologist of religion and the Deputy Director of Research, Impact, and Engagement for the School of Social Sciences at Monash University. She has won awards for both research and teaching. She has received a Discovery Early Career Researcher Award (DECRA) Fellowship investigating gender and Islamophobia, a Churchill Fellowship investigating global best-practice responses to Islamophobia, and she is the Chief Investigator on an ARC Linkage project tracking Islamophobia and its impact on Australian Muslims' lives. She is also currently conducting research on Islam on the Cocos Islands. She is the lead researcher and deputy director of the Islamophobia Register Australia, where she led the latest Islamophobia in Australia Report.",
+          "linkedin": "https://www.linkedin.com/in/susan-carland/",
+          "image": "susan-carland.jpg"
         },
         {
           "name": "Tahir Abbas",
@@ -162,12 +188,12 @@
         }
       ],
       "register_url": "https://deakin.zoom.us/webinar/register/WN_9j8ncbjtQSm3YVBqjmwDUQ",
-      "pending_note": "Susan Carland's biography will be added once confirmed."
+      "pending_note": ""
     },
     {
       "day": "Day 5",
       "date": "Friday, 11 September 2026",
-      "time_aedt": "10:00–11:15 AEST",
+      "time_aedt": "10:00–11:15 AM AEST",
       "time_other": "",
       "location": "Deakin Downtown, Melbourne — in person and via Zoom (hybrid)",
       "co_host": "AVERT Research Network",
@@ -207,7 +233,8 @@
         }
       ],
       "register_url": "https://deakin.zoom.us/webinar/register/WN_H4mHOH1KS0yTIe8Wu6IOxQ",
-      "pending_note": ""
+      "pending_note": "",
+      "in_person_note": "If you would like to attend this session in person, please email Ms Isel Ras at isel.ras@deakin.edu.au."
     }
   ]
 }

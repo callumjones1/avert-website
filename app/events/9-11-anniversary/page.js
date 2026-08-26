@@ -6,6 +6,25 @@ export const metadata = {
   description: 'A week-long series of panel discussions marking the 25th anniversary of the September 11 terrorist attacks, presented by the AVERT Research Network.',
 }
 
+function LogoStrip({ logos }) {
+  return (
+    <div className="bg-white border border-[#e2e2dc] px-6 py-8">
+      <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        {logos.map((l, i) => (
+          <div key={i} className="relative h-12 md:h-14 w-32 md:w-40">
+            <Image
+              src={`/logos/anniversary-2026/${l.logo}`}
+              alt={l.name}
+              fill
+              className="object-contain"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function PersonCard({ person, roleLabel }) {
   if (person.pending) {
     return (
@@ -27,7 +46,13 @@ function PersonCard({ person, roleLabel }) {
     <div className="border border-[#e2e2dc] bg-white p-6">
       {person.image && (
         <div className="relative w-20 h-20 overflow-hidden rounded-full bg-[#f3f3f3] mb-4">
-          <Image src={`/headshots/anniversary-2026/${person.image}`} alt={person.name} fill className="object-cover object-top" />
+          <Image
+            src={`/headshots/anniversary-2026/${person.image}`}
+            alt={person.name}
+            fill
+            className="object-cover"
+            style={{ objectPosition: person.image_position || 'top' }}
+          />
         </div>
       )}
       {roleLabel && (
@@ -43,7 +68,7 @@ function PersonCard({ person, roleLabel }) {
 function SessionSection({ session }) {
   return (
     <section className="border border-[#e2e2dc] bg-white">
-      <div className="bg-[#f7f7f5] border-b border-[#e2e2dc] px-6 md:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="bg-[#f7f7f5] border-b border-[#e2e2dc] px-6 md:px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans mb-1">{session.day} · {session.date}</p>
           <p className="text-sm text-[#5a5a5a] font-sans">
@@ -53,7 +78,7 @@ function SessionSection({ session }) {
           </p>
         </div>
         {session.co_host_logo && (
-          <div className="relative h-10 w-36 flex-shrink-0 md:ml-auto">
+          <div className="relative h-16 w-52 md:h-20 md:w-64 flex-shrink-0 md:ml-auto">
             <Image
               src={`/logos/anniversary-2026/${session.co_host_logo}`}
               alt={session.co_host}
@@ -89,32 +114,55 @@ function SessionSection({ session }) {
           <p className="text-sm text-[#5a5a5a] leading-relaxed">{session.co_host_bio}</p>
         </div>
 
-        {/* Moderator */}
-        {session.moderator && (
+        {/* Combined moderator + panellists lineup (used when the moderator also sits on the panel, or the panel isn't finalised yet) */}
+        {session.combined_lineup ? (
           <div>
             <div className="flex items-baseline gap-3 mb-4">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Moderator</h3>
-              <div className="flex-1 h-px bg-[#e2e2dc]" />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
-              <PersonCard person={session.moderator} />
-            </div>
-          </div>
-        )}
-
-        {/* Panellists */}
-        {session.panellists.length > 0 && (
-          <div>
-            <div className="flex items-baseline gap-3 mb-4">
-              <h3 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Panellists</h3>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Speakers</h3>
               <div className="flex-1 h-px bg-[#e2e2dc]" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {session.moderator && (
+                <PersonCard
+                  person={session.moderator}
+                  roleLabel={session.moderator.also_panellist ? 'Moderator & Panellist' : 'Moderator'}
+                />
+              )}
               {session.panellists.map((p, i) => (
-                <PersonCard key={i} person={p} />
+                <PersonCard key={i} person={p} roleLabel="Panellist" />
               ))}
             </div>
           </div>
+        ) : (
+          <>
+            {/* Moderator */}
+            {session.moderator && (
+              <div>
+                <div className="flex items-baseline gap-3 mb-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Moderator</h3>
+                  <div className="flex-1 h-px bg-[#e2e2dc]" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-3xl">
+                  <PersonCard person={session.moderator} />
+                </div>
+              </div>
+            )}
+
+            {/* Panellists */}
+            {session.panellists.length > 0 && (
+              <div>
+                <div className="flex items-baseline gap-3 mb-4">
+                  <h3 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Panellists</h3>
+                  <div className="flex-1 h-px bg-[#e2e2dc]" />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {session.panellists.map((p, i) => (
+                    <PersonCard key={i} person={p} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         {/* Pending note */}
@@ -125,18 +173,23 @@ function SessionSection({ session }) {
         )}
 
         {/* Register */}
-        {session.register_url ? (
-          <a
-            href={session.register_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-          >
-            Register for this session →
-          </a>
-        ) : (
-          <p className="text-sm text-[#9a9a9a] font-sans italic">Registration link coming soon.</p>
-        )}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          {session.register_url ? (
+            <a
+              href={session.register_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+            >
+              Register for this session →
+            </a>
+          ) : (
+            <p className="text-sm text-[#9a9a9a] font-sans italic">Registration link coming soon.</p>
+          )}
+          {session.in_person_note && (
+            <p className="text-sm text-[#5a5a5a] font-sans italic">{session.in_person_note}</p>
+          )}
+        </div>
       </div>
     </section>
   )
@@ -153,6 +206,10 @@ export default function AnniversaryEventPage() {
         </div>
       </div>
 
+      <div className="max-w-7xl mx-auto px-6 pt-10">
+        <LogoStrip logos={data.co_host_logos} />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-16">
 
         {/* Overview */}
@@ -162,7 +219,12 @@ export default function AnniversaryEventPage() {
               <p key={i} className="text-[#2d2d2d] leading-relaxed">{para}</p>
             ))}
           </div>
+        </section>
 
+        {/* Logo ribbon, directly below the "please see below" registration note */}
+        <LogoStrip logos={data.co_host_logos} />
+
+        <section className="max-w-3xl">
           <div>
             <div className="flex items-baseline gap-3 mb-4">
               <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Objectives</h2>
