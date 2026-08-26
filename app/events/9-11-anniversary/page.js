@@ -113,7 +113,7 @@ function SessionSection({ session }) {
         {/* Co-host */}
         <div className="max-w-3xl border-l-2 border-[#0c7c59]/30 pl-4">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans mb-1.5">
-            Co-hosted with{' '}
+            {session.co_host_label || 'Co-hosted with'}{' '}
             {session.co_host_linkedin ? (
               <a href={session.co_host_linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline normal-case font-bold text-[#1a1a1a]">
                 {session.co_host}

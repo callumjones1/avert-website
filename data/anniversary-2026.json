@@ -78,7 +78,7 @@
         "title": "Director of Online Violence Prevention, Moonshot",
         "bio": "Theresa Rajah is Director of Online Violence Prevention at Moonshot, a global social impact organisation delivering evidence-based digital interventions across Five Eyes countries. She leads government-commissioned programmes in Australia, Canada, New Zealand, and the United Kingdom, countering gender-based violence, violent extremism, and online harm. With over a decade of experience across social inclusion, gender equity, and violence prevention, Theresa has served on the Victorian Government Expert Panel on Terrorism and Violent Extremism and advised the Ministerial Taskforce on Social Cohesion and Community Resilience. Her expertise bridges social policy, prevention programmes, and advisory across government, civil society, and the technology sector.",
         "linkedin": "https://www.linkedin.com/in/theresa-rajah-268696190/",
-        "image": null
+        "image": "moonshot-spot-logo.png"
       },
       "panellists": [
         {
@@ -98,7 +98,7 @@
         }
       ],
       "register_url": "https://deakin.zoom.us/webinar/register/WN_zNKTaBYjRK-Dnupn_L9-cA",
-      "pending_note": "A further panellist for this session is being confirmed."
+      "pending_note": ""
     },
     {
       "day": "Day 3",
@@ -198,6 +198,7 @@
       "time_other": "",
       "location": "Deakin Downtown, Melbourne — in person and via Zoom (hybrid)",
       "co_host": "AVERT Research Network",
+      "co_host_label": "Hosted by",
       "co_host_bio": "The Addressing Violent Extremism and Radicalisation to Terrorism (AVERT) Research Network is a multidisciplinary, multi-institutional initiative based at Deakin University’s Alfred Deakin Institute for Citizenship and Globalisation (ADI) in Melbourne, Australia. AVERT brings together researchers, government, community and civil society stakeholders to advance evidence-based research on violent extremism, terrorism and their prevention, as well as the impacts of counter-extremism and counterterrorism on communities. While grounded in Australian contexts and policy landscapes, the Network engages globally with researchers, institutions and emerging trends.",
       "co_host_logo": "avert.png",
       "co_host_linkedin": null,
