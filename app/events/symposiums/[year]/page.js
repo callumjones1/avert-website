@@ -37,7 +37,11 @@ export default async function SymposiumPage({ params }) {
           {sym.theme && (
             <p className="text-white/80 text-lg italic mt-2">{sym.theme}</p>
           )}
-          {sym.cfp && (
+          {sym.register_url ? (
+            <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 mt-5 font-sans">
+              Registrations Open
+            </span>
+          ) : sym.cfp && (
             <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 mt-5 font-sans">
               {sym.cfp_closed ? 'Call for Proposals Closed' : 'Call for Proposals Open'}
             </span>
@@ -55,20 +59,36 @@ export default async function SymposiumPage({ params }) {
 
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-14">
 
-        {/* Program download — top of page */}
-        {sym.program_url && (
-          <section>
-            <a
-              href={sym.program_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-              </svg>
-              Download Program
-            </a>
+        {/* Calls to action — top of page */}
+        {(sym.register_url || sym.program_url) && (
+          <section className="flex flex-wrap gap-4">
+            {sym.register_url && (
+              <a
+                href={sym.register_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+              >
+                Register Now →
+              </a>
+            )}
+            {sym.program_url && (
+              <a
+                href={sym.program_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={
+                  sym.register_url
+                    ? "inline-flex items-center gap-2 border border-[#0c7c59] text-[#0c7c59] hover:bg-[#e8f5f0] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                    : "inline-flex items-center gap-2 bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
+                }
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                </svg>
+                Download Program
+              </a>
+            )}
           </section>
         )}
 
