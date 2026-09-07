@@ -44,6 +44,10 @@ next-env.d.ts
 /backend/.venv/
 /backend/__pycache__/
 
+# youtube banner generator: local cutout cache + scratch renders, not committed
+/scripts/youtube-banner/.cache/
+/scripts/youtube-banner/__pycache__/
+
 # raw html source files (scraped source, not needed in repo)
 /avert-commentary/
 /avert-impact/
