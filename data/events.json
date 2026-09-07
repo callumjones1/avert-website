@@ -60,11 +60,12 @@
     "date_other": "Sydney, Australia",
     "platform": "In-person",
     "format": "Symposium",
-    "title": "AVERT National Research Symposium 2026 — Call for Proposals",
-    "description": "AVERT is calling for proposals for its 2026 National Research Symposium, Youth and Extremism: Thresholds, Interventions, Connections, taking place 26–27 November 2026 at Macquarie University's City Campus, Sydney. Submissions are open for papers, panels, roundtables, and workshops addressing youth radicalisation and violent extremism.",
-    "register_url": "",
+    "title": "AVERT National Research Symposium 2026",
+    "description": "Registrations are now open for AVERT's 2026 National Research Symposium, Youth and Extremism: Thresholds, Interventions, Connections, taking place 26–27 November 2026 at Macquarie University's City Campus, Sydney. Overseas presenters can register to present virtually.",
+    "register_url": "https://dems-avert-2026.eventsairsite.com/",
+    "register_label": "Register Now →",
     "detail_url": "/events/symposiums/2026",
-    "detail_label": "View Symposium & Call for Proposals →",
+    "detail_label": "View Symposium Details →",
     "recording_url": ""
   },
   {

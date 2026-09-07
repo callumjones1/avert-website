@@ -125,7 +125,7 @@ export default function EventsPage() {
                             rel="noopener noreferrer"
                             className="inline-block bg-[#0c7c59] hover:bg-[#0a6b4d] text-white px-5 py-2.5 text-sm font-semibold uppercase tracking-wide transition-colors font-sans"
                           >
-                            Register via Zoom →
+                            {event.register_label || 'Register via Zoom →'}
                           </a>
                         )}
                         {event.detail_url && (
