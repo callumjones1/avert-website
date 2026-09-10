@@ -118,6 +118,9 @@ export default async function SymposiumPage({ params }) {
                       <Image src={`/${k.image_dir}/${k.image}`} alt={k.name} fill className="object-cover object-top" />
                     </div>
                   )}
+                  {k.day && (
+                    <p className="text-[10px] text-white bg-[#0c7c59] inline-block px-2 py-0.5 font-semibold uppercase tracking-widest font-sans mb-2">{k.day} Keynote</p>
+                  )}
                   <p className="font-bold text-[#1a1a1a] leading-snug mb-1">{k.name}</p>
                   <p className="text-xs text-[#0c7c59] font-semibold font-sans mb-3">{k.institution}</p>
                   <p className="text-sm text-[#5a5a5a] leading-relaxed">{k.bio}</p>
