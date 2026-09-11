@@ -9,7 +9,7 @@
     { "name": "Institute for Strategic Dialogue", "logo": "isd.png" },
     { "name": "AVERT Research Network", "logo": "avert.png" }
   ],
-  "overview": "On 11 September 2026, the world will mark the 25th anniversary of the September 11 terrorist attacks — one of the most consequential terrorist incidents in modern history. The attacks reshaped global security priorities, led to the launch of the “War on Terror,” and significantly influenced international law, intelligence cooperation, military interventions, border security, and approaches to countering violent extremism.\n\nTo mark this milestone, the AVERT Research Network is convening a week-long series of panel discussions bringing together leading Australian and international researchers, policymakers, practitioners, and civil society representatives. Rather than a purely commemorative programme, the series is intended as a substantive discussion of how the threat landscape has evolved over the past twenty-five years and what priorities should shape the next decade.\n\nEach session is co-hosted with a partner organisation and requires separate registration for each session — please see below. Recordings of each session will be made available on this page afterwards for anyone unable to attend live.",
+  "overview": "On 11 September 2026, the world marked the 25th anniversary of the September 11 terrorist attacks — one of the most consequential terrorist incidents in modern history. The attacks reshaped global security priorities, led to the launch of the “War on Terror,” and significantly influenced international law, intelligence cooperation, military interventions, border security, and approaches to countering violent extremism.\n\nTo mark this milestone, the AVERT Research Network convened a week-long series of panel discussions bringing together leading Australian and international researchers, policymakers, practitioners, and civil society representatives. Rather than a purely commemorative programme, the series was intended as a substantive discussion of how the threat landscape has evolved over the past twenty-five years and what priorities should shape the next decade.\n\nEach session was co-hosted with a partner organisation. Recordings of each session are available below for anyone unable to attend live.",
   "objectives": [
     "Reflect on key lessons learned since 9/11 across policy, law, prevention, and operational practice",
     "Examine how terrorism and violent extremism have evolved over the past twenty-five years",
@@ -30,7 +30,7 @@
       "co_host_logo": "anu.jpg",
       "co_host_linkedin": "https://rsss.cass.anu.edu.au/",
       "title": "Counter-Terrorism and Evolving Terrorism Threats",
-      "abstract": "This seminar will discuss how the terrorist threat has evolved over the quarter century since 9/11. In doing so, the speakers will critically consider the impacts and implications of counter-terrorism (CT) efforts that have been undertaken since 2001, and how the changing character of terrorist threats potentially demands reconsideration and recalibration of how counter-terrorism and preventing/countering violent extremism policies and practices are conceived and implemented. Terrorism continues to manifest in increasingly diverse, complex, and novel ways and the speakers will seek to articulate how these threats are changing, across ideologies, actors, tactics, and strategies. The discussion will address the growing diversity of terrorist threats, the challenges these present for existing frameworks, and how new contexts, both social, geopolitical and technological, are impacting the terrorism threat landscape.",
+      "abstract": "This seminar discussed how the terrorist threat has evolved over the quarter century since 9/11. In doing so, the speakers critically considered the impacts and implications of counter-terrorism (CT) efforts that have been undertaken since 2001, and how the changing character of terrorist threats potentially demands reconsideration and recalibration of how counter-terrorism and preventing/countering violent extremism policies and practices are conceived and implemented. Terrorism continues to manifest in increasingly diverse, complex, and novel ways and the speakers sought to articulate how these threats are changing, across ideologies, actors, tactics, and strategies. The discussion addressed the growing diversity of terrorist threats, the challenges these present for existing frameworks, and how new contexts, both social, geopolitical and technological, are impacting the terrorism threat landscape.",
       "combined_lineup": true,
       "moderator": {
         "name": "Levi West",
@@ -56,9 +56,7 @@
           "image": "jen-robinson.png"
         }
       ],
-      "register_url": "https://deakin.zoom.us/webinar/register/WN_5s7s8mSeRa2H0rGQq5EqeQ",
-      "pending_note": "",
-      "in_person_note": "If you are interested in attending this event in person, please email Ms Isel Ras at isel.ras@deakin.edu.au."
+      "recording_videoId": ""
     },
     {
       "day": "Day 2",
@@ -71,7 +69,7 @@
       "co_host_logo": "moonshot.png",
       "co_host_linkedin": "https://www.linkedin.com/company/moonshotteam/posts/?feedView=all",
       "title": "Digital Frontlines: Online Extremism and Prevention Since 9/11",
-      "abstract": "In the 25 years since 9/11, the frontline against violent extremism has shifted from physical spaces to digital ones, and online violence prevention has grown to meet it, spanning law, multilateral diplomacy and multistakeholder cooperation across governments, industry and civil society. Its goal has always been the same: to stop online violent extremism from taking root and spreading into real world violence.\n\nYet one thread runs through nearly all of it, often unacknowledged at the outset: gender. From the earliest counter-terrorism frameworks to today's fastest-growing online harms, misogyny and violence against women have moved from the margins of the field to its centre.\n\nThis panel, moderated by Moonshot, brings together researchers and practitioners to take stock of how online extremism has evolved and what prevention has achieved. The discussion will trace how gendered narratives, grievance and radicalisation have shaped extremist movements throughout the past 25 years, and why the manosphere, tech-facilitated gender-based violence and misogynistic content in gaming spaces have become some of the most pressing online harms of the current moment.",
+      "abstract": "In the 25 years since 9/11, the frontline against violent extremism has shifted from physical spaces to digital ones, and online violence prevention has grown to meet it, spanning law, multilateral diplomacy and multistakeholder cooperation across governments, industry and civil society. Its goal has always been the same: to stop online violent extremism from taking root and spreading into real world violence.\n\nYet one thread runs through nearly all of it, often unacknowledged at the outset: gender. From the earliest counter-terrorism frameworks to today's fastest-growing online harms, misogyny and violence against women have moved from the margins of the field to its centre.\n\nThis panel, moderated by Moonshot, brought together researchers and practitioners to take stock of how online extremism has evolved and what prevention has achieved. The discussion traced how gendered narratives, grievance and radicalisation have shaped extremist movements throughout the past 25 years, and why the manosphere, tech-facilitated gender-based violence and misogynistic content in gaming spaces have become some of the most pressing online harms of the current moment.",
       "moderator": {
         "name": "Theresa Rajah",
         "title": "Director of Online Violence Prevention, Moonshot",
@@ -102,8 +100,7 @@
           "image": "angus-lindsay.jpg"
         }
       ],
-      "register_url": "https://deakin.zoom.us/webinar/register/WN_zNKTaBYjRK-Dnupn_L9-cA",
-      "pending_note": ""
+      "recording_videoId": ""
     },
     {
       "day": "Day 3",
@@ -116,7 +113,7 @@
       "co_host_logo": "macquarie.png",
       "co_host_linkedin": "https://www.linkedin.com/company/mq-school-of-international-studies/posts/?feedView=all",
       "title": "From 9/11 to Now: Policing and Intelligence in a Changing Threat Landscape",
-      "abstract": "As part of a week-long series of events marking the 25-year anniversary of the September 11 terrorist attacks, and presented by the AVERT Network, we are pleased to invite you to attend ‘From 9/11 to Now: Policing and Intelligence in a Changing Threat Landscape’.\n\nTwenty five years after September 11, join three senior practitioners as they reflect on how policing and intelligence were transformed by the post-9/11 threat landscape. Drawing on decades of frontline experience across Australian and UK counter-terrorism, the panel will discuss the immediate challenges 9/11 posed for law enforcement and intelligence agencies, and how fields like criminology and international security adapted in response. This unique discussion connects that watershed moment to the evolving threats confronting police and intelligence services today, offering insight from those who lived through and shaped the post-9/11 world.",
+      "abstract": "As part of a week-long series of events marking the 25-year anniversary of the September 11 terrorist attacks, and presented by the AVERT Network, this session brought together three senior practitioners for ‘From 9/11 to Now: Policing and Intelligence in a Changing Threat Landscape’.\n\nTwenty five years after September 11, the panel reflected on how policing and intelligence were transformed by the post-9/11 threat landscape. Drawing on decades of frontline experience across Australian and UK counter-terrorism, the panel discussed the immediate challenges 9/11 posed for law enforcement and intelligence agencies, and how fields like criminology and international security adapted in response. This unique discussion connected that watershed moment to the evolving threats confronting police and intelligence services today, offering insight from those who lived through and shaped the post-9/11 world.",
       "moderator": {
         "name": "Julian Droogan",
         "title": "Head, School of International Studies, Macquarie University",
@@ -148,8 +145,7 @@
           "image": "john-fahey.jpg"
         }
       ],
-      "register_url": "https://deakin.zoom.us/webinar/register/WN_8RzGUUfOTMO7Y5ogW1WM_w",
-      "pending_note": ""
+      "recording_videoId": ""
     },
     {
       "day": "Day 4",
@@ -162,7 +158,7 @@
       "co_host_logo": "isd.png",
       "co_host_linkedin": null,
       "title": "Beyond 9/11: Global Muslim Diasporas, Evolving Challenges, and New Paths Forward",
-      "abstract": "Twenty-five years after the pivotal events of 9/11, the global landscape for Muslim diaspora communities has fundamentally shifted. While the enduring impact of structural Islamophobia and security-centric policies remains a critical concern, contemporary Muslim experiences are increasingly defined by complex demographic growth, socioeconomic mobility, and emerging avenues for civic leadership.\n\nThis panel brings together international academic and practitioner perspectives to evaluate the evolving reality of Muslim communities across Australia, the UK, and the broader global diaspora. Moving beyond traditional frameworks that view these communities solely through the lens of discrimination or security, panellists will explore how historical lessons learned over the past two decades are being applied to navigate contemporary challenges. The discussion will examine the intersection of institutional anti-Islamophobia initiatives, shifting public policy, and the successes driven by a new generation of diaspora leaders leveraging digital platforms, economic influence, and cross-cultural coalition building. Ultimately, the session seeks to highlight both the ongoing systemic hurdles and the transformative opportunities shaping the future of global Muslim identity.",
+      "abstract": "Twenty-five years after the pivotal events of 9/11, the global landscape for Muslim diaspora communities has fundamentally shifted. While the enduring impact of structural Islamophobia and security-centric policies remains a critical concern, contemporary Muslim experiences are increasingly defined by complex demographic growth, socioeconomic mobility, and emerging avenues for civic leadership.\n\nThis panel brought together international academic and practitioner perspectives to evaluate the evolving reality of Muslim communities across Australia, the UK, and the broader global diaspora. Moving beyond traditional frameworks that view these communities solely through the lens of discrimination or security, panellists explored how historical lessons learned over the past two decades are being applied to navigate contemporary challenges. The discussion examined the intersection of institutional anti-Islamophobia initiatives, shifting public policy, and the successes driven by a new generation of diaspora leaders leveraging digital platforms, economic influence, and cross-cultural coalition building. Ultimately, the session sought to highlight both the ongoing systemic hurdles and the transformative opportunities shaping the future of global Muslim identity.",
       "moderator": {
         "name": "Zahed Amanullah",
         "title": "Resident Senior Fellow, Institute for Strategic Dialogue",
@@ -193,8 +189,7 @@
           "image": "paul-thomas.jpg"
         }
       ],
-      "register_url": "https://deakin.zoom.us/webinar/register/WN_9j8ncbjtQSm3YVBqjmwDUQ",
-      "pending_note": ""
+      "recording_videoId": ""
     },
     {
       "day": "Day 5",
@@ -208,7 +203,7 @@
       "co_host_logo": "avert.png",
       "co_host_linkedin": null,
       "title": "25 Years On: Lessons and Legacies of 9/11",
-      "abstract": "Hosted by the AVERT Research Network and streamed from Deakin Downtown, this hybrid event will take place on the 25th anniversary of 9/11. It is the culmination of a week-long series of panel discussions on global threat evolution, online extremism, policing and intelligence, and Islamophobia. On this panel, Dr Kelly Mischel (Victorian CVE Commissioner), Associate Professor Keiran Hardy (Griffith Criminology Institute) and Dr Andrew Zammit (Victoria University) will join Lydia Khalil (Lowy Institute) to discuss the key lessons and legacies of 9/11. How has 9/11 shaped terrorism and counter-terrorism, globally and locally? How far have we come in understanding terrorism, radicalisation, extremism, and their prevention? And are there lessons still not learned, which hamper current efforts to prevent rapidly evolving threats?",
+      "abstract": "Hosted by the AVERT Research Network and streamed from Deakin Downtown, this hybrid event took place on the 25th anniversary of 9/11. It was the culmination of a week-long series of panel discussions on global threat evolution, online extremism, policing and intelligence, and Islamophobia. On this panel, Dr Kelly Mischel (Victorian CVE Commissioner), Associate Professor Keiran Hardy (Griffith Criminology Institute) and Dr Andrew Zammit (Victoria University) joined Lydia Khalil (Lowy Institute) to discuss the key lessons and legacies of 9/11 — how it shaped terrorism and counter-terrorism, globally and locally, how far understanding of terrorism, radicalisation, extremism and their prevention has come, and what lessons remain unlearned that hamper current efforts to prevent rapidly evolving threats.",
       "moderator": {
         "name": "Lydia Khalil",
         "title": "Senior Research Fellow, Alfred Deakin Institute; Project Director, Lowy Institute",
@@ -239,9 +234,7 @@
           "image": "andrew-zammit.png"
         }
       ],
-      "register_url": "https://deakin.zoom.us/webinar/register/WN_H4mHOH1KS0yTIe8Wu6IOxQ",
-      "pending_note": "",
-      "in_person_note": "If you would like to attend this session in person, please email Ms Isel Ras at isel.ras@deakin.edu.au."
+      "recording_videoId": ""
     }
   ]
 }

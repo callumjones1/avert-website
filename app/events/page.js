@@ -171,6 +171,14 @@ export default function EventsPage() {
               <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] transition-colors">Past Symposiums →</h3>
               <p className="text-sm text-[#717171] mt-1">AVERT annual research symposiums</p>
             </Link>
+            <Link
+              href="/events/special-events"
+              className="flex-1 border border-[#e2e2dc] hover:border-[#0c7c59] bg-white p-6 transition-colors group"
+            >
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] mb-2 font-sans">Archive</p>
+              <h3 className="font-bold text-[#1a1a1a] group-hover:text-[#0c7c59] transition-colors">Special Events →</h3>
+              <p className="text-sm text-[#717171] mt-1">One-off thematic panel series</p>
+            </Link>
           </div>
         </section>
       </div>

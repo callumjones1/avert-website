@@ -34,6 +34,7 @@ const navItems = [
       { label: '2026 Symposium', href: '/events/symposiums/2026' },
       { label: 'Webinars', href: '/events-webinars' },
       { label: 'Symposiums', href: '/events/symposiums' },
+      { label: 'Special Events', href: '/events/special-events' },
     ],
   },
   { label: 'Opportunities', href: '/opportunities' },
