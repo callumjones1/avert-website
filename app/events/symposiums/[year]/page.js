@@ -156,7 +156,14 @@ export default async function SymposiumPage({ params }) {
                 <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Call for Proposals</h2>
                 <div className="flex-1 h-px bg-[#e2e2dc]" />
               </div>
-              {sym.cfp_closed && (
+              {sym.cfp.outcomes_notice ? (
+                <p className="text-[#2d2d2d] leading-relaxed mb-6 font-semibold">
+                  {sym.cfp.outcomes_notice}
+                  {sym.cfp.enquiries_email && (
+                    <> Please contact <a href={`mailto:${sym.cfp.enquiries_email}`} className="text-[#0c7c59] hover:underline">{sym.cfp.enquiries_email}</a>.</>
+                  )}
+                </p>
+              ) : sym.cfp_closed && (
                 <p className="text-[#2d2d2d] leading-relaxed mb-6 font-semibold">
                   The Call for Proposals have now closed and we would like to thank everyone who submitted a proposal.
                 </p>
