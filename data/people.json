@@ -5472,5 +5472,61 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "ryan-williams",
+    "name": "Dr Ryan Williams",
+    "title": "Senior Lecturer",
+    "institution": "University of Queensland",
+    "role": "Research Member",
+    "research_areas": "Islamist extremism; Countering/preventing violent extremism; Moral values and social movements; Racialisation; Corrections",
+    "bio": "Ryan Williams is a Senior Lecturer at the University of Queensland, Australia, with expertise in the sociology of religion, prison studies, and criminology. He holds a PhD from the University of Cambridge, has held several research fellowships, and has received research funding from national schemes in the UK, Canada, and Australia. He has extensive fieldwork experience in UK prison and probation contexts and among Muslims in the community in SE Queensland. He is interested in how state power and its coercive institutions come to reshape people’s lives in sometimes negative, but also positive, ways; how religion, ideology and violence relate to meaning-making; and the racialised and environmental aspects of securitisation and radicalisation. He has a strong track record in working with national and international security and correctional agencies, and he advocates for stakeholder partnerships grounded in robust, strengths-based methods.",
+    "email": "",
+    "headshot": "ryan-williams.jpg",
+    "profile_url": "https://hpi.uq.edu.au/profile/3247/ryan-williams",
+    "orcid": "",
+    "linkedin": "",
+    "publications": [
+      {
+        "type": "Journal Articles",
+        "items": [
+          {
+            "title": "Prisoner morality beyond the inmate code? Being a working-class Muslim stuck in an English high-security prison (2025)",
+            "authors": "Williams R",
+            "in": "Incarceration, Vol.6, 26326663251321074, pp.1-18",
+            "url": "https://doi.org/10.1177/26326663251321074"
+          },
+          {
+            "title": "The moral and ethical worlds of coercive confinement: a prologue (2025)",
+            "authors": "Ievins A and Williams R",
+            "in": "Incarceration, Vol.6, 26326663251320799, pp.1-17",
+            "url": "https://doi.org/10.1177/26326663251320799"
+          },
+          {
+            "title": "Do prisons cause radicalization? Order, leadership, political charge and violence in two maximum security prisons (2022)",
+            "authors": "Williams R and Liebling A",
+            "in": "The British Journal of Criminology, Vol.63, Iss.1, pp.97-114",
+            "url": "https://doi.org/10.1093/bjc/azab122"
+          },
+          {
+            "title": "An Evidence Review of Strategies Targeting Youth Who Have Radicalised to Violent Extremism (2022)",
+            "authors": "Cherney A, De Rooy K and Williams R",
+            "in": "Journal for Deradicalization, No.33, pp.40-69"
+          }
+        ]
+      },
+      {
+        "type": "Book Chapters",
+        "items": [
+          {
+            "title": "‘Yo, God, what should I do?’: Striving for moral consistency after prison (2023)",
+            "authors": "Williams R",
+            "in": "Criminology as a moral science, pp.193-210",
+            "editors": "Bottoms AE and Jacobs J (eds), Hart Publishing: Oxford, United Kingdom",
+            "url": "https://doi.org/10.5040/9781509965366.ch-007"
+          }
+        ]
+      }
+    ]
   }
 ]
