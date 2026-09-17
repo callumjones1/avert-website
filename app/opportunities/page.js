@@ -31,6 +31,11 @@ export default function OpportunitiesPage() {
             </div>
 
             <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8">
+              <img
+                src="/images/griffith-university-logo.png"
+                alt="Griffith University"
+                className="h-14 w-auto mb-4"
+              />
               <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">PhD Scholarship</p>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
                 Understanding and Addressing Anti-Government and Sovereign Citizen Extremism in Australia
