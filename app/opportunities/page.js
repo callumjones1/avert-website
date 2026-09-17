@@ -31,6 +31,44 @@ export default function OpportunitiesPage() {
             </div>
 
             <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8">
+              <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">PhD Scholarship</p>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
+                Understanding and Addressing Anti-Government and Sovereign Citizen Extremism in Australia
+              </h3>
+              <p className="text-[#5a5a5a] text-sm font-sans mb-4">
+                Griffith University &middot; $20,000/yr top-up scholarship &middot; Expressions of Interest close Friday 16 October 2026 &middot; Position starts February 2027
+              </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                As part of an ONI grant led by Dr Keiran Hardy with Professor Tina Murphy (both Griffith University; Tina is a member of the AVERT Steering Committee), a top-up scholarship is available for a new PhD student to study sovereign citizen and anti-government extremism. The research will involve analysing body-worn camera footage from the Queensland Police Service, conducting a national survey, and reviewing correspondence sent by sovereign citizens to the police commissioner and police leadership — though there is flexibility in the specific topic a candidate wants to pursue.
+              </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                The $20,000/yr top-up brings the total stipend to $55,656 per year (tax free) at current rates, on top of the standard PhD stipend, which should minimise the amount of sessional work a candidate needs to take on. Griffith's School of Criminology and Criminal Justice also provides $4,500 for HDR research costs, training, and conference travel. Candidates would ideally be resident in Queensland, though an especially strong remote candidate would be considered.
+              </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                This EOI is not the full Griffith PhD application — that comes later. It is Griffith's internal process for lining up a ring-fenced scholarship ahead of the coming round. The EOI (submitted by email) requires: a statement addressing your suitability for the project/scholarship and why you're interested; evidence that you have completed a program with the required grades (e.g. academic transcript), with a brief discussion of that program's research component; a CV using the Griffith CV template; contact details for two referees who can comment on your suitability for PhD-level study; and evidence of Australian citizenship, permanent residency, or New Zealand Special Category Visa status.
+              </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                If any AVERT members know great honours students finishing up this year (or recently finished) who might be interested, please point them this way. Prospective candidates are also very welcome to reach out informally before submitting a formal EOI.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://www.griffith.edu.au/research-study/scholarships/understanding-and-addressing-anti-government-and-sovereign-citizen-extremism-in-australia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+                >
+                  Scholarship Details →
+                </a>
+                <a
+                  href="mailto:k.hardy@griffith.edu.au"
+                  className="inline-block border border-[#0c7c59] text-[#0c7c59] hover:bg-[#0c7c59] hover:text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+                >
+                  Contact Dr Keiran Hardy →
+                </a>
+              </div>
+            </div>
+
+            <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8 mt-6">
               <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">Call for Papers</p>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
                 18th Annual International Conference of the Society for Terrorism Research (STR): Continuity and Change in the Character of Terrorism
