@@ -74,6 +74,38 @@ export default function OpportunitiesPage() {
             </div>
 
             <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8 mt-6">
+              <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">Survey Invitation</p>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
+                Evaluating Risk: Comparing Ethics Review Boards&rsquo; and Researchers&rsquo; Perception and Understanding of the Risk of Online Violent Extremism Research
+              </h3>
+              <p className="text-[#5a5a5a] text-sm font-sans mb-4">
+                University of Southampton, University of Liverpool &amp; University of Ottawa &middot; Approx. 45 minutes &middot; Open to OVE researchers based in the UK, US, Australia, Canada, New Zealand &amp; Ireland
+              </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                Dr Ashton Kingdon (University of Southampton), Dr Nicola Mathieson (University of Liverpool), and Dr Audrey Gagnon (University of Ottawa) are running the second stage of a project comparing how ethics review boards and researchers perceive and assess risk in online violent extremism (OVE) research. The survey presents short research proposal vignettes representing common OVE methodological approaches and asks participants to briefly assess them. The project aims to explore general patterns across the field, not to evaluate individual or institutional competence, and will inform a forthcoming best-practice report for ethics professionals.
+              </p>
+              <p className="text-[#2d2d2d] leading-relaxed mb-4">
+                Open to researchers studying online violent extremism at universities in the United Kingdom, United States, Australia, Canada, New Zealand, and Ireland. Note: researchers who completed the team&rsquo;s earlier survey in their capacity as an ethics reviewer are not eligible to participate in this one.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://soton.eu.qualtrics.com/jfe/form/SV_29lvs7ukeRfEueW"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#0c7c59] text-white hover:bg-[#0a6b4d] px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+                >
+                  Complete the Survey →
+                </a>
+                <a
+                  href="mailto:a.r.kingdon@soton.ac.uk"
+                  className="inline-block border border-[#0c7c59] text-[#0c7c59] hover:bg-[#0c7c59] hover:text-white px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-colors font-sans"
+                >
+                  Contact Dr Ashton Kingdon →
+                </a>
+              </div>
+            </div>
+
+            <div className="border border-[#e2e2dc] bg-[#f7f7f5] p-8 mt-6">
               <p className="text-xs uppercase tracking-wide text-[#0c7c59] font-semibold font-sans mb-2">Call for Papers</p>
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">
                 18th Annual International Conference of the Society for Terrorism Research (STR): Continuity and Change in the Character of Terrorism
