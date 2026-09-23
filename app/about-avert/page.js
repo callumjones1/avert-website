@@ -95,6 +95,16 @@ export default function AboutPage() {
                 <li><Link href="/about-avert/faqs" className="text-[#0c7c59] hover:underline">FAQs →</Link></li>
                 <li><Link href="/people" className="text-[#0c7c59] hover:underline">Our Researchers →</Link></li>
                 <li><Link href="/opportunities" className="text-[#0c7c59] hover:underline">Join AVERT →</Link></li>
+                <li>
+                  <a
+                    href="/publications/AVERT-Code-of-Conduct-2025.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#0c7c59] hover:underline"
+                  >
+                    Code of Conduct →
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="bg-[#e8f5f0] border border-[#0c7c59]/20 p-6">
