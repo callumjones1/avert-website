@@ -48,6 +48,28 @@ export default function AboutPage() {
             </p>
 
             <div className="pt-4">
+              <h2 className="text-lg font-bold text-[#1a1a1a] mb-4">AVERT Brochure</h2>
+              <p className="mb-4">
+                An overview of the AVERT Research Network, our members and our work.{' '}
+                <a
+                  href="/publications/AVERT-Brochure.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#0c7c59] hover:underline"
+                >
+                  Download the PDF →
+                </a>
+              </p>
+              <div className="border border-[#e2e2dc]">
+                <iframe
+                  src="/publications/AVERT-Brochure.pdf"
+                  title="AVERT Research Network Brochure"
+                  className="w-full h-[700px]"
+                />
+              </div>
+            </div>
+
+            <div className="pt-4">
               <h2 className="text-lg font-bold text-[#1a1a1a] mb-4">Our Guiding Principles</h2>
               <ul className="space-y-3">
                 {principles.map((p, i) => (
