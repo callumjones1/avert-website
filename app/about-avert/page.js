@@ -48,6 +48,23 @@ export default function AboutPage() {
             </p>
 
             <div className="pt-4">
+              <h2 className="text-lg font-bold text-[#1a1a1a] mb-4">Our Guiding Principles</h2>
+              <ul className="space-y-3">
+                {principles.map((p, i) => (
+                  <li key={i} className="flex gap-3">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#0c7c59] mt-2.5" />
+                    <span>{p}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p className="pt-2 text-[#5a5a5a] text-sm border-t border-[#e2e2dc] pt-6 mt-4">
+              Affiliate membership of the AVERT Research Network is open to individuals working with community organisations and groups, service providers, NGOs, think tanks and government agencies with an interest in AVERT's focus and activities.{' '}
+              <Link href="/opportunities/affiliate" className="text-[#0c7c59] hover:underline">Learn more about affiliate membership →</Link>
+            </p>
+
+            <div className="pt-4">
               <h2 className="text-lg font-bold text-[#1a1a1a] mb-4">AVERT Brochure</h2>
               <p className="mb-4">
                 An overview of the AVERT Research Network, our members and our work.{' '}
@@ -68,23 +85,6 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-
-            <div className="pt-4">
-              <h2 className="text-lg font-bold text-[#1a1a1a] mb-4">Our Guiding Principles</h2>
-              <ul className="space-y-3">
-                {principles.map((p, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#0c7c59] mt-2.5" />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <p className="pt-2 text-[#5a5a5a] text-sm border-t border-[#e2e2dc] pt-6 mt-4">
-              Affiliate membership of the AVERT Research Network is open to individuals working with community organisations and groups, service providers, NGOs, think tanks and government agencies with an interest in AVERT's focus and activities.{' '}
-              <Link href="/opportunities/affiliate" className="text-[#0c7c59] hover:underline">Learn more about affiliate membership →</Link>
-            </p>
           </div>
 
           <div className="space-y-4">
