@@ -55,6 +55,47 @@
   },
   {
     "type": "upcoming",
+    "speakers": [
+      {
+        "name": "Galen Lamphere-Englund",
+        "title": "Senior Counter-Terrorism & Conflict Prevention Advisor; Co-Founder & Convener, Extremism and Gaming Research Network (EGRN)",
+        "bio": "Galen Lamphere-Englund is a senior advisor with over 16 years’ experience at the intersection of counter-terrorism, violence prevention, and technology. After leading initiatives in more than 30 countries, Galen has advised the United Nations, FBI, INTERPOL, CEPOL, governments, and major technology platforms on preventing online and offline harms, countering violent extremism, and strengthening digital safety. As co-founder of the Extremism and Gaming Research Network, Galen focuses on building safer digital ecosystems across gaming platforms and protecting those who work to keep them secure. Galen recently led the Christchurch Call Foundation’s Project Catalyst, a large-scale consortium dedicated to rapid pilots combating online violent misogyny and TFGBV linked to terrorism and extremism. His work focuses on protecting online ecosystems and advancing practical strategies to prevent terrorist and extremist exploitation of emerging technologies.",
+        "image": "galen-lamphere-englund.png",
+        "image_dir": "headshots"
+      },
+      {
+        "name": "Emily Thompson",
+        "title": "Principal Strategic Advisor, Christchurch Call Foundation; Extremism and Gaming Research Network",
+        "bio": "Emily Thompson is an expert on the exploitation of digital platforms, social media, and gaming spaces by violent extremists and terrorists. As an experienced researcher, consultant and program director, she works to build understanding and resilience against hateful and harmful ideologies that threaten civil society. Emily combines subject matter expertise in terrorist and violent extremist content with curriculum and program development to design effective, innovative, educational programming. She is a Principal Strategic Advisor for the Christchurch Call Foundation, leading the development of a resource hub for caring adults to build understanding of online harms in digital gaming spaces, with actionable strategies to support young people to navigate these areas in safer ways. Emily is a member of the Extremism and Gaming Research Network.",
+        "image": "emily-thompson.png",
+        "image_dir": "headshots"
+      },
+      {
+        "name": "Dr Linda Schlegel",
+        "title": "PostDoc, Peace Research Institute Frankfurt (PRIF)",
+        "bio": "Dr. Linda Schlegel is a PostDoc at the Peace Research Institute Frankfurt (PRIF), where she co-leads project RadiGaMe - Radicalization on Gaming Platforms and Messenger Services. As a founding member of the Extremism and Gaming Research Network (EGRN), she has researched the intersection of gaming and (counter-)extremism for years, including extremist exploitation of gaming platforms, gamification, and gaming-related prevention and intervention efforts.",
+        "image": "linda-schlegel.png",
+        "image_dir": "headshots"
+      },
+      {
+        "name": "Odhran McCarthy",
+        "title": "New York Liaison Officer, United Nations Interregional Crime and Justice Research Institute (UNICRI)",
+        "bio": "Mr. Odhran McCarthy is the New York Liaison Officer for the United Nations Interregional Crime and Justice Research Institute (UNICRI), based at United Nations Headquarters in New York City. In this role, he supports institutional engagement, partnerships, and programme development, while contributing to UNICRI’s research and operational work across a range of crime, justice, and security issues, with a particular focus on cybercrime and online harms.",
+        "image": "odhran-mccarthy.png",
+        "image_dir": "headshots"
+      }
+    ],
+    "date_aedt": "Friday 30 October 2026, 10:30–11:45 AEDT",
+    "date_other": "Thursday 29 October, 7:30–8:45 PM EDT",
+    "platform": "Zoom",
+    "format": "Online Webinar",
+    "title": "Behind the Screen: How Terrorists Exploit Gaming Platforms and Online Spaces",
+    "description": "Gaming has become central to how people connect, socialize, and build community online, with over 3 billion players globally. Increasingly, however, these same spaces are being exploited by terrorists and individuals or groups promoting violent extremism conducive to terrorism, who use gaming platforms for recruitment, radicalization, propaganda, and financing. Furthermore, the convergence of digital environments, algorithmic amplification, and the social and developmental vulnerabilities of children and youth has created conditions in which harmful content can reach users at scale.\n\nAccording to research by the United Nations Interregional Crime and Justice Research Institute (UNICRI) and the United Nations Office of Counter-Terrorism (UNOCT), terrorists are increasingly exploiting gaming-adjacent spaces - such as in-game chats, livestreams, and user-generated content - to spread propaganda and amplify their influence. Furthermore, a Counter-Terrorism Committee Executive Directorate (CTED) Trends Alert highlights that, given the powerful and seamless social connectivity of these digital ecosystems, youth and children are also targeted across terrorist ideologies. In Europe and North America, children account for 42 per cent of terror related investigations.\n\nThis webinar aims to go behind the screen and provide a clearer picture of these environments. Speakers from CTED’s Global Research Network (GRN) and United Nations entities will explain how features and cultures unique to gaming platforms – combined with AI and other emerging technologies – allow terrorists and groups promoting violent extremism conducive to terrorism to operate undetected.\n\nThis webinar is hosted by the Addressing Violent Extremism and Radicalization to Terrorism (AVERT) Research Network, a member of CTED's Global Research Network (GRN), in cooperation with CTED.",
+    "register_url": "https://deakin.zoom.us/webinar/register/WN_CWHYiLEMSeK1WVdxOIfUVQ",
+    "recording_url": ""
+  },
+  {
+    "type": "upcoming",
     "banner_image": "/images/symposium-2026-banner.png",
     "date_aedt": "26–27 November 2026",
     "date_other": "NEW LOCATION: Cliftons, Level 3, 10 Spring St, Sydney NSW 2000",
