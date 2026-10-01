@@ -138,6 +138,27 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Symposium 2026 venue change */}
+      <section className="bg-[#f5c518] text-[#1a1a1a] border-b-4 border-[#1a1a1a]">
+        <Link
+          href="/events/symposiums/2026"
+          className="group max-w-[1440px] mx-auto px-6 py-8 md:py-10 flex flex-col md:flex-row md:items-center gap-4 md:gap-10"
+        >
+          <span className="self-start md:self-center bg-[#1a1a1a] text-[#f5c518] text-sm md:text-base font-bold uppercase tracking-widest px-4 py-2 font-sans whitespace-nowrap">
+            New Location!
+          </span>
+          <div className="flex-1 font-sans">
+            <p className="text-sm font-semibold uppercase tracking-wide mb-1">AVERT National Research Symposium 2026</p>
+            <p className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+              26–27 November 2026 – Cliftons, Level 3, 10 Spring St, Sydney NSW 2000
+            </p>
+          </div>
+          <span className="self-start md:self-center text-sm font-bold uppercase tracking-wide font-sans group-hover:underline whitespace-nowrap">
+            Symposium details →
+          </span>
+        </Link>
+      </section>
+
       {/* News & Events */}
       <section className="max-w-[1440px] mx-auto px-6 py-16">
         <div className="mb-8">

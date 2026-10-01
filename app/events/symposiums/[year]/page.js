@@ -32,7 +32,16 @@ export default async function SymposiumPage({ params }) {
       <div className="bg-[#0c7c59] text-white py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <Link href="/events/symposiums" className="text-white/60 hover:text-white text-sm mb-6 inline-block font-sans transition-colors">← Symposiums</Link>
-          <p className="text-white/60 text-sm mt-4 mb-2 font-sans">{sym.dates} · {sym.location}</p>
+          {sym.location_notice ? (
+            <div className="mt-4 mb-4 font-sans">
+              <span className="inline-block bg-[#f5c518] text-[#1a1a1a] text-xs font-bold uppercase tracking-widest px-3 py-1 mb-2">
+                {sym.location_notice}
+              </span>
+              <p className="text-white text-lg md:text-xl font-bold">{sym.dates} – {sym.location}</p>
+            </div>
+          ) : (
+            <p className="text-white/60 text-sm mt-4 mb-2 font-sans">{sym.dates} · {sym.location}</p>
+          )}
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-2">{sym.title}</h1>
           {sym.theme && (
             <p className="text-white/80 text-lg italic mt-2">{sym.theme}</p>
