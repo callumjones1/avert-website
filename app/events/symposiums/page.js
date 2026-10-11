@@ -51,6 +51,10 @@ export default function SymposiumsPage() {
                       <span className="text-xs font-semibold text-[#0c7c59] font-sans">
                         {sym.recordings.length} session recording{sym.recordings.length !== 1 ? 's' : ''} →
                       </span>
+                    ) : sym.registrations_closed ? (
+                      <span className="text-xs font-semibold text-[#0c7c59] font-sans">
+                        Registrations Closed
+                      </span>
                     ) : sym.register_url ? (
                       <span className="text-xs font-semibold text-[#0c7c59] font-sans">
                         Registrations Open →

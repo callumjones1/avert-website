@@ -5,9 +5,16 @@
     "hero_image": "/images/symposium-2026-banner.png",
     "title": "AVERT National Research Symposium 2026",
     "theme": "Youth and Extremism: Thresholds, Interventions, Connections",
-    "cfp_closed": true,
-    "register_url": "https://dems-avert-2026.eventsairsite.com/",
-    "international_note": "Researchers and practitioners from any country are warmly invited to submit proposals. The 2026 AVERT Youth and Extremism Symposium welcomes and strongly encourages international paper and session proposals.",
+    "registrations_closed": true,
+    "registration_notice": {
+      "heading": "Registrations are now closed",
+      "paragraphs": [
+        "Thank you to everyone who has registered for the 2026 AVERT National Research Symposium. We have been delighted by the strong level of interest in this year’s event.",
+        "Please note that registering does not guarantee a place at the Symposium. Due to the high volume of registrations, we are unfortunately unable to accommodate everyone who has expressed interest.",
+        "If you have registered, you will receive an email from us shortly confirming the outcome of your registration. We appreciate your patience while we finalise attendance."
+      ],
+      "email": "avertsymposium@deakin.edu.au"
+    },
     "dates": "26–27 November 2026",
     "location": "Cliftons, Level 3, 10 Spring St, Sydney NSW 2000",
     "location_notice": "New location",
@@ -30,61 +37,19 @@
         "image_dir": "headshots"
       }
     ],
-    "cfp": {
-      "themes": [
-        "Radicalisation pathways, risk factors, and threshold indicators for violent extremism among young people",
-        "Assessment, intervention, diversion, and treatment approaches in youth CVE contexts",
-        "The role of parents/guardians/caretakers for young people in either prevention and intervention approaches and frameworks or in cross-generational radicalisation pathways",
-        "Issues in assessing risk and threat related to youth radicalisation (including various risk and threat assessment tools and measures)",
-        "The role of online environments, peer networks, and family dynamics in youth radicalisation",
-        "Psychologies of youth violent extremism, including mental health and neurodiversity",
-        "Gendered dimensions of youth violent extremism, including misogyny and the manosphere",
-        "Demographic and criminogenic risk factors (including gender, age, upbringing, socio-economic status)",
-        "Education system responses and primary prevention strategies",
-        "Non-extremist criminal justice intersections with youth violent extremism",
-        "Practitioner and policymaker perspectives, including de-identified case studies"
-      ],
-      "encouraged": [
-        "Offer innovative perspectives and conceptual approaches to youth radicalisation",
-        "Consider the perspectives and voices of young people and their experiences navigating violent extremist propaganda and environments",
-        "Where possible, draw on empirical or primary de-identified data"
-      ],
-      "categories": [
-        {
-          "name": "Individual Papers",
-          "description": "Traditional academic papers may be for a maximum of 20 minutes, not including question time. Please include the name and title of the lead presenter and any co-presenters along with a 300-word maximum abstract."
-        },
-        {
-          "name": "Themed Presentation Panels",
-          "description": "Panels consist of a maximum of 3 papers of up to 15 minutes each, not including question time, that address a common question or research/policy area. Please provide the title of the panel, details of the panel moderator and panel presenters (name, title, affiliation and paper abstracts), a 200-word maximum abstract for the panel overview, and individual panel paper abstracts (200-word maximum). Panels generally have up to 4 participants (including the panel chair). We encourage panels that combine academic and practitioner contributors."
-        },
-        {
-          "name": "Roundtables and Discussion Panels",
-          "description": "Roundtable and Discussion panels allow for shorter presentations (maximum 5–7 minutes each) and curated discussions led by a chair (approximately 25 minutes in total), not including audience question time. Please provide the title of the roundtable/discussion panel, details of the panel moderator and panel presenters (name, title, affiliation), along with a 200-word maximum abstract. Roundtables and Discussion Panels can have a maximum of 4 participants (including the chair) — this format may be best suited for policy, community, or industry stakeholders."
-        },
-        {
-          "name": "Interactive Sessions or Workshops",
-          "description": "Workshops can be a maximum of 45 minutes. They are meant to be interactive and led by a moderator, and must include hands-on exercises or interactions between moderators and participants. Please provide a 200-word maximum abstract, presentation title, and details of the moderator (name, title, affiliation), and indicate how the session will be conducted and what interactive techniques will be used."
-        }
-      ],
-      "requirements": [
-        "Title and abstract (refer to word limits and requirements for each category above)",
-        "Names, titles and institutional affiliations of presenters/participants/moderator (for paper presentations, please include any co-authors while indicating the presenter)",
-        "A 150-word maximum bio for each presenter/participant/moderator",
-        "Contact email and telephone number for each presenter/participant/moderator",
-        "Social media handles of presenter/participant/moderator (where possible/available)"
-      ],
-      "key_dates": [
-        { "label": "Proposal submission deadline", "date": "Monday, 17 August 2026, 11:59 PM AEST" },
-        { "label": "Presenters notified", "date": "15 September 2026" },
-        { "label": "Symposium registrations open", "date": "Monday, 7 September 2026" },
-        { "label": "Symposium dates", "date": "26–27 November 2026" }
-      ],
-      "submission_url": "https://forms.cloud.microsoft/r/gXVV3zwgdP",
-      "outcomes_notice": "Thank you to everyone who submitted a proposal. All applicants should now have received an email informing them of the outcome. If you have not received an email, please get in touch.",
-      "enquiries_email": "avertsymposium@deakin.edu.au",
-      "enquiries_contact": "AVERT Coordinator, Ms Isel Ras"
-    },
+    "topics": [
+      "Radicalisation pathways, risk factors, and threshold indicators for violent extremism among young people",
+      "Assessment, intervention, diversion, and treatment approaches in youth CVE contexts",
+      "The role of parents/guardians/caretakers for young people in either prevention and intervention approaches and frameworks or in cross-generational radicalisation pathways",
+      "Issues in assessing risk and threat related to youth radicalisation (including various risk and threat assessment tools and measures)",
+      "The role of online environments, peer networks, and family dynamics in youth radicalisation",
+      "Psychologies of youth violent extremism, including mental health and neurodiversity",
+      "Gendered dimensions of youth violent extremism, including misogyny and the manosphere",
+      "Demographic and criminogenic risk factors (including gender, age, upbringing, socio-economic status)",
+      "Education system responses and primary prevention strategies",
+      "Non-extremist criminal justice intersections with youth violent extremism",
+      "Practitioner and policymaker perspectives, including de-identified case studies"
+    ],
     "recordings": []
   },
   {

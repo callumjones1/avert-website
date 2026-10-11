@@ -46,7 +46,11 @@ export default async function SymposiumPage({ params }) {
           {sym.theme && (
             <p className="text-white/80 text-lg italic mt-2">{sym.theme}</p>
           )}
-          {sym.register_url ? (
+          {sym.registrations_closed ? (
+            <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 mt-5 font-sans">
+              Registrations Closed
+            </span>
+          ) : sym.register_url ? (
             <span className="inline-block bg-white/15 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 mt-5 font-sans">
               Registrations Open
             </span>
@@ -67,6 +71,20 @@ export default async function SymposiumPage({ params }) {
       )}
 
       <div className="max-w-7xl mx-auto px-6 py-12 space-y-14">
+
+        {sym.registration_notice && (
+          <section className="max-w-3xl bg-[#e8f5f0] border-l-4 border-[#0c7c59] px-6 py-5 space-y-3">
+            <h2 className="font-bold text-[#0a6b4d] text-lg">{sym.registration_notice.heading}</h2>
+            {sym.registration_notice.paragraphs.map((para, i) => (
+              <p key={i} className="text-[#2d2d2d] leading-relaxed">{para}</p>
+            ))}
+            {sym.registration_notice.email && (
+              <p className="text-[#2d2d2d] leading-relaxed">
+                For any enquiries, please contact <a href={`mailto:${sym.registration_notice.email}`} className="text-[#0c7c59] font-semibold hover:underline">{sym.registration_notice.email}</a>.
+              </p>
+            )}
+          </section>
+        )}
 
         {/* Calls to action — top of page */}
         {(sym.register_url || sym.program_url) && (
@@ -154,6 +172,19 @@ export default async function SymposiumPage({ params }) {
                 </div>
               ))}
             </div>
+          </section>
+        )}
+
+        {/* Symposium topics */}
+        {sym.topics?.length > 0 && (
+          <section className="max-w-3xl">
+            <div className="flex items-baseline gap-3 mb-6">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Symposium Topics</h2>
+              <div className="flex-1 h-px bg-[#e2e2dc]" />
+            </div>
+            <ul className="list-disc pl-5 space-y-1.5 text-[#2d2d2d] leading-relaxed">
+              {sym.topics.map((t, i) => <li key={i}>{t}</li>)}
+            </ul>
           </section>
         )}
 

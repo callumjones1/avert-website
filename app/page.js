@@ -38,6 +38,8 @@ function stripHtml(html) {
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&nbsp;/g, ' ')
+    .replace(/&ndash;/g, '–')
+    .replace(/&mdash;/g, '—')
     .replace(/&#\d+;/g, '')
 }
 
