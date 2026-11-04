@@ -128,6 +128,29 @@ export default async function SymposiumPage({ params }) {
           </section>
         )}
 
+        {/* Program preview — inline PDF viewer with a fallback link for mobile browsers that can't embed PDFs */}
+        {sym.program_url && sym.program_embed && (
+          <section>
+            <div className="flex items-baseline gap-3 mb-6">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-[#0c7c59] font-sans">Program at a Glance</h2>
+              <div className="flex-1 h-px bg-[#e2e2dc]" />
+            </div>
+            <div className="border border-[#e2e2dc] bg-[#f7f7f5] max-w-4xl">
+              <iframe
+                src={`${sym.program_url}#view=FitH`}
+                title={`${sym.title} program`}
+                className="w-full h-[75vh] min-h-[500px]"
+              />
+            </div>
+            <p className="text-sm text-[#5a5a5a] font-sans mt-3">
+              Can&apos;t see the program?{' '}
+              <a href={sym.program_url} target="_blank" rel="noopener noreferrer" className="text-[#0c7c59] font-semibold hover:underline">
+                Open the PDF in a new tab →
+              </a>
+            </p>
+          </section>
+        )}
+
         {/* Keynotes — surfaced high on the page */}
         {sym.keynotes?.length > 0 && (
           <section>

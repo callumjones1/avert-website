@@ -53,7 +53,7 @@ export default function SymposiumsPage() {
                       </span>
                     ) : sym.registrations_closed ? (
                       <span className="text-xs font-semibold text-[#0c7c59] font-sans">
-                        Registrations Closed
+                        Registrations Closed{sym.program_embed && ' · Program now available →'}
                       </span>
                     ) : sym.register_url ? (
                       <span className="text-xs font-semibold text-[#0c7c59] font-sans">
